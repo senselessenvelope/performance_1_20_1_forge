@@ -1,0 +1,836 @@
+{
+  "structures": [
+
+
+
+
+    {
+      "structure": "minecraft:buried_treasure",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:mansion",
+      "weight": 5
+    },
+
+
+
+    {
+      "structure": "minecraft:ocean_ruin_cold",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:ocean_ruin_warm",
+      "weight": 5
+    },
+
+
+
+    {
+      "structure": "minecraft:ruined_portal",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:ruined_portal_desert",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:ruined_portal_jungle",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:ruined_portal_mountain",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:ruined_portal_ocean",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:ruined_portal_swamp",
+      "weight": 5
+    },
+
+
+
+    {
+      "structure": "minecraft:shipwreck",
+      "weight": 5
+    },
+    {
+      "structure": "minecraft:shipwreck_beached",
+      "weight": 5
+    },
+    
+
+
+    {
+      "structure": "minecraft:igloo",
+      "weight": 5
+    },
+
+
+
+    
+
+    
+
+
+    
+
+
+
+
+
+
+
+    
+    {
+      "structure": "dungeons_arise:bandit_towers",
+      "weight": 5
+    },
+
+
+    
+    {
+      "structure": "dungeons_arise:thornborn_towers",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:infested_temple",
+      "weight": 5
+    },
+
+
+
+    {
+      "structure": "dungeons_arise:shiraz_palace",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:keep_kayra",
+      "weight": 5
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "structure": "dungeons_arise:abandoned_temple",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:bandit_village",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:ceryneian_hind",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:coliseum",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:fishing_hut",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:giant_mushroom",
+      "weight": 5
+    },
+
+
+
+    {
+      "structure": "dungeons_arise:illager_campsite",
+      "weight": 5
+    },
+
+
+
+    {
+      "structure": "dungeons_arise:illager_fort",
+      "weight": 5
+    },
+
+
+    
+    {
+      "structure": "dungeons_arise:illager_windmill",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:jungle_tree_house",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:lighthouse",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:merchant_campsite",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:monastery",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:mushroom_house",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:mushroom_mines",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:mushroom_village",
+      "weight": 5
+    },
+    {
+      "structure": "dungeons_arise:scorched_mines",
+      "weight": 5
+    },
+
+
+    
+    {
+      "structure": "dungeons_arise:wishing_well",
+      "weight": 5
+    },
+
+
+
+    {
+      "structure": "dungeons_arise:greenwood_pub",
+      "weight": 5
+    },
+
+
+
+
+
+    
+    {
+      "structure": "dungeons_arise:small_blimp",
+      "weight": 4
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    {
+      "structure": "graveyard:altar",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:dead_tree",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:giant_mushroom",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:haunted_house",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:large_graveyard",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:lich_prison",
+      "weight": 3
+    },
+    {
+      "structure": "graveyard:medium_graveyard",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:memorial_tree",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:mushroom_grave",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:ruins",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:small_desert_grave",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:small_desert_graveyard",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:small_grave",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:small_graveyard",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:small_mountain_grave",
+      "weight": 5
+    },
+    {
+      "structure": "graveyard:small_savanna_grave",
+      "weight": 5
+    },
+
+
+
+
+
+    {
+      "structure": "mss:birch_river",
+      "weight": 5
+    },
+    {
+      "structure": "mss:calcite_house",
+      "weight": 5
+    },
+    {
+      "structure": "mss:castle_ruin",
+      "weight": 5
+    },
+    {
+      "structure": "mss:castle_tower",
+      "weight": 5
+    },
+    {
+      "structure": "mss:cherry_river",
+      "weight": 5
+    },
+    {
+      "structure": "mss:desert_pyramid",
+      "weight": 5
+    },
+    {
+      "structure": "mss:desert_well",
+      "weight": 5
+    },
+    {
+      "structure": "mss:diorite_house",
+      "weight": 5
+    },
+    {
+      "structure": "mss:frozen_pond",
+      "weight": 5
+    },
+    {
+      "structure": "mss:jungle",
+      "weight": 5
+    },
+    {
+      "structure": "mss:large_tower",
+      "weight": 5
+    },
+    {
+      "structure": "mss:leaf_hollow",
+      "weight": 5
+    },
+    {
+      "structure": "mss:mangrove",
+      "weight": 5
+    },
+    {
+      "structure": "mss:mushroom",
+      "weight": 5
+    },
+    {
+      "structure": "mss:nether_portal",
+      "weight": 5
+    },
+    {
+      "structure": "mss:palm_island",
+      "weight": 5
+    },
+    {
+      "structure": "mss:small_deepslate_house",
+      "weight": 5
+    },
+    {
+      "structure": "mss:small_oak_house",
+      "weight": 5
+    },
+    {
+      "structure": "mss:small_pond",
+      "weight": 5
+    },
+    {
+      "structure": "mss:small_tower",
+      "weight": 5
+    },
+    {
+      "structure": "mss:spruce_huts",
+      "weight": 5
+    },
+    {
+      "structure": "mss:taiga",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_1",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_2",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_3",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_4",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_5",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_6",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_7",
+      "weight": 5
+    },
+    {
+      "structure": "mss:tree_8",
+      "weight": 5
+    },
+    {
+      "structure": "mss:volcano",
+      "weight": 5
+    },
+    {
+      "structure": "mss:white_house",
+      "weight": 5
+    },
+  
+
+
+
+
+
+
+    {
+      "structure": "mvs:beach_bar",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:cartographer_tower",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:cathedral",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:crystal",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:gallows",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:horse_pen",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:jungle_tower",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:out_house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:railway",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:shed",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:small_pillager_tower",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:small_ship",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:stone_fountain",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:sunzi_gate",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/azelea_house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/barn",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/deepslate_house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/desert_house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/flower_hole",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/large_floating_island",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/large_warped_tower",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/medium_igloo_1",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/medium_igloo_2",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/small_igloo",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/small_swamp_house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/tall_house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:houses/warped_house",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/acacia_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/big_oak_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/birch_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/boulder",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/cherry_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/dark_oak_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/floating_islands",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/jungle_palm_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/jungle_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/large_mushroom",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/mushroom_pond",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/oak_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/paths",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/small_oak_pond",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/spruce_tree",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:nature/stone_rock",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:ruins/castle_ruins",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:ruins/log_ruin",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:ruins/ruined_beacon",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:ruins/small_ruin",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:ruins/statue_ruins",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:ruins/stone_pillars",
+      "weight": 5
+    },
+    {
+      "structure": "mvs:ruins/tree_monument",
+      "weight": 5
+    },
+
+
+
+
+
+
+
+
+    {
+      "structure": "philipsruins:ancient_crypt",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:ancient_dungeon",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:ancient_ruins",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:ancient_towers",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:antiquus_crypta",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:badlands_start_dungeon",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:badlands_structures",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:desert_structures",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:level_one_ruins",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:level_three_ruins",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:level_two_ruins",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:level_two_ruins_pool",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:lost_soul_city",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:rare_ruin",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:lost_soul_dungeon",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:bone_dungeon",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:underground_structures",
+      "weight": 5
+    },
+    {
+      "structure": "philipsruins:sculk_dungeon",
+      "weight": 5
+    },
+
+
+
+
+
+
+    {
+      "structure": "castle_in_the_sky:castle_in_the_sky",
+      "weight": 3
+    },
+
+
+
+
+
+
+
+    {
+      "structure": "tlc:lost_castle",
+      "weight": 5
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+{
+	"structure": "explorations:floating_island",
+	"weight": 6
+},
+{
+	"structure": "explorations:slime_cave",
+	"weight": 5
+},
+{
+	"structure": "explorations:underground_temple",
+	"weight": 5
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+
+
+    
+    
+
+  ],
+  "placement": {
+    "salt": 12376967,
+    "spacing": 12,
+    "separation": 8,
+    "type": "minecraft:random_spread"
+  }
+}

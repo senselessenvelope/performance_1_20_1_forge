@@ -1,0 +1,21 @@
+[
+    {
+      "name": "full_moon_is_broken",
+      "conditions": {
+        "daycount": "repeat(8,1,2)",
+        "time": "range(13000,23000)"
+      }
+    },
+    {
+        "name": "day",
+        "conditions": {
+          "time": "range(0,12000)"
+        }
+    },
+    {
+        "name": "night",
+        "conditions": {
+          "time": "range(13000,23000)"
+        }
+    }
+  ]

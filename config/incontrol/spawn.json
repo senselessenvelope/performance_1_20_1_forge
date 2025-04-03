@@ -1,0 +1,5859 @@
+[
+
+
+{
+  "dimension": "minecraft:overworld",
+  "mob": [
+    "legendary_monsters:ambusher",
+    "legendary_monsters:ancient_guardian",
+    "legendary_monsters:cloud_golem",
+    "legendary_monsters:dark_cloud_golem",
+    "legendary_monsters:frostbitten_golem",
+    "legendary_monsters:overgrown_colossus"
+  ],
+  "incontrol": true,
+  "result": "deny"
+},
+
+{
+  "dimension": "minecraft:overworld",
+  "mob": [
+    "minecraft:blaze",
+    "minecraft:cave_spider",
+    "minecraft:elder_guardian",
+    "minecraft:ender_dragon",
+    "minecraft:endermite",
+    "minecraft:evoker",
+    "minecraft:ghast",
+    "minecraft:giant",
+    "minecraft:hoglin",
+    "minecraft:illusioner",
+    "minecraft:iron_golem",
+    "minecraft:magma_cube",
+    "minecraft:mule",
+    "minecraft:phantom",
+    "minecraft:piglin",
+    "minecraft:piglin_brute",
+    "minecraft:pillager",
+    "minecraft:ravager",
+    "minecraft:shulker",
+    "minecraft:slime",
+    "minecraft:snow_golem",
+    "minecraft:strider",
+    "minecraft:trader_llama",
+    "minecraft:vex",
+    "minecraft:villager",
+    "minecraft:vindicator",
+    "minecraft:wandering_trader",
+    "minecraft:warden",
+    "minecraft:wither",
+    "minecraft:wither_skeleton",
+    "minecraft:zoglin",
+    "minecraft:zombie_horse",
+    "minecraft:zombie_villager",
+    "minecraft:zombified_piglin",
+
+    "alexsmobs:farseer"
+  ],
+  "incontrol": false,
+  
+  "result": "default"
+},
+{ 
+  "dimension": "minecraft:overworld",
+  "mob": [
+    "whisperwoods:moth"
+  ],
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:overworld",
+  "spawner": true,
+  "incontrol": false,
+  "result": "allow"
+},
+{ 
+  "dimension": "minecraft:overworld",
+  "maxheight": 60,
+  "mincount": {
+    "amount": 100,
+    "hostile": true,
+    "perplayer": true
+  },
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:overworld",
+  "phase": "day",
+  "minheight": 60,
+  "mincount": {
+    "amount": 100,
+    "hostile": true,
+    "perplayer": true
+  },
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "minheight": 60,
+  "mincount": {
+    "amount": 150,
+    "hostile": true,
+    "perplayer": true
+  },
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:overworld",
+  "mincount": {
+    "amount": 80,
+    "passive": true,
+    "perplayer": true
+  },
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:overworld",
+  "spawner": false,
+  "incontrol": false,
+  "result": "deny"
+},
+
+
+
+
+{ 
+  "dimension": [
+    "minecraft:the_end",
+    "more_zombies2:dark_dimension",
+    "twilightforest:twilight_forest",
+    "graveyard:past",
+    "eldritch_grotto:eldritch_grotto_dimension",
+    "aether:the_aether",
+    "the_forgotten_dimensions:ryumsky",
+    "the_forgotten_dimensions:perma_frost",
+    "blue_skies:everbright",
+    "blue_skies:everdawn"
+  ],
+  "mob": [
+    "born_in_chaos_v1:nightmare_stalker"
+  ],
+  "incontrol": "false",
+  "result": "deny"
+},
+{ 
+  "dimension": [
+    "minecraft:the_end",
+    "undergarden:undergarden",
+    "more_zombies2:dark_dimension",
+    "deeperdarker:otherside",
+    "twilightforest:twilight_forest",
+    "graveyard:past",
+    "eldritch_grotto:eldritch_grotto_dimension",
+    "aether:the_aether",
+    "the_forgotten_dimensions:ryumsky",
+    "the_forgotten_dimensions:perma_frost",
+    "blue_skies:everbright",
+    "blue_skies:everdawn"
+  ],
+  "result": "default"
+},
+
+{
+  "dimension": "minecraft:the_nether",
+  "mob": [
+    
+    "minecraft:allay",
+    "minecraft:axolotl",
+    "minecraft:bat",
+    "minecraft:blaze",
+    "minecraft:camel",
+    "minecraft:cat",
+    "minecraft:cave_spider",
+    "minecraft:chicken",
+    "minecraft:cod",
+    "minecraft:cow",
+    "minecraft:creeper",
+    "minecraft:dolphin",
+    "minecraft:donkey",
+    "minecraft:drowned",
+    "minecraft:elder_guardian",
+    "minecraft:ender_dragon",
+    "minecraft:enderman",
+    "minecraft:endermite",
+    "minecraft:evoker",
+    "minecraft:fox",
+    "minecraft:ghast",
+    "minecraft:giant",
+    "minecraft:glow_squid",
+    "minecraft:goat",
+    "minecraft:guardian",
+    "minecraft:hoglin",
+    "minecraft:horse",
+    "minecraft:husk",
+    "minecraft:illusioner",
+    "minecraft:iron_golem",
+    "minecraft:llama",
+    "minecraft:magma_cube",
+    "minecraft:mooshroom",
+    "minecraft:mule",
+    "minecraft:ocelot",
+    "minecraft:panda",
+    "minecraft:parrot",
+    "minecraft:phantom",
+    "minecraft:pig",
+    "minecraft:piglin",
+    "minecraft:piglin_brute",
+    "minecraft:pillager",
+    "minecraft:polar_bear",
+    "minecraft:pufferfish",
+    "minecraft:rabbit",
+    "minecraft:ravager",
+    "minecraft:salmon",
+    "minecraft:sheep",
+    "minecraft:shulker",
+    "minecraft:silverfish",
+    "minecraft:skeleton",
+    "minecraft:slime",
+    "minecraft:sniffer",
+    "minecraft:snow_golem",
+    "minecraft:spider",
+    "minecraft:squid",
+    "minecraft:stray",
+    "minecraft:strider",
+    "minecraft:tadpole",
+    "minecraft:trader_llama",
+    "minecraft:tropical_fish",
+    "minecraft:turtle",
+    "minecraft:vex",
+    "minecraft:villager",
+    "minecraft:vindicator",
+    "minecraft:wandering_trader",
+    "minecraft:warden",
+    "minecraft:witch",
+    "minecraft:wither",
+    "minecraft:wither_skeleton",
+    "minecraft:wolf",
+    "minecraft:zoglin",
+    "minecraft:zombie",
+    "minecraft:zombie_horse",
+    "minecraft:zombie_villager",
+    "minecraft:zombified_piglin",
+
+    "piglinproliferation:piglin_alchemist",
+    "piglinproliferation:piglin_traveler",
+    "stalwart_dungeons:awful_ghast",
+    "stalwart_dungeons:giddy_blaze",
+    "stalwart_dungeons:incomplete_wither",
+    "stalwart_dungeons:nether_keeper",
+    "stalwart_dungeons:nether_wart_cocoon",
+    "stalwart_dungeons:propulk",
+    "stalwart_dungeons:reinforced_blaze",
+    "stalwart_dungeons:shelterer"
+  ],
+  "incontrol": false,
+  
+  "result": "default"
+},
+{ 
+  "dimension": "minecraft:the_nether",
+  "mod": "netherdepthsupgrade",
+  "result": "default"
+},
+{ 
+  "dimension": "minecraft:the_nether",
+  "mob": [
+    "more_zombies2:burning_zombie",
+    "monsterplus:lava_squid",
+    "monsterplus:mother_lava_squid"
+  ],
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:the_nether",
+  "spawner": true,
+  "incontrol": false,
+  "result": "allow"
+},
+{ 
+  "dimension": "minecraft:the_nether",
+  "mincount": {
+    "amount": 150,
+    "hostile": true,
+    "perplayer": true
+  },
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:the_nether",
+  "mincount": {
+    "amount": 50,
+    "passive": true,
+    "perplayer": true
+  },
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:the_nether",
+  "spawner": false,
+  "incontrol": false,
+  "result": "deny"
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blue_moon",
+  "minheight": 60,
+  "spawner": false,
+  "mincount": {
+    "amount": 100,
+    "hostile": true,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "deny"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blue_moon",
+  "maxheight": 60,
+  "spawner": false,
+  "mincount": {
+    "amount": 50,
+    "hostile": true,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "deny"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blue_moon",
+  "mob": "born_in_chaos_v1:missioner",
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blue_moon",
+  "mob": [
+    "born_in_chaos_v1:nightmare_stalker",
+    "goat_man:goat_man",
+    "antlers:wendigo",
+    "whisperwoods:hirschgeist",
+    "whisperwoods:wisp",
+    "whisperwoods:hidebehind",
+    "graveyard:corrupted_pillager",
+    "graveyard:corrupted_vindicator"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blue_moon",
+  "mob": [
+    "distantfriends:friend"
+  ],
+  
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blue_moon",
+  "incontrol": true,
+  
+  "result": "deny"
+},
+
+
+
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "minheight": 60,
+  "spawner": false,
+  "mincount": {
+    "amount": 100,
+    "hostile": true,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "deny"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "maxheight": 60,
+  "spawner": false,
+  "mincount": {
+    "amount": 50,
+    "hostile": true,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "deny"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "mob": [
+    "realmrpg_creep:creepling",
+    "realmrpg_creep:halloweed",
+    "born_in_chaos_v1:pumpkin_bruiser",
+    "born_in_chaos_v1:seared_spirit"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "biome": "minecraft:plains",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "knightquest:samhain"
+  ],
+  "block": [
+    "minecraft:dark_oak_leaves"
+  ],
+  "incontrol": true,
+  
+  "result": "allow"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "knightquest:samhain"
+  ],
+  "block": [
+    "minecraft:jungle_leaves"
+  ],
+  "incontrol": true,
+  
+  "result": "allow"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:ocean",
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 120,
+  "mob": [
+    "knightquest:samhain"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "allow"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "mob": [
+    "born_in_chaos_v1:lifestealer"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "harvest_moon",
+  "incontrol": true,
+  
+  "result": "deny"
+},
+
+
+
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blood_moon",
+  "minheight": 60,
+  "spawner": false,
+  "mincount": {
+    "amount": 100,
+    "hostile": true,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "deny"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blood_moon",
+  "maxheight": 60,
+  "spawner": false,
+  "mincount": {
+    "amount": 50,
+    "hostile": true,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "deny"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blood_moon",
+  "mob": [
+    "graveyard:ghoul",
+    "graveyard:wraith",
+    "graveyard:revenant",
+    "graveyard:nightmare",
+    "graveyard:skeleton_creeper",
+
+
+    "whisperwoods:zotzpyre",
+
+
+    "born_in_chaos_v1:glutton_fish",
+
+    "zombies_plus:axe_zombie",
+    "zombies_plus:bow_zombie",
+    "zombies_plus:brute_zombie",
+    "zombies_plus:cave_zombie",
+    "zombies_plus:crawler_zombie",
+    "zombies_plus:crossbow_zombie",
+    "zombies_plus:leaper_zombie",
+    "zombies_plus:runner_zombie",
+    "zombies_plus:shrieker_zombie",
+    "zombies_plus:slow_zombie",
+    "zombies_plus:sword_zombie",
+    "zombies_plus:vile_zombie",
+    "zombies_plus:weak_zombie",
+    
+    "more_zombies2:zombie_summoner",
+    "more_zombies2:zombie_god",
+
+    "more_zombies2:dark_zombie",
+    "more_zombies2:furious_zombie",
+    "more_zombies2:horde_leader",
+    "more_zombies2:horde_zombie",
+    "more_zombies2:the_watcher",
+    "more_zombies2:zombie_runner",
+    "more_zombies2:zombie_soul",
+    "more_zombies2:zombie_spitter",
+
+    "born_in_chaos_v1:dire_hound_leader",
+    "born_in_chaos_v1:zombie_clown",
+
+    "enemyexpansion:meature",
+    "enemyexpansion:slugger",
+    "enemyexpansion:sprinter",
+    "enemyexpansion:vampire"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blood_moon",
+  "mob": [
+    "more_zombies2:zombie_summoner"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "blood_moon",
+  "incontrol": true,
+  
+  "result": "deny"
+},
+
+
+
+
+
+
+
+
+{
+  "dimension": "deeperdarker:otherside",
+  "mob": "born_in_chaos_v1:nightmare_stalker",
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  "result": "default"
+},
+{
+  "dimension": "undergarden:undergarden",
+  "mob": "born_in_chaos_v1:nightmare_stalker",
+  "maxcount": {
+    "amount": 5,
+    "perplayer": true
+  },
+  "incontrol": true,
+  "result": "default"
+},
+{
+  "dimension": "undergarden:undergarden",
+  "mob": [
+      "antlers:wendigo",
+      "whisperwoods:hidebehind",
+      "goat_man:goat_man"
+  ],
+  "incontrol": true,
+  "result": "default"
+},
+
+
+
+
+{
+  "phase": "night",
+  "gamestage": "hard_mode",
+  "mob": [
+    "warrior:warrior"
+  ],
+  "healthmultiply": 2,
+  "damagemultiply": 2,
+  "speedmultiply": 1.5,
+  "helditem": [
+    "minecraft:netherite_sword",
+    "minecraft:diamond_sword",
+    "minecraft:crossbow"
+  ],
+  "armorchest": [
+    "minecraft:netherite_chestplate",
+    "minecraft:diamond_chestplate"
+  ],
+  "armorboots": [
+    "minecraft:netherite_boots",
+    "minecraft:diamond_boots"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "phase": "night",
+  "gamestage": "medium_mode",
+  "mob": [
+    "warrior:warrior"
+  ],
+  "healthmultiply": 2,
+  "helditem": [
+    "minecraft:iron_sword",
+    "minecraft:stone_sword",
+    "minecraft:bow"
+  ],
+  "armorchest": [
+    "minecraft:iron_chestplate",
+    "minecraft:chainmail_chestplate"
+  ],
+  "armorboots": [
+    "minecraft:iron_boots",
+    "minecraft:chainmail_boots"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "phase": "night",
+  "gamestage": "easy_mode",
+  "mob": [
+    "warrior:warrior"
+  ],
+  "helditem": [
+    "minecraft:wooden_sword",
+    "minecraft:golden_sword"
+  ],
+  "armorchest": [
+    "minecraft:leather_chestplate",
+    "minecraft:golden_chestplate"
+  ],
+  "armorboots": [
+    "minecraft:leather_boots",
+    "minecraft:golden_boots"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+
+
+
+
+{
+  "dimension": "minecraft:the_end",
+  "gamestage": "hard_mode",
+  "mob": [
+    "mutantmonsters:mutant_enderman"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:sand",
+    "minecraft:coarse_dirt",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:windswept_savanna"
+  ],
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:gravel",
+    "minecraft:stone",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:forest",
+  "minheight": 100,
+  "maxheight": 190,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": [
+    "minecraft:deep_ocean",
+    "minecraft:warm_ocean",
+    "minecraft:end_midlands"
+  ],
+  "minheight": 60,
+  "maxheight": 120,
+  "mob": [
+    "mutantmonsters:mutant_zombie"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:dark_forest",
+  "minheight": 70,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:taiga",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:coarse_dirt",
+    "minecraft:podzol",
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "maxheight": 100,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": [
+    "minecraft:deep_ocean",
+    "minecraft:warm_ocean",
+    "minecraft:end_midlands"
+  ],
+  "minheight": 60,
+  "maxheight": 120,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:small_end_islands",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:savanna_plateau",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:birch_forest",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:deep_cold_ocean",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:end_highlands",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "mutantmonsters:mutant_skeleton"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_creeper"
+  ],
+  "block": [
+    "minecraft:coarse_dirt",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:windswept_savanna"
+  ],
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "mutantmonsters:mutant_creeper"
+  ],
+  "block": [
+    "minecraft:gravel",
+    "minecraft:stone",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 130,
+  "mob": [
+    "mutantmonsters:mutant_creeper"
+  ],
+  "block": [
+    "minecraft:prismarine",
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "mutantmonsters:mutant_creeper"
+  ],
+  "block": [
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 60,
+  "mob": [
+    "mutantmonsters:mutant_snow_golem"
+  ],
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 120,
+  "mob": [
+    "mutantmonsters:mutant_snow_golem"
+  ],
+  "block": [
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "minheight": -64,
+  "maxheight": 60,
+  "mob": [
+    "mutantmonsters:spider_pig"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "mob": [
+    "born_in_chaos_v1:skeleton_thrasher",
+    "born_in_chaos_v1:fallen_chaos_knight"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "biome": "yungscavebiomes:lost_caves",
+  "mob": [
+    "galosphere:berserker"
+  ],
+  "maxcount": {
+    "amount": 5,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "maxheight": 0,
+  "mob": [
+    "galosphere:berserker"
+  ],
+  "maxcount": {
+    "amount": 5,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "mob": [
+    "born_in_chaos_v1:lord_pumpkinhead"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "mob": [
+    "majruszsdifficulty:giant"
+  ],
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "mob": [
+    "born_in_chaos_v1:scarlet_persecutor"
+  ],
+  "eventspawn": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "hard_mode",
+  "mob": [
+    "majruszsdifficulty:cerberus"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+
+
+
+
+
+
+
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "mob": [
+    "born_in_chaos_v1:senor_pumpkin",
+    "majruszsdifficulty:cursed_armor",
+    "knightquest:netherman"
+  ],
+
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:spirit_guide"
+  ],
+  "block": [
+    "minecraft:red_sandstone",
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "maxheight": 110,
+  "mob": [
+    "born_in_chaos_v1:spirit_guide"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "maxheight": 110,
+  "mob": [
+    "born_in_chaos_v1:spirit_guide"
+  ],
+  "block": [
+    "minecraft:sandstone",
+    "minecraft:brown_terracotta",
+    "minecraft:white_terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:desert",
+  "minheight": 110,
+  "mob": [
+    "born_in_chaos_v1:spirit_guide"
+  ],
+  "block": [
+    "minecraft:red_sand",
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:gray_terracotta",
+    "minecraft:white_terracotta",
+    "minecraft:red_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "born_in_chaos_v1:spirit_guide"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:deep_lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:restless_spirit",
+    "born_in_chaos_v1:bonescaller",
+    "born_in_chaos_v1:dark_vortex"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:end_barrens",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:restless_spirit",
+    "born_in_chaos_v1:bonescaller",
+    "born_in_chaos_v1:dark_vortex",
+    "graveyard:skeleton_creeper"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "mob": [
+    "born_in_chaos_v1:pumpkin_spirit"
+  ],
+  "block": [
+    "minecraft:farmland"
+  ],
+  "incontrol": true,
+  
+  "result": "allow"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "mob": [
+    "born_in_chaos_v1:skeleton_demoman",
+    "born_in_chaos_v1:door_knight"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 70,
+  "maxheight": 130,
+  "seesky": true,
+  "mob": [
+    "mowziesmobs:naga"
+  ],
+  "block": [
+    "minecraft:prismarine",
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:stony_shore",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:barrel_zombie",
+    "born_in_chaos_v1:zombie_fisherman"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "maxheight": 65,
+  "mob": [
+    "born_in_chaos_v1:barrel_zombie",
+    "born_in_chaos_v1:zombie_fisherman"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:beach",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "born_in_chaos_v1:barrel_zombie",
+    "born_in_chaos_v1:zombie_fisherman"
+  ],
+  "block": [
+    "minecraft:sand",
+    "minecraft:grass_block",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:forest",
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "born_in_chaos_v1:corpse_fish"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:swamp",
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "born_in_chaos_v1:corpse_fish"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:deep_ocean",
+  "maxheight": 55,
+  "mob": [
+    "born_in_chaos_v1:corpse_fish",
+    "born_in_chaos_v1:glutton_fish"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "day",
+  "gamestage": "medium_mode",
+  "maxheight": 55,
+  "mob": [
+    "upgrade_aquatic:great_thrasher"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:swamp",
+  "minheight": 60,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:clay",
+    "minecraft:podzol"
+  ],
+  "mob": [
+    "born_in_chaos_v1:swarmer"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:dark_forest",
+  "minheight": 60,
+  "maxheight": 70,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:clay",
+    "minecraft:podzol"
+  ],
+  "mob": [
+    "born_in_chaos_v1:swarmer"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:decaying_zombie",
+    "born_in_chaos_v1:corpse_fly"
+  ],
+  "block": [
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "maxheight": 60,
+  "mob": [
+    "born_in_chaos_v1:dark_vortex",
+    "born_in_chaos_v1:decaying_zombie",
+    "born_in_chaos_v1:mother_spider",
+    "majruszsdifficulty:tank"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:bloody_gadfly",
+    "knightquest:eldbomb",
+    "knightquest:eldknight"
+  ],
+  "block": [
+    "minecraft:coarse_dirt",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:beach",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "born_in_chaos_v1:thornshell_crab"
+  ],
+  "maxcount": {
+    "amount": 3,
+    "perplayer": true
+  },
+  "block": [
+    "minecraft:sand",
+    "minecraft:grass_block",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 90,
+  "maxheight": 120,
+  "mob": [
+    "born_in_chaos_v1:dread_hound"
+  ],
+  "block": [
+    "minecraft:snow",
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:taiga",
+  "minheight": 90,
+  "mob": [
+    "born_in_chaos_v1:dread_hound"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:dread_hound"
+  ],
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "mob": [
+    "born_in_chaos_v1:sir_pumpkinhead"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "structure": "betterfortresses:fortress",
+  "mob": [
+    "born_in_chaos_v1:supreme_bonescaller"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "mob": [
+    "born_in_chaos_v1:supreme_bonescaller"
+  ],
+  "block": [
+    "minecraft:nether_bricks",
+    "minecraft:red_nether_bricks"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:sand",
+    "minecraft:coarse_dirt",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:red_sandstone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:windswept_savanna"
+  ],
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:gravel",
+    "minecraft:stone",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:forest",
+  "minheight": 100,
+  "maxheight": 190,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": [
+    "minecraft:deep_ocean",
+    "minecraft:warm_ocean",
+    "minecraft:end_midlands"
+  ],
+  "minheight": 60,
+  "maxheight": 120,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:small_end_islands",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:savanna_plateau",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_bruiser"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:dark_forest",
+  "minheight": 70,
+  "mob": [
+    "born_in_chaos_v1:mother_spider"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:plains",
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "royalvariations:royal_creeper",
+    "royalvariations:royal_skeleton",
+    "royalvariations:royal_zombie"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "seadwellers:mermorph",
+    "seadwellers:mermorph_river"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": [
+    "minecraft:river",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:lukewarm_ocean"
+  ],
+  "maxheight": 60,
+  "mob": [
+    "seadwellers:mermorph",
+    "seadwellers:mermorph_river"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:ocean",
+  "maxheight": 60,
+  "mob": [
+    "seadwellers:mermorph_coral_orange",
+    "seadwellers:mermorph_coral_yellow",
+    "seadwellers:mermorph_blacksmith",
+    "seadwellers:mermorph_farmer"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "maxcount": {
+    "amount": 4,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:deep_ocean",
+  "maxheight": 60,
+  "mob": [
+    "seadwellers:mermorph_hunter",
+    "seadwellers:mermorph_architect",
+    "seadwellers:mermorph_collector",
+    "seadwellers:mermorph_polar"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "maxcount": {
+    "amount": 4,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "maxheight": 0,
+  "mob": [
+    "seadwellers:mermorph_cavern"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "knightquest:momma_lizzy"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:podzol",
+    "minecraft:gravel",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "medium_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "mob": [
+    "knightquest:momma_lizzy"
+  ],
+  "block": [
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "medium_mode",
+  "mob": [
+    "more_zombies2:burning_zombie"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+
+
+
+
+
+
+
+
+
+{
+  "dimension": "minecraft:the_end",
+  "gamestage": "easy_mode",
+  "mob": [
+    "endermanoverhaul:end_enderman",
+    "endermanoverhaul:end_islands_enderman",
+    "caneswonderfulspidersoverhaul:void_watcher",
+    "alexsmobs:cosmaw",
+    "alexsmobs:cosmic_cod",
+    "alexsmobs:endergrade",
+    "alexsmobs:enderiophage",
+    "alexsmobs:mimicube",
+    "alexsmobs:spectre",
+    "alexsmobs:void_worm",
+    "unusualend:bolok",
+    "unusualend:dragling",
+    "unusualend:ender_blob",
+    "unusualend:ender_firefly",
+    "unusualend:endstone_golem",
+    "unusualend:endstone_trapper",
+    "unusualend:undead_enderling",
+    "upgrade_aquatic:flare"
+  ],
+
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "mob": [
+    "knightquest:ghastling",
+    "alexsmobs:crimson_mosquito",
+    "alexsmobs:laviathan",
+    "alexsmobs:soul_vulture",
+    "alexsmobs:straddler",
+    "alexsmobs:stradpole",
+    "alexsmobs:warped_mosco",
+    "upgrade_aquatic:flare"
+  ],
+
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "mob": [
+    "tradersindisguise:bow_ambusher",
+    "tradersindisguise:sickle_ambusher",
+    "artifacts:mimic",
+    "alexsmobs:sea_bear",
+    "alexsmobs:skreecher",
+    "graveyard:ghouling",
+    "graveyard:lich",
+    "snowyspirit:gingerbread_golem",
+    "upgrade_aquatic:flare"
+  ],
+
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "easy_mode",
+  "mob": [
+    "born_in_chaos_v1:spiritof_chaos"
+  ],
+  "maxcount": {
+    "amount": 5,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:basalt_deltas",
+    "incendium:volcanic_deltas"
+  ],
+  "mob": [
+    "netherskeletons:basalt_skeleton",
+    "caneswonderfulspidersoverhaul:molten_spider"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "incendium:ash_barrens"
+  ],
+  "mob": [
+    "netherskeletons:charred_skeleton",
+    "netherskeletons:crimson_skeleton",
+    "quark:foxhound",
+    "endermanoverhaul:crimson_forest_enderman",
+    "monsterplus:mother_lava_squid",
+    "caneswonderfulspidersoverhaul:crimson_spider",
+    "knightquest:gremlin"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:crimson_forest"
+  ],
+  "mob": [
+    "netherskeletons:crimson_skeleton",
+    "quark:foxhound",
+    "endermanoverhaul:crimson_forest_enderman",
+    "monsterplus:mother_lava_squid",
+    "caneswonderfulspidersoverhaul:crimson_spider"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "incendium:withered_forest"
+  ],
+  "mob": [
+    "netherskeletons:crying_obby_skeleton"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "incendium:toxic_heap"
+  ],
+  "mob": [
+    "netherskeletons:nether_skeleton",
+    "knightquest:gremlin"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:nether_wastes"
+  ],
+  "mob": [
+    "netherskeletons:nether_skeleton",
+    "endermanoverhaul:nether_wastes_enderman",
+    "knightquest:gremlin",
+    "alexsmobs:dropbear"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "incendium:infernal_dunes"
+  ],
+  "mob": [
+    "netherskeletons:nether_skeleton",
+    "quark:foxhound",
+    "caneswonderfulspidersoverhaul:molten_spider",
+    "alexsmobs:dropbear"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "incendium:quartz_flats"
+  ],
+  "mob": [
+    "netherskeletons:skelly_ghast",
+    "netherskeletons:skelly_piglin"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "incendium:weeping_valley",
+    "minecraft:soul_sand_valley"
+  ],
+  "mob": [
+    "netherskeletons:soul_skeleton",
+    "netherskeletons:skelly_ghast",
+    "netherskeletons:skelly_piglin",
+    "quark:wraith",
+    "endermanoverhaul:soulsand_valley_enderman",
+    "caneswonderfulspidersoverhaul:soul_caster_spider",
+    "alexsmobs:guster",
+    "graveyard:wraith"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:warped_forest",
+    "incendium:inverted_forest"
+  ],
+  "mob": [
+    "netherskeletons:warped_skeleton",
+    "endermanoverhaul:warped_forest_enderman",
+    "born_in_chaos_v1:phantom_creeper",
+    "caneswonderfulspidersoverhaul:warped_spider",
+    "alexsmobs:warped_toad"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "yungscavebiomes:lost_caves",
+  "mob": [
+    "galosphere:preserved"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 0,
+  "mob": [
+    "galosphere:preserved",
+    "creeperoverhaul:cave_creeper",
+    "endermanoverhaul:cave_enderman",
+    "monsterplus:crystal_zombie",
+    "monsterplus:abyssologer",
+    "monsterplus:glow_skeleton",
+    "born_in_chaos_v1:phantom_creeper",
+    "enemyexpansion:intruder"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 0,
+  "mob": [
+    "alexsmobs:murmur"
+  ],
+  "maxcount": {
+    "amount": 3,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 0,
+  "mob": [
+    "galosphere:sparkle",
+    "galosphere:specterpillar",
+    "galosphere:spectre"
+  ],
+  "maxcount": {
+    "amount": 10,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "yungscavebiomes:frosted_caves",
+  "mob": [
+    "galosphere:sparkle",
+    "galosphere:specterpillar",
+    "galosphere:spectre"
+  ],
+  "maxcount": {
+    "amount": 10,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "yungscavebiomes:frosted_caves",
+  "mob": [
+    "alexsmobs:murmur"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 50,
+  "mob": [
+    "goblintraders:goblin_trader"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 50,
+  "mob": [
+    "quark:forgotten"
+  ],
+  "maxcount": {
+    "amount": 4,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 0,
+  "mob": [
+    "mowziesmobs:grottol"
+  ],
+  "maxcount": {
+    "amount": 3,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:the_nether",
+  "gamestage": "easy_mode",
+  "mob": [
+    "goblintraders:vein_goblin_trader"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "maxheight": 110,
+  "mob": [
+    "creeperoverhaul:badlands_creeper",
+    "endermanoverhaul:badlands_enderman",
+    "knightquest:ratman"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:desert",
+  "minheight": 110,
+  "mob": [
+    "creeperoverhaul:badlands_creeper",
+    "endermanoverhaul:badlands_enderman",
+    "knightquest:ratman"
+  ],
+  "block": [
+    "minecraft:red_sand",
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:gray_terracotta",
+    "minecraft:white_terracotta",
+    "minecraft:red_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:badlands_creeper",
+    "endermanoverhaul:badlands_enderman",
+    "knightquest:ratman",
+    "alexsmobs:elephant"
+  ],
+  "block": [
+    "minecraft:coarse_dirt",
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "endermanoverhaul:badlands_enderman",
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:sparse_jungle",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:jungle_creeper",
+    "monsterplus:overgrown_skeleton",
+    "mowziesmobs:foliaath",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow",
+    "knightquest:bad_patch",
+    "knightquest:lizzy",
+    "neapolitan:plantain_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "creeperoverhaul:bamboo_creeper",
+    "creeperoverhaul:jungle_creeper",
+    "monsterplus:overgrown_skeleton",
+    "mowziesmobs:foliaath",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow",
+    "knightquest:bad_patch",
+    "knightquest:lizzy",
+    "knightquest:ratman",
+    "neapolitan:plantain_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:podzol",
+    "minecraft:gravel",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 90,
+  "mob": [
+    "creeperoverhaul:bamboo_creeper",
+    "creeperoverhaul:jungle_creeper",
+    "monsterplus:overgrown_skeleton",
+    "mowziesmobs:foliaath",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow",
+    "knightquest:bad_patch",
+    "knightquest:lizzy",
+    "knightquest:ratman",
+    "neapolitan:plantain_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:podzol",
+    "minecraft:gravel",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:jungle_creeper",
+    "monsterplus:overgrown_skeleton",
+    "mowziesmobs:foliaath",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow",
+    "knightquest:bad_patch",
+    "knightquest:lizzy",
+    "knightquest:ratman",
+    "neapolitan:plantain_spider"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "mob": [
+    "knightquest:lizzy",
+    "creeperoverhaul:savannah_creeper"
+  ],
+  "block": [
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:beach",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "creeperoverhaul:beach_creeper",
+    "enemyexpansion:starved",
+    "caneswonderfulspidersoverhaul:sand_shifter_spider"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:beach_creeper",
+    "enemyexpansion:starved",
+    "caneswonderfulspidersoverhaul:sand_shifter_spider",
+    "knightquest:ratman"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "minheight": 0,
+  "maxheight": 60,
+  "mob": [
+    "creeperoverhaul:dripstone_creeper",
+    "endermanoverhaul:cave_enderman",
+    "born_in_chaos_v1:siamese_skeletons",
+    "enemyexpansion:crawler",
+    "enemyexpansion:faller",
+    "enemyexpansion:goblin",
+    "enemyexpansion:silverqueen",
+    "enemyexpansion:troll",
+    "caneswonderfulspidersoverhaul:cobbleshell_spider",
+    "knightquest:ratman",
+    "alexsmobs:rocky_roller",
+    "graveyard:reaper",
+    "quark:stoneling",
+    "quark:toretoise",
+    "whisperwoods:zotzpyre"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "minheight": -64,
+  "maxheight": 0,
+  "mob": [
+    "endermanoverhaul:cave_enderman",
+    "born_in_chaos_v1:siamese_skeletons",
+    "enemyexpansion:troll",
+    "graveyard:corrupted_pillager",
+    "graveyard:corrupted_vindicator"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "minheight": -64,
+  "maxheight": 0,
+  "mob": [
+    "alexsmobs:centipede_head"
+  ],
+  "maxcount": {
+    "amount": 3,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "minheight": -64,
+  "maxheight": 0,
+  "mob": [
+    "alexsmobs:underminer"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "random": 0.5,
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:deep_lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:dark_oak_creeper",
+    "graveyard:acolyte",
+    "graveyard:corrupted_pillager",
+    "graveyard:corrupted_vindicator",
+    "graveyard:wraith"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:deep_lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "knightquest:ghosty"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:end_barrens",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:dark_oak_creeper",
+    "endermanoverhaul:dark_oak_enderman",
+    "graveyard:acolyte",
+    "graveyard:nightmare"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:end_barrens",
+  "minheight": 60,
+  "mob": [
+    "knightquest:ghosty"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:dark_forest",
+  "minheight": 70,
+  "mob": [
+    "creeperoverhaul:dark_oak_creeper",
+    "creeperoverhaul:swamp_creeper",
+    "endermanoverhaul:dark_oak_enderman",
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider",
+    "graveyard:acolyte",
+    "graveyard:reaper",
+    "mowziesmobs:lantern"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:dark_forest",
+  "minheight": 70,
+  "mob": [
+    "knightquest:ghosty"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:swamp_creeper",
+    "endermanoverhaul:swamp_enderman",
+    "monsterplus:swamp_zombie",
+    "caneswonderfulspidersoverhaul:slug_spider",
+    "enemyexpansion:botfly"
+  ],
+  "block": [
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:swamp",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:swamp_creeper",
+    "endermanoverhaul:swamp_enderman",
+    "monsterplus:swamp_zombie",
+    "caneswonderfulspidersoverhaul:slug_spider",
+    "knightquest:swampman",
+    "mowziesmobs:lantern"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:clay",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:dark_forest",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "creeperoverhaul:swamp_creeper",
+    "endermanoverhaul:swamp_enderman",
+    "monsterplus:swamp_zombie",
+    "caneswonderfulspidersoverhaul:slug_spider",
+    "knightquest:swampman",
+    "mowziesmobs:lantern"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:clay",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "maxheight": 65,
+  "mob": [
+    "creeperoverhaul:swamp_creeper",
+    "endermanoverhaul:swamp_enderman",
+    "monsterplus:swamp_zombie",
+    "caneswonderfulspidersoverhaul:slug_spider",
+    "knightquest:swampman",
+    "born_in_chaos_v1:zombie_fisherman",
+    "mowziesmobs:lantern"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:desert_creeper",
+    "endermanoverhaul:desert_enderman",
+    "endermanoverhaul:savanna_enderman",
+    "enemyexpansion:scorpion",
+    "enemyexpansion:starved",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:sand_shifter_spider",
+    "knightquest:ratman",
+    "alexsmobs:tarantula_hawk"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "weather": "rain",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:guster"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "maxheight": 110,
+  "mob": [
+    "creeperoverhaul:desert_creeper",
+    "endermanoverhaul:desert_enderman",
+    "endermanoverhaul:savanna_enderman",
+    "enemyexpansion:scorpion",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow",
+    "knightquest:ratman",
+    "alexsmobs:tarantula_hawk"
+  ],
+  "block": [
+    "minecraft:sandstone",
+    "minecraft:brown_terracotta",
+    "minecraft:white_terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:desert_creeper",
+    "endermanoverhaul:desert_enderman",
+    "endermanoverhaul:savanna_enderman",
+    "enemyexpansion:scorpion",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow",
+    "knightquest:ratman",
+    "alexsmobs:tarantula_hawk",
+    "whatareyouvotingfor:armadillo",
+    "mowziesmobs:umvuthana_raptor",
+    "mowziesmobs:umvuthana_crane",
+    "mowziesmobs:umvuthana"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "enemyexpansion:scorpion",
+    "enemyexpansion:tarantula",
+    "alexsmobs:tarantula_hawk"
+  ],
+  "block": [
+    "minecraft:red_sandstone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:desert_creeper",
+    "endermanoverhaul:desert_enderman",
+    "enemyexpansion:scorpion",
+    "enemyexpansion:starved",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:sand_shifter_spider",
+    "alexsmobs:tarantula_hawk"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "weather": "rain",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:guster"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:savannah_creeper",
+    "endermanoverhaul:savanna_enderman",
+    "mowziesmobs:umvuthana_raptor",
+    "mowziesmobs:umvuthana_crane",
+    "mowziesmobs:umvuthana"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:savannah_creeper",
+    "endermanoverhaul:savanna_enderman",
+    "enemyexpansion:scorpion",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow"
+  ],
+  "block": [
+    "minecraft:red_sandstone",
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "weather": "rain",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:guster"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:savannah_creeper",
+    "endermanoverhaul:savanna_enderman",
+    "mowziesmobs:umvuthana_raptor",
+    "mowziesmobs:umvuthana_crane",
+    "mowziesmobs:umvuthana"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:sand",
+    "minecraft:coarse_dirt",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:windswept_savanna"
+  ],
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "enemyexpansion:equestrian"
+  ],
+  "block": [
+    "minecraft:gravel",
+    "minecraft:stone",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "enemyexpansion:equestrian"
+  ],
+  "block": [
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 100,
+  "maxheight": 190,
+  "mob": [
+    "creeperoverhaul:hills_creeper",
+    "enemyexpansion:equestrian"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:old_growth_birch_forest",
+  "minheight": 120,
+  "mob": [
+    "creeperoverhaul:hills_creeper",
+    "endermanoverhaul:windswept_hills_enderman"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:gravel",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:old_growth_birch_forest",
+  "minheight": 120,
+  "mob": [
+    "alexsmobs:sunbird"
+  ],
+  "random": 0.1,
+  "seesky": true,
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 160,
+  "mob": [
+    "creeperoverhaul:hills_creeper",
+    "endermanoverhaul:windswept_hills_enderman"
+  ],
+  "block": [
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 160,
+  "mob": [
+    "breeze_mob_mod:breeze",
+    "caneswonderfulspidersoverhaul:orb_weaver"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 80,
+  "mob": [
+    "creeperoverhaul:hills_creeper"
+  ],
+  "block": [
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 70,
+  "mob": [
+    "creeperoverhaul:hills_creeper"
+  ],
+  "block": [
+    "minecraft:cyan_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:end_barrens",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:hills_creeper"
+  ],
+  "block": [
+    "minecraft:stone",
+    "minecraft:cyan_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 60,
+  "mob": [
+    "creeperoverhaul:mushroom_creeper",
+    "endermanoverhaul:mushroom_fields_enderman",
+    "alexsmobs:mungus"
+  ],
+  "block": [
+    "minecraft:mycelium"
+  ],
+  "maxcount": {
+    "amount": 7,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "maxheight": 60,
+  "seesky": false,
+  "mob": [
+    "blue_skies:gatekeeper"
+  ],
+  "block": [
+    "minecraft:mycelium"
+  ],
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "random": 0.25,
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 190,
+  "mob": [
+    "creeperoverhaul:mushroom_creeper",
+    "endermanoverhaul:mushroom_fields_enderman",
+    "alexsmobs:bunfungus",
+    "alexsmobs:mungus"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "maxcount": {
+    "amount": 6,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:jungle"
+  ],
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "creeperoverhaul:ocean_creeper",
+    "endermanoverhaul:coral_enderman",
+    "upgrade_aquatic:thrasher"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:jungle"
+  ],
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "minecraft:drowned"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:river",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:lukewarm_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "creeperoverhaul:ocean_creeper",
+    "endermanoverhaul:coral_enderman",
+    "upgrade_aquatic:thrasher"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:river",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:lukewarm_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "minecraft:drowned"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:river",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:lukewarm_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "caneswonderfulspidersoverhaul:diving_bell_spider"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "creeperoverhaul:ocean_creeper",
+    "endermanoverhaul:coral_enderman",
+    "upgrade_aquatic:thrasher"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "minecraft:elder_guardian"
+  ],
+  "block": [
+    "minecraft:prismarine",
+    "minecraft:dark_prismarine",
+    "minecraft:prismarine_bricks"
+  ],
+  "random": 0.2,
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "caneswonderfulspidersoverhaul:diving_bell_spider"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "creeperoverhaul:ocean_creeper",
+    "endermanoverhaul:coral_enderman",
+    "upgrade_aquatic:thrasher"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "minecraft:elder_guardian"
+  ],
+  "block": [
+    "minecraft:prismarine",
+    "minecraft:dark_prismarine",
+    "minecraft:prismarine_bricks"
+  ],
+  "random": 0.2,
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "caneswonderfulspidersoverhaul:diving_bell_spider"
+  ],
+  "potion": [
+    "minecraft:dolphins_grace,1000000,9",
+    "minecraft:speed,1000000,9"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "alexsmobs:skelewag"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "phase": "night",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "alexsmobs:skelewag"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 120,
+  "mob": [
+    "creeperoverhaul:snowy_creeper",
+    "endermanoverhaul:ice_spikes_enderman",
+    "majruszsdifficulty:illusioner",
+    "caneswonderfulspidersoverhaul:jumping_spider"
+  ],
+  "block": [
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 120,
+  "mob": [
+    "alexsmobs:froststalker"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 120,
+  "mob": [
+    "alexsmobs:sunbird"
+  ],
+  "seesky": true,
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 90,
+  "maxheight": 120,
+  "mob": [
+    "creeperoverhaul:snowy_creeper",
+    "endermanoverhaul:ice_spikes_enderman",
+    "endermanoverhaul:snowy_enderman",
+    "majruszsdifficulty:illusioner",
+    "caneswonderfulspidersoverhaul:jumping_spider",
+    "enemyexpansion:direwolf"
+  ],
+  "block": [
+    "minecraft:snow",
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 90,
+  "maxheight": 120,
+  "mob": [
+    "alexsmobs:froststalker"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:snow",
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:taiga",
+  "minheight": 90,
+  "mob": [
+    "creeperoverhaul:snowy_creeper",
+    "endermanoverhaul:snowy_enderman",
+    "majruszsdifficulty:illusioner",
+    "caneswonderfulspidersoverhaul:jumping_spider",
+    "enemyexpansion:direwolf"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:taiga",
+  "minheight": 90,
+  "mob": [
+    "alexsmobs:froststalker"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:taiga",
+  "minheight": 90,
+  "mob": [
+    "creeperoverhaul:snowy_creeper",
+    "endermanoverhaul:ice_spikes_enderman",
+    "enemyexpansion:direwolf",
+    "alexsmobs:froststalker"
+  ],
+  "block": [
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "creeperoverhaul:snowy_creeper",
+    "endermanoverhaul:ice_spikes_enderman",
+    "endermanoverhaul:snowy_enderman",
+    "majruszsdifficulty:illusioner",
+    "caneswonderfulspidersoverhaul:jumping_spider",
+    "enemyexpansion:direwolf"
+  ],
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "alexsmobs:froststalker"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 70,
+  "mob": [
+    "creeperoverhaul:snowy_creeper",
+    "endermanoverhaul:ice_spikes_enderman",
+    "endermanoverhaul:snowy_enderman",
+    "majruszsdifficulty:illusioner",
+    "caneswonderfulspidersoverhaul:jumping_spider",
+    "enemyexpansion:direwolf"
+  ],
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 70,
+  "mob": [
+    "alexsmobs:froststalker"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:taiga",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "creeperoverhaul:spruce_creeper",
+    "endermanoverhaul:dark_oak_enderman",
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:coarse_dirt",
+    "minecraft:podzol",
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "maxheight": 100,
+  "mob": [
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:deep_ocean",
+    "minecraft:warm_ocean",
+    "minecraft:end_midlands"
+  ],
+  "minheight": 60,
+  "maxheight": 120,
+  "mob": [
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:small_end_islands",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:savanna_plateau",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:birch_forest",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:deep_cold_ocean",
+  "minheight": 60,
+  "mob": [
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:end_highlands",
+  "minheight": 60,
+  "mob": [
+    "creeperoverhaul:spruce_creeper",
+    "endermanoverhaul:dark_oak_enderman",
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "creeperoverhaul:spruce_creeper",
+    "born_in_chaos_v1:zombie_lumberjack",
+    "enemyexpansion:huntsman",
+    "caneswonderfulspidersoverhaul:wolf_spider"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:plains",
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "endermanoverhaul:flower_fields_enderman",
+    "enemyexpansion:equestrian",
+    "enemyexpansion:flutterfly"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:flower_forest",
+  "minheight": 60,
+  "mob": [
+    "endermanoverhaul:flower_fields_enderman",
+    "enemyexpansion:flutterfly"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:ocean",
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 120,
+  "mob": [
+    "endermanoverhaul:flower_fields_enderman",
+    "enemyexpansion:flutterfly"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 130,
+  "mob": [
+    "endermanoverhaul:windswept_hills_enderman",
+    "breeze_mob_mod:breeze",
+    "caneswonderfulspidersoverhaul:orb_weaver"
+  ],
+  "block": [
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:savanna",
+  "minheight": 130,
+  "mob": [
+    "endermanoverhaul:windswept_hills_enderman",
+    "breeze_mob_mod:breeze",
+    "caneswonderfulspidersoverhaul:orb_weaver"
+  ],
+  "block": [
+    "minecraft:white_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "enemyexpansion:botfly",
+    "enemyexpansion:scorpion",
+    "enemyexpansion:tarantula",
+    "caneswonderfulspidersoverhaul:black_widow",
+    "knightquest:gremlin",
+    "alexsmobs:tarantula_hawk"
+  ],
+  "block": [
+    "minecraft:coarse_dirt",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:plains",
+  "minheight": 75,
+  "maxheight": 120,
+  "mob": [
+    "creeperoverhaul:swamp_creeper",
+    "endermanoverhaul:swamp_enderman",
+    "monsterplus:swamp_zombie",
+    "monsterplus:overgrown_skeleton",
+    "caneswonderfulspidersoverhaul:slug_spider",
+    "neapolitan:plantain_spider",
+    "born_in_chaos_v1:zombie_fisherman",
+    "mowziesmobs:lantern"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "gamestage": "easy_mode",
+  "biome": "minecraft:plains",
+  "minheight": 80,
+  "maxheight": 120,
+  "mob": [
+    "creeperoverhaul:swamp_creeper",
+    "endermanoverhaul:swamp_enderman",
+    "monsterplus:swamp_zombie",
+    "monsterplus:overgrown_skeleton",
+    "caneswonderfulspidersoverhaul:slug_spider",
+    "neapolitan:plantain_spider",
+    "born_in_chaos_v1:zombie_fisherman",
+    "mowziesmobs:lantern"
+  ],
+  "block": [
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "dimension": "minecraft:overworld",
+  "mob": [
+    "alexsmobs:devils_hole_pupfish",
+    "goated:geep"
+  ],
+
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "maxheight": 110,
+  "mob": [
+    "whatareyouvotingfor:armadillo",
+    "minecraft:camel"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:desert",
+  "minheight": 110,
+  "mob": [
+    "alexsmobs:kangaroo",
+    "alexsmobs:maned_wolf",
+    "whatareyouvotingfor:armadillo",
+    "minecraft:camel"
+  ],
+  "block": [
+    "minecraft:red_sand",
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:gray_terracotta",
+    "minecraft:white_terracotta",
+    "minecraft:red_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:elephant",
+    "alexsmobs:emu",
+    "alexsmobs:anteater",
+    "alexsmobs:gazelle",
+    "alexsmobs:kangaroo",
+    "alexsmobs:maned_wolf",
+    "alexsmobs:leafcutter_ant",
+    "alexsmobs:rhinoceros",
+    "alexsmobs:roadrunner",
+    "whatareyouvotingfor:armadillo"
+  ],
+  "block": [
+    "minecraft:coarse_dirt",
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:emu",
+    "alexsmobs:maned_wolf",
+    "alexsmobs:tasmanian_devil",
+    "whatareyouvotingfor:armadillo"
+  ],
+  "block": [
+    "minecraft:terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:sparse_jungle",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:anteater",
+    "alexsmobs:capuchin_monkey",
+    "alexsmobs:gorilla",
+    "alexsmobs:komodo_dragon",
+    "alexsmobs:leafcutter_ant",
+    "alexsmobs:tiger",
+    "alexsmobs:toucan",
+    "neapolitan:chimpanzee",
+    "minecraft:parrot",
+    "minecraft:ocelot"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "alexsmobs:anteater",
+    "alexsmobs:capuchin_monkey",
+    "alexsmobs:gorilla",
+    "alexsmobs:hummingbird",
+    "alexsmobs:leafcutter_ant",
+    "alexsmobs:tiger",
+    "alexsmobs:toucan",
+    "neapolitan:chimpanzee",
+    "minecraft:panda",
+    "minecraft:parrot",
+    "minecraft:ocelot"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:podzol",
+    "minecraft:gravel",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:jungle",
+  "minheight": 90,
+  "mob": [
+    "alexsmobs:anteater",
+    "alexsmobs:capuchin_monkey",
+    "alexsmobs:gorilla",
+    "alexsmobs:hummingbird",
+    "alexsmobs:leafcutter_ant",
+    "alexsmobs:tiger",
+    "alexsmobs:toucan",
+    "neapolitan:chimpanzee",
+    "minecraft:panda",
+    "minecraft:parrot",
+    "minecraft:ocelot"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:podzol",
+    "minecraft:gravel",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:anteater",
+    "alexsmobs:komodo_dragon",
+    "alexsmobs:leafcutter_ant",
+    "alexsmobs:tiger",
+    "neapolitan:chimpanzee",
+    "minecraft:ocelot"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:komodo_dragon"
+  ],
+  "block": [
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:beach",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "alexsmobs:lobster",
+    "alexsmobs:seagull",
+    "alexsmobs:seal",
+    "quark:crab",
+    "whatareyouvotingfor:crab",
+    "minecraft:turtle"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:jungle",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:anteater",
+    "alexsmobs:komodo_dragon",
+    "alexsmobs:leafcutter_ant"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "minheight": -64,
+  "maxheight": 0,
+  "mob": [
+    "alexsmobs:cockroach",
+    "minecraft:silverfish"
+  ],
+  "maxcount": {
+    "amount": 3,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "minheight": -64,
+  "maxheight": 0,
+  "mob": [
+    "minecraft:axolotl"
+  ],
+  "random": 0.5,
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:dark_forest",
+  "minheight": 70,
+  "mob": [
+    "enemyexpansion:wasp",
+    "alexsmobs:crow",
+    "minecraft:wolf",
+    "minecraft:fox"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:fly",
+    "alexsmobs:potoo",
+    "minecraft:frog",
+    "upgrade_aquatic:goose"
+  ],
+  "block": [
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "alexsmobs:alligator_snapping_turtle",
+    "alexsmobs:anaconda",
+    "alexsmobs:catfish",
+    "alexsmobs:crocodile",
+    "alexsmobs:mantis_shrimp",
+    "alexsmobs:mudskipper",
+    "alexsmobs:caiman",
+    "upgrade_aquatic:perch",
+    "upgrade_aquatic:pike",
+    "minecraft:tadpole"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:swamp",
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "alexsmobs:alligator_snapping_turtle",
+    "alexsmobs:anaconda",
+    "alexsmobs:catfish",
+    "alexsmobs:crocodile",
+    "alexsmobs:mantis_shrimp",
+    "alexsmobs:mudskipper",
+    "alexsmobs:caiman",
+    "minecraft:tadpole"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:swamp",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:alligator_snapping_turtle",
+    "alexsmobs:anaconda",
+    "alexsmobs:crocodile",
+    "alexsmobs:fly",
+    "alexsmobs:mudskipper",
+    "alexsmobs:shoebill",
+    "minecraft:frog",
+    "alexsmobs:caiman",
+    "upgrade_aquatic:goose",
+    "minecraft:pig",
+    "minecraft:slime"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:clay",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:dark_forest",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "alexsmobs:alligator_snapping_turtle",
+    "alexsmobs:anaconda",
+    "alexsmobs:crocodile",
+    "alexsmobs:fly",
+    "alexsmobs:mudskipper",
+    "alexsmobs:shoebill",
+    "minecraft:frog",
+    "alexsmobs:caiman",
+    "upgrade_aquatic:goose",
+    "minecraft:pig",
+    "minecraft:slime"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:clay",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "maxheight": 65,
+  "mob": [
+    "alexsmobs:alligator_snapping_turtle",
+    "alexsmobs:anaconda",
+    "minecraft:frog",
+    "alexsmobs:crocodile",
+    "alexsmobs:fly",
+    "alexsmobs:mudskipper",
+    "alexsmobs:shoebill",
+    "alexsmobs:caiman",
+    "upgrade_aquatic:goose",
+    "minecraft:slime"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:emu",
+    "alexsmobs:flutter",
+    "alexsmobs:jerboa",
+    "alexsmobs:kangaroo",
+    "alexsmobs:rattlesnake",
+    "alexsmobs:roadrunner",
+    "minecraft:camel",
+    "minecraft:rabbit"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "weather": "rain",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:rain_frog"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "maxheight": 110,
+  "mob": [
+    "alexsmobs:emu",
+    "alexsmobs:gazelle",
+    "alexsmobs:jerboa",
+    "alexsmobs:kangaroo",
+    "alexsmobs:maned_wolf",
+    "alexsmobs:rattlesnake",
+    "alexsmobs:roadrunner",
+    "minecraft:camel",
+    "minecraft:rabbit"
+  ],
+  "block": [
+    "minecraft:sandstone",
+    "minecraft:brown_terracotta",
+    "minecraft:white_terracotta",
+    "minecraft:red_terracotta",
+    "minecraft:orange_terracotta",
+    "minecraft:yellow_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:elephant",
+    "alexsmobs:emu",
+    "alexsmobs:gazelle",
+    "alexsmobs:jerboa",
+    "alexsmobs:kangaroo",
+    "alexsmobs:maned_wolf",
+    "alexsmobs:rattlesnake",
+    "alexsmobs:rhinoceros",
+    "alexsmobs:roadrunner",
+    "alexsmobs:tiger",
+    "whatareyouvotingfor:armadillo",
+    "minecraft:rabbit"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:elephant",
+    "alexsmobs:emu",
+    "alexsmobs:gazelle",
+    "alexsmobs:kangaroo",
+    "alexsmobs:maned_wolf",
+    "alexsmobs:rhinoceros",
+    "alexsmobs:rattlesnake",
+    "alexsmobs:roadrunner",
+    "alexsmobs:tiger",
+    "whatareyouvotingfor:armadillo",
+    "minecraft:donkey"
+  ],
+  "block": [
+    "minecraft:red_sandstone",
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:elephant",
+    "alexsmobs:emu",
+    "alexsmobs:flutter",
+    "alexsmobs:gazelle",
+    "alexsmobs:jerboa",
+    "alexsmobs:kangaroo",
+    "alexsmobs:maned_wolf",
+    "alexsmobs:rhinoceros",
+    "alexsmobs:rattlesnake",
+    "alexsmobs:roadrunner",
+    "alexsmobs:tiger",
+    "whatareyouvotingfor:armadillo",
+    "minecraft:donkey"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "weather": "rain",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:rain_frog"
+  ],
+  "block": [
+    "minecraft:sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:elephant",
+    "alexsmobs:emu",
+    "alexsmobs:kangaroo",
+    "alexsmobs:rhinoceros",
+    "alexsmobs:roadrunner",
+    "whatareyouvotingfor:armadillo"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "weather": "rain",
+  "biome": "minecraft:savanna",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:rain_frog"
+  ],
+  "block": [
+    "minecraft:red_sand"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:elephant",
+    "alexsmobs:emu",
+    "alexsmobs:anteater",
+    "alexsmobs:gazelle",
+    "alexsmobs:kangaroo",
+    "alexsmobs:maned_wolf",
+    "alexsmobs:leafcutter_ant",
+    "alexsmobs:rhinoceros",
+    "alexsmobs:tiger",
+    "whatareyouvotingfor:armadillo",
+    "minecraft:donkey"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:sand",
+    "minecraft:coarse_dirt",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:windswept_savanna"
+  ],
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "alexsmobs:bison",
+    "minecraft:cow",
+    "minecraft:chicken",
+    "minecraft:horse"
+  ],
+  "block": [
+    "minecraft:gravel",
+    "minecraft:stone",
+    "minecraft:dirt"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 100,
+  "maxheight": 190,
+  "mob": [
+    "alexsmobs:gelada_monkey",
+    "minecraft:sheep",
+    "minecraft:llama",
+    "minecraft:horse"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:old_growth_birch_forest",
+  "minheight": 120,
+  "mob": [
+    "alexsmobs:bald_eagle",
+    "minecraft:goat"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:gravel",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 160,
+  "mob": [
+    "alexsmobs:bald_eagle",
+    "minecraft:goat"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 190,
+  "mob": [
+    "alexsmobs:blue_jay",
+    "alexsmobs:hummingbird",
+    "minecraft:mooshroom"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 190,
+  "mob": [
+    "minecraft:sniffer"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "random": 0.2,
+  "maxcount": {
+    "amount": 1,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:jungle"
+  ],
+  "minheight": 50,
+  "maxheight": 60,
+  "mob": [
+    "alexsmobs:terrapin",
+    "upgrade_aquatic:perch",
+    "upgrade_aquatic:pike",
+    "minecraft:tropical_fish"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:river",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:lukewarm_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "alexsmobs:catfish",
+    "alexsmobs:platypus",
+    "alexsmobs:terrapin",
+    "upgrade_aquatic:perch",
+    "upgrade_aquatic:pike",
+    "minecraft:salmon",
+    "minecraft:tadpole"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "alexsmobs:flying_fish",
+    "alexsmobs:hammerhead_shark",
+    "alexsmobs:mantis_shrimp",
+    "alexsmobs:mimic_octopus",
+    "upgrade_aquatic:box_jellyfish",
+    "upgrade_aquatic:cassiopea_jellyfish",
+    "upgrade_aquatic:lionfish",
+    "upgrade_aquatic:nautilus",
+    "minecraft:squid",
+    "minecraft:cod",
+    "minecraft:salmon",
+    "minecraft:drowned",
+    "minecraft:turtle",
+    "minecraft:dolphin",
+    "minecraft:pufferfish"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "minecraft:guardian"
+  ],
+  "block": [
+    "minecraft:prismarine",
+    "minecraft:dark_prismarine",
+    "minecraft:prismarine_bricks"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "alexsmobs:cachalot_whale",
+    "alexsmobs:comb_jelly",
+    "alexsmobs:giant_squid",
+    "alexsmobs:orca",
+    "alexsmobs:seal",
+    "upgrade_aquatic:box_jellyfish",
+    "upgrade_aquatic:cassiopea_jellyfish",
+    "upgrade_aquatic:immortal_jellyfish",
+    "upgrade_aquatic:lionfish",
+    "upgrade_aquatic:nautilus",
+    "minecraft:glow_squid",
+    "minecraft:cod",
+    "minecraft:drowned",
+    "minecraft:dolphin",
+    "minecraft:pufferfish"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 20,
+  "mob": [
+    "minecraft:guardian"
+  ],
+  "block": [
+    "minecraft:prismarine",
+    "minecraft:dark_prismarine",
+    "minecraft:prismarine_bricks"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "maxheight": 30,
+  "mob": [
+    "alexsmobs:blobfish",
+    "alexsmobs:frilled_shark"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 120,
+  "mob": [
+    "alexsmobs:tusklin",
+    "alexsmobs:bald_eagle",
+    "alexsmobs:snow_leopard"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 90,
+  "maxheight": 120,
+  "mob": [
+    "alexsmobs:tusklin",
+    "alexsmobs:bald_eagle",
+    "alexsmobs:moose",
+    "alexsmobs:snow_leopard",
+    "snowpig:snow_pig",
+    "snuffles:snuffle",
+    "whatareyouvotingfor:penguin",
+    "minecraft:polar_bear",
+    "minecraft:goat"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:snow",
+    "minecraft:stone",
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:taiga",
+  "minheight": 90,
+  "mob": [
+    "alexsmobs:tusklin",
+    "alexsmobs:moose",
+    "snowpig:snow_pig",
+    "snuffles:snuffle",
+    "whatareyouvotingfor:penguin",
+    "minecraft:sheep",
+    "minecraft:polar_bear",
+    "minecraft:wolf",
+    "minecraft:fox"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:taiga",
+  "minheight": 90,
+  "mob": [
+    "snowpig:snow_pig"
+  ],
+  "block": [
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 60,
+  "maxheight": 70,
+  "mob": [
+    "alexsmobs:bison",
+    "alexsmobs:tusklin",
+    "alexsmobs:moose",
+    "alexsmobs:snow_leopard",
+    "snowpig:snow_pig",
+    "snuffles:snuffle",
+    "whatareyouvotingfor:penguin",
+    "minecraft:polar_bear",
+    "minecraft:fox",
+    "minecraft:rabbit"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:snowy_taiga",
+  "minheight": 70,
+  "mob": [
+    "alexsmobs:moose",
+    "alexsmobs:snow_leopard",
+    "alexsmobs:tusklin",
+    "whatareyouvotingfor:penguin",
+    "minecraft:polar_bear",
+    "minecraft:fox"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:snow",
+    "minecraft:grass_block",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:ice"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:taiga",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "alexsmobs:banana_slug"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:coarse_dirt",
+    "minecraft:podzol",
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:taiga",
+  "minheight": 60,
+  "maxheight": 90,
+  "mob": [
+    "alexsmobs:blue_jay",
+    "alexsmobs:crow",
+    "alexsmobs:grizzly_bear",
+    "alexsmobs:potoo",
+    "alexsmobs:raccoon",
+    "alexsmobs:skunk",
+    "minecraft:pig",
+    "minecraft:wolf",
+    "minecraft:fox"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:coarse_dirt",
+    "minecraft:podzol",
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 60,
+  "maxheight": 100,
+  "mob": [
+    "enemyexpansion:wasp",
+    "alexsmobs:blue_jay",
+    "alexsmobs:crow",
+    "alexsmobs:grizzly_bear",
+    "alexsmobs:hummingbird",
+    "alexsmobs:raccoon",
+    "alexsmobs:skunk",
+    "alexsmobs:tasmanian_devil",
+    "minecraft:cow",
+    "minecraft:pig",
+    "minecraft:chicken",
+    "minecraft:cat",
+    "minecraft:rabbit"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:deep_ocean",
+    "minecraft:warm_ocean",
+    "minecraft:end_midlands"
+  ],
+  "minheight": 60,
+  "maxheight": 120,
+  "mob": [
+    "enemyexpansion:wasp",
+    "minecraft:cow",
+    "minecraft:sheep",
+    "minecraft:pig",
+    "minecraft:chicken",
+    "minecraft:cat",
+    "minecraft:rabbit"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:small_end_islands",
+  "minheight": 60,
+  "mob": [
+    "enemyexpansion:wasp",
+    "alexsmobs:grizzly_bear",
+    "alexsmobs:raccoon",
+    "alexsmobs:skunk",
+    "alexsmobs:tasmanian_devil",
+    "minecraft:cow"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:savanna_plateau",
+  "minheight": 60,
+  "mob": [
+    "enemyexpansion:wasp",
+    "alexsmobs:grizzly_bear",
+    "alexsmobs:raccoon",
+    "alexsmobs:skunk",
+    "alexsmobs:tasmanian_devil",
+    "minecraft:cow"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:birch_forest",
+  "minheight": 60,
+  "mob": [
+    "minecraft:bee",
+    "alexsmobs:banana_slug",
+    "alexsmobs:blue_jay",
+    "alexsmobs:crow",
+    "alexsmobs:grizzly_bear",
+    "alexsmobs:hummingbird",
+    "alexsmobs:raccoon",
+    "alexsmobs:skunk",
+    "alexsmobs:sugar_glider",
+    "minecraft:pig",
+    "minecraft:chicken",
+    "minecraft:cat",
+    "minecraft:rabbit"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:end_highlands",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:banana_slug",
+    "alexsmobs:blue_jay",
+    "alexsmobs:crow",
+    "alexsmobs:grizzly_bear",
+    "alexsmobs:potoo",
+    "alexsmobs:raccoon",
+    "alexsmobs:skunk",
+    "minecraft:pig",
+    "minecraft:wolf",
+    "minecraft:fox"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:plains",
+  "minheight": 60,
+  "maxheight": 80,
+  "mob": [
+    "enemyexpansion:ladybug",
+    "alexsmobs:bison",
+    "alexsmobs:gelada_monkey",
+    "minecraft:cow",
+    "minecraft:chicken",
+    "minecraft:rabbit",
+    "minecraft:horse"
+  ],
+  "seesky": true,
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:flower_forest",
+  "minheight": 60,
+  "mob": [
+    "enemyexpansion:ladybug",
+    "enemyexpansion:wasp",
+    "minecraft:bee",
+    "alexsmobs:grizzly_bear",
+    "minecraft:cow",
+    "minecraft:sheep",
+    "minecraft:chicken",
+    "minecraft:rabbit"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": [
+    "minecraft:plains",
+    "minecraft:ocean",
+    "minecraft:deep_ocean"
+  ],
+  "minheight": 120,
+  "mob": [
+    "enemyexpansion:ladybug",
+    "quark:shiba",
+    "minecraft:sheep",
+    "minecraft:chicken",
+    "minecraft:llama"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:windswept_hills",
+  "minheight": 130,
+  "mob": [
+    "alexsmobs:bald_eagle",
+    "snuffles:snuffle",
+    "minecraft:goat"
+  ],
+  "block": [
+    "minecraft:diorite"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:savanna",
+  "minheight": 130,
+  "mob": [
+    "alexsmobs:bald_eagle",
+    "minecraft:goat"
+  ],
+  "block": [
+    "minecraft:white_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:desert",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:fly"
+  ],
+  "block": [
+    "minecraft:coarse_dirt",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:stony_shore",
+  "minheight": 60,
+  "mob": [
+    "alexsmobs:seagull",
+    "alexsmobs:seal"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:plains",
+  "minheight": 75,
+  "maxheight": 120,
+  "mob": [
+    "minecraft:frog",
+    "alexsmobs:crocodile",
+    "alexsmobs:fly",
+    "alexsmobs:caiman",
+    "upgrade_aquatic:goose"
+  ],
+  "block": [
+    "minecraft:grass_block"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:plains",
+  "minheight": 80,
+  "maxheight": 120,
+  "mob": [
+    "minecraft:frog",
+    "alexsmobs:crocodile",
+    "alexsmobs:fly",
+    "alexsmobs:caiman",
+    "upgrade_aquatic:goose"
+  ],
+  "block": [
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:end_barrens",
+  "minheight": 60,
+  "mob": [
+    "minecraft:cow",
+    "minecraft:sheep"
+  ],
+  "block": [
+    "minecraft:stone",
+    "minecraft:cyan_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:deep_lukewarm_ocean",
+  "minheight": 60,
+  "mob": [
+    "minecraft:cow",
+    "minecraft:sheep",
+    "minecraft:chicken"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:stone"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 70,
+  "mob": [
+    "minecraft:sheep",
+    "minecraft:wolf",
+    "minecraft:goat"
+  ],
+  "block": [
+    "minecraft:cyan_terracotta"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:end_barrens",
+  "minheight": 60,
+  "mob": [
+    "minecraft:pig",
+    "minecraft:wolf",
+    "minecraft:fox"
+  ],
+  "block": [
+    "minecraft:grass_block",
+    "minecraft:podzol"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "yungscavebiomes:frosted_caves",
+  "mob": [
+    "minecraft:allay"
+  ],
+  "maxcount": {
+    "amount": 3,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "mob": [
+    "minecraft:bat"
+  ],
+  "maxcount": {
+    "amount": 2,
+    "perplayer": true
+  },
+  "incontrol": true,
+  
+  "result": "default"
+},
+{
+  "dimension": "minecraft:overworld",
+  "biome": "minecraft:forest",
+  "minheight": 80,
+  "mob": [
+    "minecraft:llama"
+  ],
+  "block": [
+    "minecraft:gravel"
+  ],
+  "incontrol": true,
+  
+  "result": "default"
+},
+
+
+
+
+
+
+
+
+
+
+{ 
+  "dimension": "minecraft:overworld",
+  "result": "deny"
+},
+{ 
+  "dimension": "minecraft:the_nether",
+  "result": "deny"
+}
+
+
+
+
+
+
+
+
+
+]

@@ -1,0 +1,1908 @@
+[
+  {
+    "mob": [
+      "whisperwoods:wisp"
+    ],
+    "weights": [
+      1
+    ],
+    "persecond": 0.5,
+    "attempts": 1,
+    "amount": {
+      "minimum": 1,
+      "maximum": 20
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 8,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 20
+    }
+  },
+  {
+    "mob": [
+      "goat_man:goat_man",
+
+      "antlers:wendigo",
+      "whisperwoods:hidebehind"
+    ],
+    "weights": [
+      3,
+
+      1,
+      1
+    ],
+    "persecond": 0.5,
+    "attempts": 2,
+    "amount": {
+      "minimum": 1,
+      "maximum": 7
+    },
+    "conditions": {
+      "dimension": [
+        "minecraft:overworld",
+        "undergarden:undergarden"
+      ],
+      "mindist": 32,
+      "maxdist": 100,
+      "maxthis": 10
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:nightmare_stalker"
+    ],
+    "weights": [
+      7
+    ],
+    "persecond": 1,
+    "attempts": 50,
+    "amount": {
+      "minimum": 1,
+      "maximum": 17
+    },
+    "conditions": {
+      "dimension": [
+        "minecraft:overworld"
+      ],
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 20
+    }
+  },
+  {
+    "mob": [
+      "enemyexpansion:vampire"
+    ],
+    "weights": [
+      7
+    ],
+    "persecond": 1,
+    "attempts": 5,
+    "amount": {
+      "minimum": 1,
+      "maximum": 17
+    },
+    "conditions": {
+      "dimension": [
+        "minecraft:overworld"
+      ],
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 20
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:nightmare_stalker",
+      "enemyexpansion:vampire"
+    ],
+    "weights": [
+      7,
+      7
+    ],
+    "persecond": 1,
+    "attempts": 5,
+    "amount": {
+      "minimum": 1,
+      "maximum": 17
+    },
+    "conditions": {
+      "dimension": [
+        "deeperdarker:otherside",
+        "undergarden:undergarden"
+      ],
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 20
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:missioner",
+      "whisperwoods:hirschgeist"
+    ],
+    "weights": [
+      3,
+      1
+    ],
+    "persecond": 0.05,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 40,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 1
+    }
+  },
+
+
+
+  
+  {
+    "mob": [
+      "realmrpg_creep:creepling",
+      "realmrpg_creep:halloweed"
+    ],
+    "weights": [
+      3,
+      1
+    ],
+    "persecond": 0.5,
+    "attempts": 10,
+    "amount": {
+      "minimum": 5,
+      "maximum": 20
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 20,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 30
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:pumpkin_bruiser"
+    ],
+    "weights": [
+      3
+    ],
+    "persecond": 1,
+    "attempts": 20,
+    "amount": {
+      "minimum": 5,
+      "maximum": 20
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 20,
+      "maxdist": 100,
+      "maxheight": 60,
+      "maxthis": 20
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:seared_spirit"
+    ],
+    "weights": [
+      3
+    ],
+    "persecond": 0.5,
+    "attempts": 20,
+    "amount": {
+      "minimum": 5,
+      "maximum": 20
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 20,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 8
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:lifestealer"
+    ],
+    "weights": [
+      3
+    ],
+    "persecond": 0.01,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 32,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 1
+    }
+  },
+
+
+
+  {
+    "mob": [
+      "graveyard:ghoul",
+      "graveyard:wraith",
+      "graveyard:revenant",
+      "graveyard:nightmare",
+      "graveyard:skeleton_creeper",
+      "born_in_chaos_v1:glutton_fish",
+      "whisperwoods:zotzpyre",
+      "zombies_plus:axe_zombie",
+      "zombies_plus:bow_zombie",
+      "zombies_plus:brute_zombie",
+      "zombies_plus:cave_zombie",
+      "zombies_plus:crawler_zombie",
+      "zombies_plus:crossbow_zombie",
+      "zombies_plus:leaper_zombie",
+      "zombies_plus:runner_zombie",
+      "zombies_plus:shrieker_zombie",
+      "zombies_plus:slow_zombie",
+      "zombies_plus:sword_zombie",
+      "zombies_plus:vile_zombie",
+      "zombies_plus:weak_zombie",
+      "more_zombies2:dark_zombie",
+      "more_zombies2:furious_zombie",
+      "more_zombies2:horde_leader",
+      "more_zombies2:horde_zombie",
+      "more_zombies2:the_watcher",
+      "more_zombies2:zombie_runner",
+      "more_zombies2:zombie_soul",
+      "more_zombies2:zombie_spitter",
+      "more_zombies2:zombie_summoner",
+      "born_in_chaos_v1:dire_hound_leader",
+      "born_in_chaos_v1:zombie_clown",
+      "enemyexpansion:meature",
+      "enemyexpansion:slugger",
+      "enemyexpansion:sprinter"
+    ],
+    "persecond": 1,
+    "attempts": 100,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 200
+    }
+  },
+  
+
+
+
+
+
+  
+  
+  {
+    "mob": [
+      "graveyard:skeleton_creeper",
+      "born_in_chaos_v1:bonescaller",
+      "born_in_chaos_v1:barrel_zombie",
+      "born_in_chaos_v1:door_knight",
+      "born_in_chaos_v1:dark_vortex",
+      "graveyard:acolyte",
+      "graveyard:corrupted_pillager",
+      "graveyard:corrupted_vindicator",
+      "graveyard:nightmare",
+      "graveyard:reaper",
+      "graveyard:wraith",
+      "born_in_chaos_v1:spiritof_chaos"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:zombie_fisherman",
+
+      "born_in_chaos_v1:thornshell_crab",
+
+      "creeperoverhaul:beach_creeper",
+      "enemyexpansion:starved",
+      "caneswonderfulspidersoverhaul:sand_shifter_spider"
+    ],
+    "weights": [
+      3,
+
+      1,
+
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:spirit_guide",
+      "born_in_chaos_v1:zombie_bruiser",
+      "creeperoverhaul:badlands_creeper",
+      "creeperoverhaul:desert_creeper",
+      "creeperoverhaul:savannah_creeper",
+      "endermanoverhaul:badlands_enderman",
+      "endermanoverhaul:desert_enderman",
+      "endermanoverhaul:savanna_enderman",
+
+      "mowziesmobs:umvuthana_raptor",
+
+      "mowziesmobs:umvuthana_crane",
+      "mowziesmobs:umvuthana",
+      "enemyexpansion:scorpion",
+      "enemyexpansion:tarantula",
+      "knightquest:ratman"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+
+      2,
+
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:corpse_fly",
+      "born_in_chaos_v1:bloody_gadfly",
+      "born_in_chaos_v1:swarmer",
+      "born_in_chaos_v1:decaying_zombie",
+      "creeperoverhaul:swamp_creeper",
+      "endermanoverhaul:swamp_enderman",
+      "monsterplus:overgrown_skeleton",
+      "monsterplus:swamp_zombie",
+      "mowziesmobs:lantern",
+      "enemyexpansion:botfly",
+      "caneswonderfulspidersoverhaul:slug_spider",
+      "knightquest:ghosty",
+      "knightquest:swampman"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "creeperoverhaul:bamboo_creeper",
+      "creeperoverhaul:jungle_creeper",
+      "mowziesmobs:foliaath",
+      "caneswonderfulspidersoverhaul:black_widow",
+      "knightquest:bad_patch",
+      "knightquest:lizzy"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "creeperoverhaul:dark_oak_creeper",
+      "endermanoverhaul:dark_oak_enderman",
+      "born_in_chaos_v1:zombie_lumberjack",
+      "enemyexpansion:huntsman",
+      "caneswonderfulspidersoverhaul:wolf_spider"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "creeperoverhaul:hills_creeper",
+      "creeperoverhaul:snowy_creeper",
+      "endermanoverhaul:ice_spikes_enderman",
+      "endermanoverhaul:snowy_enderman",
+      "endermanoverhaul:windswept_hills_enderman",
+
+      "breeze_mob_mod:breeze",
+
+      "enemyexpansion:equestrian",
+      "caneswonderfulspidersoverhaul:jumping_spider",
+      "caneswonderfulspidersoverhaul:orb_weaver"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+
+      2,
+
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "creeperoverhaul:mushroom_creeper",
+      "endermanoverhaul:mushroom_fields_enderman"
+    ],
+    "weights": [
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "creeperoverhaul:spruce_creeper",
+
+      "majruszsdifficulty:illusioner",
+
+      "knightquest:gremlin"
+    ],
+    "weights": [
+      3,
+
+      2,
+
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "creeperoverhaul:spruce_creeper",
+
+      "majruszsdifficulty:illusioner",
+
+      "knightquest:gremlin"
+    ],
+    "weights": [
+      3,
+
+      2,
+
+      3
+    ],
+    "persecond": 1,
+    "attempts": 40,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 60
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:restless_spirit",
+      "born_in_chaos_v1:dread_hound",
+      "knightquest:eldbomb",
+      "knightquest:momma_lizzy",
+      "knightquest:samhain",
+      "enemyexpansion:direwolf"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 20,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": 60,
+      "maxthis": 20
+    }
+  },
+
+
+
+
+
+
+
+
+  {
+    "mob": [
+      "creeperoverhaul:dripstone_creeper",
+      "creeperoverhaul:mushroom_creeper",
+      "endermanoverhaul:cave_enderman",
+      "endermanoverhaul:mushroom_fields_enderman",
+      "born_in_chaos_v1:siamese_skeletons",
+      "born_in_chaos_v1:spiritof_chaos",
+      "enemyexpansion:crawler",
+      "enemyexpansion:faller",
+      "caneswonderfulspidersoverhaul:cobbleshell_spider",
+      "graveyard:corrupted_pillager",
+      "graveyard:corrupted_vindicator"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 30,
+    "amount": {
+      "minimum": 1,
+      "maximum": 4
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 16,
+      "maxdist": 100,
+      "maxthis": 30
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:skeleton_demoman",
+
+      "born_in_chaos_v1:decaying_zombie",
+
+      "quark:forgotten",
+      "enemyexpansion:goblin",
+      "enemyexpansion:silverqueen",
+      "enemyexpansion:troll",
+      "knightquest:ratman",
+      "whisperwoods:zotzpyre",
+      "minecraft:slime",
+      "minecraft:silverfish"
+    ],
+    "weights": [
+      3,
+
+      2,
+
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 30,
+    "amount": {
+      "minimum": 1,
+      "maximum": 4
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 16,
+      "maxdist": 100,
+      "maxthis": 30
+    }
+  },
+  {
+    "mob": [
+      "galosphere:preserved",
+      "galosphere:sparkle",
+      "galosphere:specterpillar",
+      "galosphere:spectre",
+      "creeperoverhaul:dripstone_creeper",
+      "monsterplus:crystal_zombie",
+      "monsterplus:glow_skeleton",
+
+      "mowziesmobs:grottol",
+
+      "born_in_chaos_v1:phantom_creeper",
+      "enemyexpansion:intruder",
+      "minecraft:allay"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+
+      2,
+
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 30,
+    "amount": {
+      "minimum": 1,
+      "maximum": 4
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 16,
+      "maxdist": 100,
+      "maxthis": 30
+    }
+  },
+
+
+
+  {
+    "mob": [
+      "born_in_chaos_v1:fallen_chaos_knight",
+      "galosphere:berserker",
+      "born_in_chaos_v1:dark_vortex",
+      "majruszsdifficulty:tank"
+    ],
+    "weights": [
+      5,
+      4,
+      4,
+      2
+    ],
+    "persecond": 0.5,
+    "attempts": 5,
+    "amount": {
+      "minimum": 0,
+      "maximum": 2
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 8
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:skeleton_thrasher"
+    ],
+    "weights": [
+      5
+    ],
+    "persecond": 0.5,
+    "attempts": 10,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 8
+    }
+  },
+
+
+
+  {
+    "mob": [
+      "warrior:warrior"
+    ],
+    "weights": [
+      1
+    ],
+    "persecond": 0.5,
+    "attempts": 8,
+    "amount": {
+      "minimum": 1,
+      "maximum": 3
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 18,
+      "maxdist": 100,
+      "maxthis": 5
+    }
+  },
+
+
+
+  {
+    "mob": [
+      "mutantmonsters:mutant_creeper",
+      "mutantmonsters:mutant_skeleton",
+      "mutantmonsters:mutant_zombie"
+    ],
+    "persecond": 0.05,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 18,
+      "maxdist": 100,
+      "maxthis": 1
+    }
+  },
+  {
+    "mob": [
+      "mutantmonsters:mutant_enderman"
+    ],
+    "persecond": 0.05,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:the_end",
+      "mindist": 18,
+      "maxdist": 100,
+      "maxthis": 1
+    }
+  },
+  {
+    "mob": [
+      "mutantmonsters:mutant_snow_golem",
+      "mutantmonsters:spider_pig"
+    ],
+    "persecond": 0.01,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 18,
+      "maxdist": 100,
+      "maxthis": 1
+    }
+  },
+
+
+
+
+
+  
+  {
+    "mob": [
+      "majruszsdifficulty:cerberus",
+
+      "born_in_chaos_v1:supreme_bonescaller",
+
+      "goblintraders:vein_goblin_trader",
+
+      "monsterplus:mother_lava_squid"
+    ],
+    "weights": [
+      5,
+
+      4,
+
+      5,
+
+      2
+    ],
+    "persecond": 1,
+    "attempts": 10,
+    "amount": {
+      "minimum": 1,
+      "maximum": 2
+    },
+    "conditions": {
+      "dimension": "minecraft:the_nether",
+      "mindist": 18,
+      "maxdist": 100,
+      "maxthis": 6
+    }
+  },
+  {
+    "mob": [
+      "more_zombies2:burning_zombie",
+      "netherskeletons:basalt_skeleton",
+      "netherskeletons:charred_skeleton",
+      "netherskeletons:crimson_skeleton",
+      "netherskeletons:crying_obby_skeleton",
+      "netherskeletons:nether_skeleton",
+      "netherskeletons:skelly_ghast",
+      "netherskeletons:skelly_piglin",
+      "netherskeletons:soul_skeleton",
+      "netherskeletons:warped_skeleton"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 30,
+    "amount": {
+      "minimum": 1,
+      "maximum": 4
+    },
+    "conditions": {
+      "dimension": "minecraft:the_nether",
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 40
+    }
+  },
+  {
+    "mob": [
+      "quark:foxhound",
+      "quark:wraith",
+      "endermanoverhaul:crimson_forest_enderman",
+      "endermanoverhaul:nether_wastes_enderman",
+      "endermanoverhaul:soulsand_valley_enderman",
+      "endermanoverhaul:warped_forest_enderman",
+      "monsterplus:lava_squid",
+      "born_in_chaos_v1:phantom_creeper",
+      "caneswonderfulspidersoverhaul:crimson_spider",
+      "caneswonderfulspidersoverhaul:molten_spider",
+      "caneswonderfulspidersoverhaul:soul_caster_spider",
+      "caneswonderfulspidersoverhaul:warped_spider",
+      "knightquest:gremlin",
+      "graveyard:wraith"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 30,
+    "amount": {
+      "minimum": 1,
+      "maximum": 4
+    },
+    "conditions": {
+      "dimension": "minecraft:the_nether",
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 40
+    }
+  },
+
+
+  
+
+
+  {
+    "mob": [
+      "born_in_chaos_v1:pumpkin_spirit",
+
+      "born_in_chaos_v1:mother_spider",
+    
+      "goblintraders:goblin_trader",
+
+      "monsterplus:abyssologer"
+    ],
+    "weights": [
+      5,
+
+      4,
+
+      3,
+
+      4
+    ],
+    "persecond": 0.05,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 16,
+      "maxdist": 100,
+      "maxthis": 1
+    }
+  },
+ 
+
+
+  
+  {
+    "mob": [
+      "mowziesmobs:naga",
+      "royalvariations:royal_creeper",
+      "royalvariations:royal_skeleton",
+      "royalvariations:royal_zombie",
+      "knightquest:eldknight",
+      "endermanoverhaul:flower_fields_enderman",
+
+      "enemyexpansion:flutterfly",
+
+      "enemyexpansion:ladybug",
+      "enemyexpansion:wasp",
+
+      "minecraft:bee"
+    ],
+    "weights": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+
+      4,
+
+      5,
+      5,
+
+      4
+    ],
+    "persecond": 1,
+    "attempts": 20,
+    "amount": {
+      "minimum": 1,
+      "maximum": 4
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "minheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 10
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:alligator_snapping_turtle",
+      "alexsmobs:anaconda",
+      "alexsmobs:caiman",
+      "alexsmobs:crocodile",
+      "alexsmobs:fly",
+      "alexsmobs:mudskipper",
+      "minecraft:frog"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:anteater",
+      "alexsmobs:gorilla",
+      "alexsmobs:komodo_dragon",
+      "alexsmobs:leafcutter_ant",
+      "alexsmobs:tiger",
+      "alexsmobs:toucan",
+      "neapolitan:chimpanzee",
+      "neapolitan:plantain_spider",
+      "alexsmobs:capuchin_monkey",
+      "minecraft:panda",
+      "minecraft:parrot"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:bald_eagle",
+      "alexsmobs:moose",
+      "alexsmobs:snow_leopard",
+      "alexsmobs:tusklin",
+      "snowpig:snow_pig",
+      "snuffles:snuffle",
+      "whatareyouvotingfor:penguin",
+      "alexsmobs:froststalker",
+      "minecraft:goat",
+      "minecraft:polar_bear"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:banana_slug",
+      "alexsmobs:blue_jay",
+      "alexsmobs:crow",
+      "alexsmobs:grizzly_bear",
+      "alexsmobs:hummingbird",
+      "alexsmobs:raccoon",
+      "alexsmobs:skunk",
+      "alexsmobs:sugar_glider",
+      "minecraft:wolf",
+      "minecraft:fox",
+      "minecraft:rabbit",
+      "minecraft:cat"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:bison",
+      "alexsmobs:gelada_monkey",
+      "quark:shiba",
+      "minecraft:donkey",
+      "minecraft:horse",
+      "minecraft:llama"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:bunfungus",
+      "alexsmobs:mungus",
+      "minecraft:sniffer",
+      "minecraft:mooshroom"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 0.5,
+    "attempts": 10,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:elephant",
+      "alexsmobs:emu",
+      "alexsmobs:gazelle",
+      "alexsmobs:jerboa",
+      "alexsmobs:kangaroo",
+      "alexsmobs:maned_wolf",
+      "alexsmobs:rattlesnake",
+      "alexsmobs:rhinoceros",
+      "alexsmobs:roadrunner",
+      "alexsmobs:tasmanian_devil",
+      "whatareyouvotingfor:armadillo"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:lobster",
+      "alexsmobs:seagull",
+      "alexsmobs:seal",
+      "alexsmobs:shoebill",
+      "quark:crab",
+      "whatareyouvotingfor:crab",
+      "upgrade_aquatic:goose",
+      "minecraft:turtle"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:flutter",
+      "alexsmobs:guster",
+      "alexsmobs:potoo",
+      "alexsmobs:rain_frog",
+      "alexsmobs:tarantula_hawk",
+      "minecraft:camel"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "minecraft:cow",
+      "minecraft:sheep",
+      "minecraft:pig",
+      "minecraft:chicken"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 60,
+    "amount": {
+      "minimum": 4,
+      "maximum": 10
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 90,
+      "minheight": 60,
+      "maxthis": 45
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:sunbird"
+    ],
+    "weights": [
+      3
+    ],
+    "persecond": 0.01,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inair": true,
+      "mindist": 32,
+      "maxdist": 100,
+      "minheight": 200,
+      "maxthis": 1
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:murmur",
+      "alexsmobs:rocky_roller"
+    ],
+    "weights": [
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 15,
+    "amount": {
+      "minimum": 1,
+      "maximum": 3
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "mindist": 10,
+      "maxdist": 100,
+      "minheight": -64,
+      "maxheight": 60,
+      "maxthis": 10
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:centipede_head",
+      "alexsmobs.cockroach",
+
+      "alexsmobs:underminer",
+
+      "quark:stoneling",
+
+      "quark:toretoise"
+    ],
+    "weights": [
+      2,
+      2,
+
+      1,
+
+      2,
+
+      1
+    ],
+    "persecond": 1,
+    "attempts": 10,
+    "amount": {
+      "minimum": 0,
+      "maximum": 2
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 8
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:alligator_snapping_turtle",
+      "alexsmobs:anaconda",
+      "alexsmobs:caiman",
+      "alexsmobs:crocodile",
+      "alexsmobs:mudskipper"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 15,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inwater": true,
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 15
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:blobfish",
+      "alexsmobs:cachalot_whale",
+      "alexsmobs:comb_jelly",
+      "alexsmobs:frilled_shark",
+      "alexsmobs:giant_squid",
+      "alexsmobs:orca",
+      "alexsmobs:seal",
+      "alexsmobs:skelewag",
+      "upgrade_aquatic:box_jellyfish",
+      "upgrade_aquatic:cassiopea_jellyfish",
+      "upgrade_aquatic:immortal_jellyfish",
+      "upgrade_aquatic:lionfish",
+      "upgrade_aquatic:nautilus"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 15,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inwater": true,
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 15
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:catfish",
+      "alexsmobs:flying_fish",
+      "alexsmobs:hammerhead_shark",
+      "alexsmobs:mantis_shrimp",
+      "alexsmobs:mimic_octopus",
+
+      "alexsmobs:platypus",
+
+      "alexsmobs:terrapin",
+      "upgrade_aquatic:perch",
+      "upgrade_aquatic:pike"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+
+      2,
+
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 15,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inwater": true,
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 15
+    }
+  },
+  {
+    "mob": [
+      "minecraft:squid",
+      "minecraft:glow_squid",
+      "minecraft:cod",
+      "minecraft:salmon",
+      "minecraft:tadpole",
+      "minecraft:turtle",
+      "minecraft:dolphin",
+      "minecraft:axolotl",
+      "minecraft:pufferfish"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 15,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inwater": true,
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 15
+    }
+  },
+  {
+    "mob": [
+      "alexsmobs:dropbear",
+      "alexsmobs:guster",
+      "alexsmobs:warped_toad"
+    ],
+    "weights": [
+      3,
+      3,
+      3
+    ],
+    "persecond": 1,
+    "attempts": 20,
+    "amount": {
+      "minimum": 1,
+      "maximum": 4
+    },
+    "conditions": {
+      "dimension": "minecraft:the_nether",
+      "mindist": 10,
+      "maxdist": 100,
+      "maxthis": 10
+    }
+  },
+
+
+
+  
+  {
+    "mob": [
+    "born_in_chaos_v1:corpse_fish",
+    "creeperoverhaul:ocean_creeper",
+    "endermanoverhaul:coral_enderman",
+    "upgrade_aquatic:thrasher",
+    "caneswonderfulspidersoverhaul:diving_bell_spider",
+    "minecraft:drowned",
+    "minecraft:guardian",
+    "minecraft:elder_guardian"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      1
+    ],
+    "persecond": 0.5,
+    "attempts": 20,
+    "amount": {
+      "minimum": 2,
+      "maximum": 5
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inwater": true,
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 14,
+      "maxdist": 100,
+      "maxthis": 10
+    }
+  },
+  {
+    "mob": [
+      "born_in_chaos_v1:glutton_fish",
+      "upgrade_aquatic:great_thrasher"
+    ],
+    "weights": [
+      3,
+      3
+    ],
+    "persecond": 0.5,
+    "attempts": 20,
+    "amount": {
+      "minimum": 1,
+      "maximum": 2
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inwater": true,
+      "minheight": 20,
+      "maxheight": 60,
+      "mindist": 14,
+      "maxdist": 100,
+      "maxthis": 2
+    }
+  },
+  {
+    "mob": [
+      "seadwellers:mermorph",
+      "seadwellers:mermorph_hunter",
+      "seadwellers:mermorph_architect",
+      "seadwellers:mermorph_cavern",
+      "seadwellers:mermorph_collector",
+      "seadwellers:mermorph_coral_orange",
+      "seadwellers:mermorph_coral_yellow",
+      "seadwellers:mermorph_blacksmith",
+      "seadwellers:mermorph_farmer",
+      "seadwellers:mermorph_river",
+      "seadwellers:mermorph_polar"
+    ],
+    "weights": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "persecond": 0.5,
+    "attempts": 20,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "inwater": true,
+      "minheight": -64,
+      "maxheight": 60,
+      "mindist": 14,
+      "maxdist": 100,
+      "maxthis": 2
+    }
+  },
+
+
+
+
+  
+  {
+    "mob": [
+      "blue_skies:gatekeeper"
+    ],
+    "persecond": 0.01,
+    "attempts": 1,
+    "amount": {
+      "minimum": 0,
+      "maximum": 1
+    },
+    "conditions": {
+      "dimension": "minecraft:overworld",
+      "maxheight": 60,
+      "mindist": 18,
+      "maxdist": 100,
+      "maxthis": 1
+    }
+  }
+
+]

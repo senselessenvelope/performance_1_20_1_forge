@@ -1,0 +1,20 @@
+[
+    {
+      "on": "mob_killed",
+      "parameters": {
+        "mob": "born_in_chaos_v1:fallen_chaos_knight",
+        "player": true
+      },
+      "conditions": {
+        "dimension": "minecraft:overworld",
+        "random": 1
+      },
+      "spawn": {
+        "mob": "born_in_chaos_v1:scarlet_persecutor",
+        "mincount": 3,
+        "maxcount": 4,
+        "attempts": 20,
+        "norestrictions": true
+      }
+    }
+  ]
