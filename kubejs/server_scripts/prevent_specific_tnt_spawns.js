@@ -38,7 +38,7 @@ EntityEvents.spawned(event => {
     // restricted explosives will only be restricted in overworld
     if (spawned_entity.level.dimension === 'minecraft:overworld') {
         // Use the stringified key from the translation component
-        if (restricted_explosives.includes(spawned_entity.type)) { // Check the entity type
+        if (restricted_explosives.includes(spawned_entity.type.toString())) { // Check the entity type
             // explosives are for use deep underground only
             if (spawned_entity.y > 40) {
                 // console logs and chat logs (for player feedback)
