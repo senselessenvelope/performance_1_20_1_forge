@@ -44,7 +44,6 @@ PlayerEvents.tick(event => {
     }
 })
 
-
 BlockEvents.broken(event => {
     const { player, block } = event
     if (player.isHoldingInAnyHand('kubejs:golden_egg')) {
