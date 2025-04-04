@@ -1,3 +1,4 @@
+
 // TEST, was trying to see if maybe needs to be updated every tick
 // other version i had is EntityEvents.spawned(...)
 LevelEvents.tick(event => {

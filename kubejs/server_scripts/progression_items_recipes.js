@@ -33,7 +33,7 @@ ServerEvents.recipes(event => {
         ]
     )   
     event.shapeless(EYE_OF_BONES, [
-            'kubejs:green_goop',
+            'kubejs:green_goo',
             'kubejs:stiff_skin',
             'kubejs:golden_egg'
         ]

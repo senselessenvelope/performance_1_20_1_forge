@@ -17,8 +17,8 @@ StartupEvents.registry('item', event => {
         .maxStackSize(16)
         .tooltip('Strong gust that never stops blowing')
     // eye of bones items
-    event.create('green_goop')
-        .displayName('Green Goop')
+    event.create('green_goo')
+        .displayName('Green Goo')
         .maxStackSize(16)
         .tooltip('Hurts to hold')
     event.create('stiff_skin')
