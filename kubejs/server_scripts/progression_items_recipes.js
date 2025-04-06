@@ -1,5 +1,11 @@
 
+
 let blazePowder = 'minecraft:blaze_powder'
+// reference enum
+const EYE_OF_MAGMA = global.legendaryMonstersEyes.EYE_OF_MAGMA
+const EYE_OF_SOUL = global.legendaryMonstersEyes.EYE_OF_SOUL
+const EYE_OF_BONES = global.legendaryMonstersEyes.EYE_OF_BONES
+const EYE_OF_AIR = global.legendaryMonstersEyes.EYE_OF_AIR
 
 // Listen for the recipes server event.
 ServerEvents.recipes(event => {

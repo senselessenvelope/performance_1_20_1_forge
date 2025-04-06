@@ -1,21 +1,21 @@
 
-
+// -- Summoning Nether Bosses for Nether Eyes --
 BlockEvents.rightClicked(event => {
     const { level, block, item } = event
-    var mob
+    var mob;
+    // // NEED TO ADD A DIMENSION CHECK -- TEST IF CORRECT
+    // if (level.getDimension() != 'minecraft:the_nether') {
+    //     return
+    // }
+    // spawn mob based on held item and block
     if (block.id == 'stalwart_dungeons:awful_ghast_altar') {
-        if (item.id != 'kubejs:ghast_key') {
-            return
-        }
+        if (item.id != 'kubejs:ghast_key') { return }
         mob = block.createEntity('stalwart_dungeons:awful_ghast')
     } else if (block.id == 'stalwart_dungeons:nether_keeper_altar') {
-        if (item.id != 'kubejs:keeper_key') {
-            return
-        }
+        if (item.id != 'kubejs:keeper_key') { return }
         mob = block.createEntity('stalwart_dungeons:nether_keeper')
-    } else {
-        return
-    }
+    } else { return }
+    // spawn, play spawn sound and reduce item held by 1
     mob.spawn()
     level.playSound(null, event.player.x, event.player.y, event.player.z, 'minecraft:entity.wither.spawn', 'master', 1, 0.5)
     item.shrink(1)
@@ -40,25 +40,30 @@ PlayerEvents.tick(event => {
         }
     }
     if (player.isHoldingInAnyHand('kubejs:golden_egg')) {
-        player.potionEffects.add("minecraft:luck", 100, 2)
+        player.potionEffects.add("minecraft:luck", 1, 2)
+    }
+    if (player.isHoldingInAnyHand('kubejs:valkyrean_wing')) {
+        player.potionEffects.add("minecraft:strength", 1)
     }
 })
 
 BlockEvents.broken(event => {
     const { player, block } = event
+    // do not drop items in creative
+    if (player.isCreative()) { return }
     if (player.isHoldingInAnyHand('kubejs:golden_egg')) {
-        if (!block.id.includes("_ore")) {
-            return
-        }
+        // do not do extra drops to blocks that are not ores
+        if (!block.id.includes("_ore")) { return }
         let drops = block.getDrops()
-        // give approximate fortune to event
-        drops.forEach(drop => {
-            let extra = Math.floor(Math.random() * 3) // Fortune III can give up to 3 extra
-            // drop.count += extra
-            // BELOW DOES NOT WORK -- DOES NOTHING
-            // MAYBE use LootJS to modify drops
-            drop.setCount(drop.getCount() + extra)
-        })
+        let max = 4 // count could be [0-4), so chance of no extra item
+        for (let i = 0; i < drops.length; i++) {
+            let extraItemCount = Math.floor(Math.random() * max)
+            // no extra item case
+            if (extraItemCount == 0) { return }
+            // otherwise get item, set extra count and add it to drop
+            let item = drops.get(i)
+            item.setCount(extraItemCount)
+            block.popItem(item)
+        }
     }
 })
-
