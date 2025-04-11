@@ -3,10 +3,10 @@
 BlockEvents.rightClicked(event => {
     const { level, block, item } = event
     var mob;
-    // // NEED TO ADD A DIMENSION CHECK -- TEST IF CORRECT
-    // if (level.getDimension() != 'minecraft:the_nether') {
-    //     return
-    // }
+    // NEED TO ADD A DIMENSION CHECK -- TEST IF CORRECT
+    if (level.getDimension() != 'minecraft:the_nether') {
+        return
+    }
     // spawn mob based on held item and block
     if (block.id == 'stalwart_dungeons:awful_ghast_altar') {
         if (item.id != 'kubejs:ghast_key') { return }
@@ -28,6 +28,33 @@ ServerEvents.loaded(event => {
         dummy.kill()
     })
 })
+
+// -- Entity Hurting Based On Item In Inventory --
+EntityEvents.hurt(event => {
+    const { entity, source } = event
+    // if entity is not a player, return
+    if (!entity.player) return
+    // check source of damage being another entity
+    const attacker = source.actual
+    if (!attacker) return
+    // does not do if entity attacking is too far away (wouldnt make sense if it was ranged entity unless close)
+    if (entity.distanceToEntity(attacker) > 3) return
+    // info on inventory object:
+    //      https://hunter19823.github.io/kubejsoffline/1.20.1/forge/#net.minecraft.world.entity.player.Inventory?focus=methods-header&methods-expanded=false&methods-page=0&methods-page-size=25
+    const inventory = entity.getInventory()
+    // create items to look for using ItemStack objects
+    const ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack');
+    const greenGoo = new ItemStack("kubejs:green_goo")
+    const solarStone = new ItemStack("kubejs:solar_stone")
+    // give wither if green goo
+    if (inventory.contains(greenGoo)) {
+        attacker.potionEffects.add("minecraft:wither", 20 * 5) // wither for 5 seconds
+    }
+    // set on fire for 5 seconds if solar stone
+    if (inventory.contains(solarStone)) {
+        attacker.remainingFireTicks = 20 * 3
+    }
+});
 
 ServerEvents.tick(event => {
     // Get the world where the event is running
@@ -92,6 +119,7 @@ ItemEvents.rightClicked("kubejs:solar_stone", event => {
     let entityLife = 30
     // after number of ticks, entity will be killed
     Utils.server.scheduleInTicks(20 * entityLife, ctx => {
+            entity.kill()
             entity.discard()
     })
 })
@@ -104,6 +132,7 @@ PlayerEvents.tick(event => {
         player.potionEffects.add("minecraft:jump_boost", 1, 1)
     }
     if (player.isHoldingInAnyHand('kubejs:solar_stone')) {
+        // no need to check if in water, already handled by game
         player.setSecondsOnFire(1)
     }
     if (player.isHoldingInAnyHand('kubejs:green_goo')) {
@@ -119,6 +148,9 @@ PlayerEvents.tick(event => {
     }
     if (player.isHoldingInAnyHand('kubejs:valkyrean_wing')) {
         player.potionEffects.add("minecraft:strength", 1)
+    }
+    if (player.isHoldingInAnyHand('kubejs:stiff_skin')) {
+        player.potionEffects.add("minecraft:resistance", 1)
     }
 })
 

@@ -9,10 +9,10 @@ StartupEvents.registry('entity_type', event => {
         .item(item => {
             item.canThrow(true)
         })
-        ////Setting .noItem() here will result in the builder skipping the item build altogether
-        ////Since the builder registers the item automatically this is the only way to prevent an item from being created here.
-        // .noItem()
-        ////uncomment if you want it to auto create item (if you havent already)
+        //Setting .noItem() here will result in the builder skipping the item build altogether
+        //Since the builder registers the item automatically this is the only way to prevent an item from being created here.
+        .noItem()
+        //uncomment if you want it to auto create item (if you havent already)
         /**
          * All methods below return void meaning they don't require a set return value to function.
          * These mostly are similar to KubeJS' normal events where you may do things on certain events your entities call!
@@ -43,13 +43,20 @@ StartupEvents.registry('entity_type', event => {
                 .explosionMode('tnt')
                 .explode()
             entity.discard()
-            entity.kill()
         })
         .tick(entity => {
+            // check if projectile entity has been discarded (to prevent phantom projectiles, 
+            // particularly after hitting entity, so does not continue to a block)
+            // also check for if trying to render client side, should only do server-side entity checks
+            // (prevents item being summoned in command below for both server and client, duplicating it)
+            if (entity.removed|| entity.level.isClientSide()) return
+            
             // if in water, kill entity
             if (entity.getLevel().getBlockState(entity.blockPosition()).getBlock().id == "minecraft:water") {
                 Utils.server.runCommandSilent(`particle minecraft:angry_villager ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 1 50 force`)
                 entity.getLevel().playSound(null, entity.x, entity.y, entity.z, 'minecraft:block.fire.extinguish', 'players', 1, 1) // scarier
+                // and drop item (this is summon command i am referring to above)
+                Utils.server.runCommandSilent(`summon item ${entity.x} ${entity.y} ${entity.z} {Item:{id:"kubejs:solar_stone",Count:1b}}`)
                 entity.discard()
             }
         })
@@ -58,7 +65,7 @@ StartupEvents.registry('entity_type', event => {
 StartupEvents.registry('item', event => {
     // eye of air items
     event.create('gravitite_gel')
-        .displayName('Gravitite Gel')
+        .displayName('§9Gravitite Gel')
         .maxStackSize(16)
         .tooltip('Feels very light')
         .food(food => {
@@ -71,20 +78,20 @@ StartupEvents.registry('item', event => {
         })
     // may need tweaks for balancing
     event.create('valkyrean_wing', 'sword')
-        .displayName('Valkyrean Wing')
+        .displayName('§cValkyrean Wing')
         .tooltip('Sharp with fierceness')
-        .tier('diamond')
+        .tier('iron')
         .attackDamageBaseline(1.0) 
         .speedBaseline(-2.0)
     event.create('solar_stone')
-        .displayName('Solar Stone')
+        .displayName('§6Solar Stone')
         .maxStackSize(16)
         .tooltip('Hot to the touch')
     // for some code below explained, see: 
     //      https://wiki.latvian.dev/books/kubejs-legacy/page/custom-items#bkmrk-custom-foods
     // create generic item, then define to be drinkable
     event.create('whale_wind')
-        .displayName('Whale Wind')
+        .displayName('§bWhale Wind')
         .tooltip('Strong gust that can blow with force')
         .useAnimation('drink')
         .useDuration(itemstack => 30)
@@ -98,25 +105,25 @@ StartupEvents.registry('item', event => {
         })
     // eye of bones items
     event.create('green_goo')
-        .displayName('Green Goo')
+        .displayName('§2Green Goo')
         .maxStackSize(16)
         .tooltip('Hurts to hold')
     event.create('stiff_skin')
-        .displayName('Stiff Skin')
+        .displayName('§3Stiff Skin')
         .maxStackSize(16)
-        .tooltip('Hardened almost to stone')
+        .tooltip('Hardened for defense')
     event.create('golden_egg')
-        .displayName('Golden Egg')
+        .displayName('§aGolden Egg')
         .maxStackSize(16)
         .tooltip('Holds potential for life and riches')
     // eye of magma and soul items 
     // (not used to craft it, but to summon stalwart dungeon bosses that drop it)
     event.create('ghast_key')
-        .displayName('Ghast Key')
+        .displayName('§4Ghast Key')
         .maxStackSize(16)
         .tooltip('Unlocks the cage of a ghastly guardian')
     event.create('keeper_key')
-        .displayName('Keeper Key')
+        .displayName('§4Keeper Key')
         .maxStackSize(16)
         .tooltip('Unlocks the cage of a cunning keeper')
 })
