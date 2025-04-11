@@ -116,11 +116,18 @@ ItemEvents.rightClicked("kubejs:solar_stone", event => {
     // player.level.playSound(null, player.x, player.y, player.z, 'minecraft:entity.ghast.shoot', 'players', 1, 1)
     player.level.playSound(null, player.x, player.y, player.z, 'minecraft:entity.wither.shoot', 'players', 1, 1) // scarier
     // seconds entity will exist for
-    let entityLife = 30
+    let entityLife = 20
     // after number of ticks, entity will be killed
     Utils.server.scheduleInTicks(20 * entityLife, ctx => {
-            entity.kill()
-            entity.discard()
+        let explosion = entity.block.createExplosion()
+        explosion
+            .exploder(entity)
+            .strength(5)
+            .causesFire(true)
+            .explosionMode('tnt')
+            .explode()
+        entity.kill()
+        entity.discard()
     })
 })
 

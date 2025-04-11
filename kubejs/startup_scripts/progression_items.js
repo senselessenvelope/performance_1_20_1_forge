@@ -9,6 +9,8 @@ StartupEvents.registry('entity_type', event => {
         .item(item => {
             item.canThrow(true)
         })
+        // // use existing item texture as entity
+        // .render('kubejs:item/solar_stone')
         //Setting .noItem() here will result in the builder skipping the item build altogether
         //Since the builder registers the item automatically this is the only way to prevent an item from being created here.
         .noItem()
@@ -65,7 +67,7 @@ StartupEvents.registry('entity_type', event => {
 StartupEvents.registry('item', event => {
     // eye of air items
     event.create('gravitite_gel')
-        .displayName('§9Gravitite Gel')
+        .displayName('§1Gravitite Gel')
         .maxStackSize(16)
         .tooltip('Feels very light')
         .food(food => {
@@ -85,7 +87,7 @@ StartupEvents.registry('item', event => {
         .speedBaseline(-2.0)
     event.create('solar_stone')
         .displayName('§6Solar Stone')
-        .maxStackSize(16)
+        .maxStackSize(8)
         .tooltip('Hot to the touch')
     // for some code below explained, see: 
     //      https://wiki.latvian.dev/books/kubejs-legacy/page/custom-items#bkmrk-custom-foods
