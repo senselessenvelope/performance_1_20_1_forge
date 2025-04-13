@@ -20,8 +20,10 @@ BlockEvents.rightClicked(event => {
     level.playSound(null, event.player.x, event.player.y, event.player.z, 'minecraft:entity.wither.spawn', 'master', 1, 0.5)
     item.shrink(1)
 })
+// firing test projectile first time on loading server to ensure it works
 ServerEvents.loaded(event => {
     Utils.server.scheduleInTicks(1, () => {
+        // log will complain about createEntity below but it works, ignore it
         let dummy = event.level.createEntity('kubejs:solar_stone_projectile')
         dummy.setPos(0, -1000, 0)
         dummy.spawn()

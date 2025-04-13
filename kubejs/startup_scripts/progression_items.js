@@ -102,12 +102,16 @@ StartupEvents.registry('item', event => {
         .tooltip('Strong gust that can blow with force')
         .useAnimation('drink')
         .useDuration(itemstack => 30)
+        .maxStackSize(8)
         .use((level, player, hand) => true)
         .finishUsing((itemstack, level, entity) => {
             let effects = entity.potionEffects
             effects.add('minecraft:levitation', 20, 100)
             effects.add('kubejs:falling_immunity', 20 * 20 )
-            itemstack.shrink(1) // reduce item
+            if (entity.isPlayer() && !entity.isCreative()) {
+                itemstack.shrink(1) // reduce item
+                entity.give("minecraft:glass_bottle")
+            }
             return itemstack
         })
     // eye of bones items
@@ -121,7 +125,7 @@ StartupEvents.registry('item', event => {
         .tooltip('Hardened for defense')
     event.create('golden_egg')
         .displayName('§aGolden Egg')
-        .maxStackSize(16)
+        .maxStackSize(1)
         .tooltip('Holds potential for life and riches')
     // eye of magma and soul items 
     // (not used to craft it, but to summon stalwart dungeon bosses that drop it)
