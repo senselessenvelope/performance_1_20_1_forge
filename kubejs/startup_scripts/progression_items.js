@@ -33,6 +33,7 @@ StartupEvents.registry('entity_type', event => {
                 .causesFire(true)
                 .explosionMode('tnt') // 'none','block','mob','tnt'
                 .explode()
+            entity.teleportTo(0, -1000, 0)
             entity.discard()
         })
         .onHitEntity(context => {
@@ -49,6 +50,7 @@ StartupEvents.registry('entity_type', event => {
                 .causesFire(true)
                 .explosionMode('tnt')
                 .explode()
+            entity.teleportTo(0, -1000, 0)
             entity.discard()
         })
         .tick(entity => {
@@ -64,6 +66,7 @@ StartupEvents.registry('entity_type', event => {
                 entity.getLevel().playSound(null, entity.x, entity.y, entity.z, 'minecraft:block.fire.extinguish', 'players', 1, 1) // scarier
                 // and drop item (this is summon command i am referring to above)
                 Utils.server.runCommandSilent(`summon item ${entity.x} ${entity.y} ${entity.z} {Item:{id:"kubejs:solar_stone",Count:1b}}`)
+                entity.teleportTo(0, -1000, 0)
                 entity.discard()
             }
         })
