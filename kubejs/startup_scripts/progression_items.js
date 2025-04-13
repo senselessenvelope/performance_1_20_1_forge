@@ -24,9 +24,7 @@ StartupEvents.registry('entity_type', event => {
          */
         .onHitBlock(context => {
             const { entity, result } = context;
-            if (entity.removed|| entity.level.isClientSide()) {
-                entity.teleportTo(0, -1000, 0)
-            }
+            if (entity.removed|| entity.level.isClientSide()) { return }
             // construct explosion
             let explosion = entity.block.createExplosion()
             explosion
@@ -39,9 +37,7 @@ StartupEvents.registry('entity_type', event => {
         })
         .onHitEntity(context => {
             const { entity, result } = context;
-            if (entity.removed|| entity.level.isClientSide()) {
-                entity.teleportTo(0, -1000, 0)
-            }
+            if (entity.removed|| entity.level.isClientSide()) { return }
             // custom effect upon hitting entity
             if (result.entity.living) {
                 result.entity.setSecondsOnFire(10)
@@ -60,10 +56,7 @@ StartupEvents.registry('entity_type', event => {
             // particularly after hitting entity, so does not continue to a block)
             // also check for if trying to render client side, should only do server-side entity checks
             // (prevents item being summoned in command below for both server and client, duplicating it)
-            if (entity.removed|| entity.level.isClientSide()) {
-                // teleporting prevents the phantom explosion from setting off later
-                entity.teleportTo(0, -1000, 0)
-            }
+            if (entity.removed|| entity.level.isClientSide()) { return }
             
             // if in water, kill entity
             if (entity.getLevel().getBlockState(entity.blockPosition()).getBlock().id == "minecraft:water") {
