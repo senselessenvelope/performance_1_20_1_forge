@@ -22,8 +22,8 @@ BlockEvents.rightClicked(event => {
 })
 ServerEvents.loaded(event => {
     Utils.server.scheduleInTicks(1, () => {
-        let dummy = level.createEntity('kubejs:your_projectile')
-        dummy.setPos(0, -200, 0)
+        let dummy = event.level.createEntity('kubejs:solar_stone_projectile')
+        dummy.setPos(0, -1000, 0)
         dummy.spawn()
         dummy.kill()
     })
