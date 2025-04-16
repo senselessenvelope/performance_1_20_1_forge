@@ -1,4 +1,4 @@
-
+const { explodeEntity, removeEntity } = global.entityUtils;
 // -- Summoning Nether Bosses for Nether Eyes --
 BlockEvents.rightClicked(event => {
     const { level, block, item } = event
@@ -121,15 +121,8 @@ ItemEvents.rightClicked("kubejs:solar_stone", event => {
     let entityLife = 20
     // after number of ticks, entity will be killed
     Utils.server.scheduleInTicks(20 * entityLife, ctx => {
-        let explosion = entity.block.createExplosion()
-        explosion
-            .exploder(entity)
-            .strength(5)
-            .causesFire(true)
-            .explosionMode('tnt')
-            .explode()
-        entity.kill()
-        entity.discard()
+        explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
+        removeEntity({ entity: entity })
     })
 })
 

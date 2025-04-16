@@ -1,3 +1,4 @@
+const { explodeEntity, removeEntity } = global.entityUtils;
 
 StartupEvents.registry('entity_type', event => {
     event.create('kubejs:solar_stone_projectile', 'entityjs:projectile')
@@ -24,34 +25,20 @@ StartupEvents.registry('entity_type', event => {
          */
         .onHitBlock(context => {
             const { entity, result } = context;
-            if (entity.removed|| entity.level.isClientSide()) { return }
+            if (entity.removed || entity.level.isClientSide()) { return }
             // construct explosion
-            let explosion = entity.block.createExplosion()
-            explosion
-                .exploder(entity)
-                .strength(5)
-                .causesFire(true)
-                .explosionMode('tnt') // 'none','block','mob','tnt'
-                .explode()
-            entity.teleportTo(0, -1000, 0)
-            entity.discard()
+            explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
+            removeEntity({ entity: entity })
         })
         .onHitEntity(context => {
             const { entity, result } = context;
-            if (entity.removed|| entity.level.isClientSide()) { return }
+            if (entity.removed || entity.level.isClientSide()) { return }
             // custom effect upon hitting entity
             if (result.entity.living) {
                 result.entity.setSecondsOnFire(10)
             }
-            let explosion = entity.block.createExplosion()
-            explosion
-                .exploder(entity)
-                .strength(5)
-                .causesFire(true)
-                .explosionMode('tnt')
-                .explode()
-            entity.teleportTo(0, -1000, 0)
-            entity.discard()
+            explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
+            removeEntity({ entity: entity })
         })
         .tick(entity => {
             // check if projectile entity has been discarded (to prevent phantom projectiles, 
@@ -66,8 +53,7 @@ StartupEvents.registry('entity_type', event => {
                 entity.getLevel().playSound(null, entity.x, entity.y, entity.z, 'minecraft:block.fire.extinguish', 'players', 1, 1) // scarier
                 // and drop item (this is summon command i am referring to above)
                 Utils.server.runCommandSilent(`summon item ${entity.x} ${entity.y} ${entity.z} {Item:{id:"kubejs:solar_stone",Count:1b}}`)
-                entity.teleportTo(0, -1000, 0)
-                entity.discard()
+                removeEntity({ entity: entity })
             }
         })
 })
