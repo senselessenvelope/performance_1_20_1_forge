@@ -18,6 +18,7 @@ global.legendaryMonstersEyes = Object.freeze({
 
 // global entity utility functions will use in parts of program
 global.entityUtils = {
+
     // pass in entity to explode, set defaults if other parameters not defined
     explodeEntity: function(params) {
         // parameters that can be passed in
@@ -51,18 +52,27 @@ global.entityUtils = {
         entity.kill()
         entity.discard()
     },
+    verifyProjectile: function(params) {
+        const {
+            projectile
+        } = params
+        console.log(`Projectile object from verifyProjectile: ${projectile}`)
+        const entity = projectile.entity
+        const velocity = projectile.velocity !== undefined ? projectile.velocity : 1.5;
+        const sound = projectile.sound !== undefined ? projectile.sound : 'minecraft:entity.ghast.shoot';
+        const noGravity = projectile.noGravity !== undefined ? projectile.noGravity : true;
+        const texture = projectile.texture !== undefined ? projectile.texture : 'kubejs:textures/item/example_item.png'
+        const item = projectile.item !== undefined ? projectile.item : 'minecraft:air'
+        return { entity: entity, velocity: velocity, sound: sound, noGravity: noGravity, texture: texture, item: item }
+    },
     // summon projectile at player
     summonProjectile: function(params) {
         // parameters of function, player and velocity of projectile, and sound it makes when shot
         const {
             player,
-            projectile,
-            velocity,
-            sound
+            projectile
         } = params
-        // define all parameter defaults if undefined
-        const vel = velocity !== undefined ? velocity : 1.5;
-        const snd = sound !== undefined ? sound : 'minecraft:entity.ghast.shoot';
+        const projectileData = verifyProjectile({ projectile: projectile })
         // angle player looking at
         const playerAngle = {
             x: player.lookAngle.x(),
@@ -70,30 +80,45 @@ global.entityUtils = {
             z: player.lookAngle.z()
         }
         // create entity to shoot
-        const entity = player.level.createEntity(projectile)
+        const entity = player.level.createEntity(projectileData.entity)
         // spawn entity
         entity.spawn()
         Utils.server.schedule(5, () => {
             // entity spawn position
             entity.pos = new Vec3d(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
             // not affected by gravity
-            entity.setNoGravity(true)
-            const motion = new Vec3d(playerAngle.x * vel, playerAngle.y * vel,  playerAngle.z * vel)
+            entity.setNoGravity(projectileData.noGravity)
+            const motion = new Vec3d(playerAngle.x * projectileData.velocity, playerAngle.y * projectileData.velocity,  playerAngle.z * projectileData.velocity)
             // entity.persistentData.put('motion', motion)
             // entity movement
             entity.setDeltaMovement(motion)
         })
         // player.level.playSound(null, player.x, player.y, player.z, 'minecraft:entity.ghast.shoot', 'players', 1, 1)
-        player.level.playSound(null, player.x, player.y, player.z, snd, 'players', 1, 1) // scarier
+        player.level.playSound(null, player.x, player.y, player.z, projectileData.sound, 'players', 1, 1) // scarier
         // seconds entity will exist for
         let entityLife = 20
         // after number of ticks, entity will be killed
         Utils.server.scheduleInTicks(20 * entityLife, ctx => {
+            // if (explosion !== undefined) {
+            //     // explodeEntity({ explosion: explosionData })
+            //     const strength = explosion.strength !== undefined ? explosion.strength : 5;
+            //     const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
+            //     const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'tnt';
+                
+            //     let explosionSummon = explosion.entity.block.createExplosion()
+            //     explosionSummon
+            //         .exploder(explosion.entity)
+            //         .strength(strength)
+            //         .causesFire(causesFire)
+            //         .explosionMode(explosionMode)
+            //         .explode()
+            // }
+            
             explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
             removeEntity({ entity: entity })
         })
     },
-    // crete projectile entity given object arguments
+    // create projectile entity given object arguments
     createProjectile: function(params) {
         // parameters of function, player and velocity of projectile, and sound it makes when shot
         const {
@@ -101,11 +126,8 @@ global.entityUtils = {
             projectile,
             explosion
         } = params
-        // projectile should never be null, must always have at least the projectile entity
-        // texture and item (dropped when projectile hits water) can have default values
-        const projectileEntity = projectile.entity
-        const texture = projectile.texture !== undefined ? projectile.texture : 'kubejs:textures/item/example_item.png'
-        const item = projectile.item !== undefined ? projectile.item : 'minecraft:air'
+        const projectileData = verifyProjectile({ projectile: projectile })
+
         // check if explosion is null or not
         const explosionData = explosion || {}
         // check each property of explosion data, if undefined set default value
@@ -113,7 +135,7 @@ global.entityUtils = {
         const causesFire = explosionData.causesFire !== undefined ? explosionData.causesFire : false
         const explosionMode = explosionData.explosionMode !== undefined ? explosionData.explosionMode : 'mob'
         // create projectile for event
-        event.create(projectileEntity, 'entityjs:projectile')
+        event.create(projectileData.entity, 'entityjs:projectile')
             // one-off values set at startup of game
             .sized(0.4, 0.4)
             .renderScale(1, 1, 1)
@@ -122,7 +144,7 @@ global.entityUtils = {
             })
             // use custom texture
             .textureLocation(entity => {
-                return texture
+                return projectileData.texture
             })
             // prevents an item specifically for this entity from being created (keep if you already have an item to shoot the projectile)
             // uncomment if you want it to auto create item (if you havent already)
@@ -131,7 +153,24 @@ global.entityUtils = {
             .onHitBlock(context => {
                 const { entity } = context;
                 if (entity.removed || entity.level.isClientSide()) { return }
-                // construct explosion
+                // if (explosionData !== undefined) {
+                //     explodeEntity({ explosion: explosionData })
+                // }
+                
+                // if (explosion !== undefined) {
+                //     // explodeEntity({ explosion: explosionData })
+                //     const strength = explosion.strength !== undefined ? explosion.strength : 5;
+                //     const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
+                //     const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'tnt';
+                    
+                //     let explosionSummon = explosion.entity.block.createExplosion()
+                //     explosionSummon
+                //         .exploder(explosion.entity)
+                //         .strength(strength)
+                //         .causesFire(causesFire)
+                //         .explosionMode(explosionMode)
+                //         .explode()
+                // }
                 explodeEntity({ entity: entity, strength: strength, causesFire: causesFire, explosionMode: explosionMode })
                 removeEntity({ entity: entity })
             })
@@ -142,6 +181,24 @@ global.entityUtils = {
                 if (result.entity.living) {
                     result.entity.setSecondsOnFire(10)
                 }
+                // if (explosionData !== undefined) {
+                //     explodeEntity({ explosion: explosionData })
+                // }
+                
+                // if (explosion !== undefined) {
+                //     // explodeEntity({ explosion: explosionData })
+                //     const strength = explosion.strength !== undefined ? explosion.strength : 5;
+                //     const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
+                //     const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'tnt';
+                    
+                //     let explosionSummon = explosion.entity.block.createExplosion()
+                //     explosionSummon
+                //         .exploder(explosion.entity)
+                //         .strength(strength)
+                //         .causesFire(causesFire)
+                //         .explosionMode(explosionMode)
+                //         .explode()
+                // }
                 explodeEntity({ entity: entity, strength: strength, causesFire: causesFire, explosionMode: explosionMode })
                 removeEntity({ entity: entity })
             })
@@ -157,7 +214,7 @@ global.entityUtils = {
                     Utils.server.runCommandSilent(`particle minecraft:angry_villager ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 1 50 force`)
                     entity.getLevel().playSound(null, entity.x, entity.y, entity.z, 'minecraft:block.fire.extinguish', 'players', 1, 1)
                     // and drop item (this is the summon command i am referring to above)
-                    Utils.server.runCommandSilent(`summon item ${entity.x} ${entity.y} ${entity.z} {Item:{id:"${item}",Count:1b}}`)
+                    Utils.server.runCommandSilent(`summon item ${entity.x} ${entity.y} ${entity.z} {Item:{id:"${projectileData.item}",Count:1b}}`)
                     removeEntity({ entity: entity })
                 }
             })

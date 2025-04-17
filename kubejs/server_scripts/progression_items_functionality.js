@@ -1,15 +1,15 @@
-const { explodeEntity, removeEntity, summonProjectile } = global.entityUtils;
+const { explodeEntity, removeEntity, summonProjectile, verifyProjectile } = global.entityUtils;
 const { useItem } = global.itemUtils;
 
 // shoot fireball from given item
 function shootFireball(player, item) {
     // cooldown of 0.5 seconds
     useItem({ player: player, item: item, cooldown: 0.5 })
-    const [proj, vel] = ['kubejs:fireball', 1.5];
-    summonProjectile({ player: player, projectile: proj, velocity: vel })
+    const entity = 'kubejs:fireball'
+    const projectile = { entity: entity, velocity: 1.5 }
+    const explosion = { entity: entity } // as long as entity specified, will do a default (small) explosion
+    summonProjectile({ player: player, projectile: projectile })
 }
-
-
 // firing test projectile first time on loading server to ensure it works
 ServerEvents.loaded(event => {
     Utils.server.scheduleInTicks(1, () => {
@@ -20,7 +20,6 @@ ServerEvents.loaded(event => {
         dummy.kill()
     })
 })
-
 // -- Summoning nether bosses for nether eyes --
 BlockEvents.rightClicked(event => {
     const { level, block, item } = event
@@ -61,7 +60,7 @@ EntityEvents.hurt(event => {
     if (inventory.contains(greenGoo)) {
         attacker.potionEffects.add("minecraft:wither", 20 * 5) // wither for 5 seconds
     }
-    // set on fire for 5 seconds if solar stone
+    // set on fire for 3 seconds if solar stone
     if (inventory.contains(solarStone)) {
         attacker.remainingFireTicks = 20 * 3
     }
@@ -102,9 +101,11 @@ ItemEvents.rightClicked("kubejs:solar_stone", event => {
     const { player, item } = event;
     // use item with cooldown of 2 seconds
     useItem({ player: player, item: item, cooldown: 2 })
-    // specify velocity and sound when shot (by default uses ghast shoot)
-    const [proj, vel, snd] = ['kubejs:solar_stone_projectile', 1.5, 'minecraft:entity.wither.shoot'];
-    summonProjectile({ player: player, projectile: proj, velocity: vel, sound: snd })
+    let entity = 'kubejs:solar_stone_projectile'
+    // specify projectile, velocity and sound when shot (by default uses ghast shoot)
+    const projectile = { entity: entity, velocity: 1.5, sound: 'minecraft:entity.wither.shoot' }
+    const explosion = { entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' }
+    summonProjectile({ player: player, projectile: projectile})
 })
 // -- Append custom fire charge functionality to existing vanilla --
 BlockEvents.rightClicked(event => {
