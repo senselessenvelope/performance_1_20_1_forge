@@ -1,13 +1,13 @@
 
-
-let blazePowder = 'minecraft:blaze_powder'
-// reference enum
+// common items for some recipes
+const blazePowder = 'minecraft:blaze_powder'
+// reference enum with eye data
 const EYE_OF_MAGMA = global.legendaryMonstersEyes.EYE_OF_MAGMA
 const EYE_OF_SOUL = global.legendaryMonstersEyes.EYE_OF_SOUL
 const EYE_OF_BONES = global.legendaryMonstersEyes.EYE_OF_BONES
 const EYE_OF_AIR = global.legendaryMonstersEyes.EYE_OF_AIR
 
-// Listen for the recipes server event.
+// -- Recipes for custom items --
 ServerEvents.recipes(event => {
     event.shaped(EYE_OF_MAGMA, [
             'XYX',

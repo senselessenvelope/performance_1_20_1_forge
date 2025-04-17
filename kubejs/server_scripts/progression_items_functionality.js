@@ -1,25 +1,15 @@
-const { explodeEntity, removeEntity } = global.entityUtils;
-// -- Summoning Nether Bosses for Nether Eyes --
-BlockEvents.rightClicked(event => {
-    const { level, block, item } = event
-    var mob;
-    // NEED TO ADD A DIMENSION CHECK -- TEST IF CORRECT
-    if (level.getDimension() != 'minecraft:the_nether') {
-        return
-    }
-    // spawn mob based on held item and block
-    if (block.id == 'stalwart_dungeons:awful_ghast_altar') {
-        if (item.id != 'kubejs:ghast_key') { return }
-        mob = block.createEntity('stalwart_dungeons:awful_ghast')
-    } else if (block.id == 'stalwart_dungeons:nether_keeper_altar') {
-        if (item.id != 'kubejs:keeper_key') { return }
-        mob = block.createEntity('stalwart_dungeons:nether_keeper')
-    } else { return }
-    // spawn, play spawn sound and reduce item held by 1
-    mob.spawn()
-    level.playSound(null, event.player.x, event.player.y, event.player.z, 'minecraft:entity.wither.spawn', 'master', 1, 0.5)
-    item.shrink(1)
-})
+const { explodeEntity, removeEntity, summonProjectile } = global.entityUtils;
+const { useItem } = global.itemUtils;
+
+// shoot fireball from given item
+function shootFireball(player, item) {
+    // cooldown of 0.5 seconds
+    useItem({ player: player, item: item, cooldown: 0.5 })
+    const [proj, vel] = ['kubejs:fireball', 1.5];
+    summonProjectile({ player: player, projectile: proj, velocity: vel })
+}
+
+
 // firing test projectile first time on loading server to ensure it works
 ServerEvents.loaded(event => {
     Utils.server.scheduleInTicks(1, () => {
@@ -31,7 +21,26 @@ ServerEvents.loaded(event => {
     })
 })
 
-// -- Entity Hurting Based On Item In Inventory --
+// -- Summoning nether bosses for nether eyes --
+BlockEvents.rightClicked(event => {
+    const { level, block, item } = event
+    var mob;
+    // do not summon if not in nether
+    if (level.getDimension() != 'minecraft:the_nether') { return }
+    // define mob based on held item and block, otherwise stop
+    if (block.id == 'stalwart_dungeons:awful_ghast_altar') {
+        if (item.id != 'kubejs:ghast_key') { return }
+        mob = block.createEntity('stalwart_dungeons:awful_ghast')
+    } else if (block.id == 'stalwart_dungeons:nether_keeper_altar') {
+        if (item.id != 'kubejs:keeper_key') { return }
+        mob = block.createEntity('stalwart_dungeons:nether_keeper')
+    } else { return }
+    // spawn, play spawn sound and reduce item held by 1
+    mob.spawn()
+    level.playSound(null, event.player.x, event.player.y, event.player.z, 'minecraft:entity.wither.spawn', 'master', 1, 0.5)
+    item.shrink(1) // reduce key item
+})
+// -- Entity hurting player affected based on item in inventory --
 EntityEvents.hurt(event => {
     const { entity, source } = event
     // if entity is not a player, return
@@ -57,7 +66,7 @@ EntityEvents.hurt(event => {
         attacker.remainingFireTicks = 20 * 3
     }
 });
-
+// test for looping through all entities, was originally a way to try get solar stone projectile to go on forever
 ServerEvents.tick(event => {
     // Get the world where the event is running
     // const world = event.server.level;
@@ -87,46 +96,29 @@ ServerEvents.tick(event => {
     });
 });
 
+// -- Shoot solar stone projectile --
 ItemEvents.rightClicked("kubejs:solar_stone", event => {
+    // get player and item
     const { player, item } = event;
-    const vel = 1.5
-    // angle player looking at
-    const playerAngle = {
-        x: player.lookAngle.x(),
-        y: player.lookAngle.y(),
-        z: player.lookAngle.z()
-    }
-    // create entity to shoot
-    const entity = player.level.createEntity('kubejs:solar_stone_projectile')
-    // spawn entity
-    entity.spawn()
-    Utils.server.schedule(5, () => {
-        // entity spawn position
-        entity.pos = new Vec3d(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
-        // not affected by gravity
-        entity.setNoGravity(true)
-        const motion = new Vec3d(playerAngle.x * vel, playerAngle.y * vel,  playerAngle.z * vel)
-        // entity.persistentData.put('motion', motion)
-        // entity movement
-        entity.setDeltaMovement(motion)
-    })
-    // do not reduce stack size if in creative
-    if (!player.isCreative()) { item.shrink(1) }
-    // cooldown in seconds
-    let cooldown = 2
-    player.addItemCooldown(item, 20 * cooldown)
-    // player.level.playSound(null, player.x, player.y, player.z, 'minecraft:entity.ghast.shoot', 'players', 1, 1)
-    player.level.playSound(null, player.x, player.y, player.z, 'minecraft:entity.wither.shoot', 'players', 1, 1) // scarier
-    // seconds entity will exist for
-    let entityLife = 20
-    // after number of ticks, entity will be killed
-    Utils.server.scheduleInTicks(20 * entityLife, ctx => {
-        explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
-        removeEntity({ entity: entity })
-    })
+    // use item with cooldown of 2 seconds
+    useItem({ player: player, item: item, cooldown: 2 })
+    // specify velocity and sound when shot (by default uses ghast shoot)
+    const [proj, vel, snd] = ['kubejs:solar_stone_projectile', 1.5, 'minecraft:entity.wither.shoot'];
+    summonProjectile({ player: player, projectile: proj, velocity: vel, sound: snd })
 })
-
-
+// -- Append custom fire charge functionality to existing vanilla --
+BlockEvents.rightClicked(event => {
+    const { player, item } = event
+    if (item.id == 'minecraft:fire_charge') { 
+        shootFireball(player, item)
+    }
+})
+// -- Shoot fireball projectile --
+ItemEvents.rightClicked("minecraft:fire_charge", event => {
+    const { player, item } = event;
+    shootFireball(player, item)
+})
+// -- Effect based on items held --
 PlayerEvents.tick(event => {
     const { player, server } = event
     // holding different items will have different effects
@@ -156,7 +148,7 @@ PlayerEvents.tick(event => {
     }
 })
 
-
+// -- Golden egg fortune enchantment while holding --
 BlockEvents.broken(event => {
     const { player, block } = event
     // do not drop items in creative

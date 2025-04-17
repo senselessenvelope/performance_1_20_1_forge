@@ -1,63 +1,18 @@
-const { explodeEntity, removeEntity } = global.entityUtils;
-
+// referencing utility functions defined at startup
+const { explodeEntity, removeEntity, createProjectile } = global.entityUtils;
+// -- Create custom projectiles  --
 StartupEvents.registry('entity_type', event => {
-    event.create('kubejs:solar_stone_projectile', 'entityjs:projectile')
-        /**
-         * One-Off values set at the startup of the game.
-         */
-        .sized(0.4, 0.4)
-        .renderScale(1, 1, 1)
-        // .texture('kubejs:item/solar_stone')
-        .item(item => {
-            item.canThrow(true)
-        })
-        .textureLocation(entity => {
-            // use custom texture
-            return "kubejs:textures/item/solar_stone.png"
-        })
-        //Setting .noItem() here will result in the builder skipping the item build altogether
-        //Since the builder registers the item automatically this is the only way to prevent an item from being created here.
-        .noItem()
-        //uncomment if you want it to auto create item (if you havent already)
-        /**
-         * All methods below return void meaning they don't require a set return value to function.
-         * These mostly are similar to KubeJS' normal events where you may do things on certain events your entities call!
-         */
-        .onHitBlock(context => {
-            const { entity, result } = context;
-            if (entity.removed || entity.level.isClientSide()) { return }
-            // construct explosion
-            explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
-            removeEntity({ entity: entity })
-        })
-        .onHitEntity(context => {
-            const { entity, result } = context;
-            if (entity.removed || entity.level.isClientSide()) { return }
-            // custom effect upon hitting entity
-            if (result.entity.living) {
-                result.entity.setSecondsOnFire(10)
-            }
-            explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
-            removeEntity({ entity: entity })
-        })
-        .tick(entity => {
-            // check if projectile entity has been discarded (to prevent phantom projectiles, 
-            // particularly after hitting entity, so does not continue to a block)
-            // also check for if trying to render client side, should only do server-side entity checks
-            // (prevents item being summoned in command below for both server and client, duplicating it)
-            if (entity.removed|| entity.level.isClientSide()) { return }
-            
-            // if in water, kill entity
-            if (entity.getLevel().getBlockState(entity.blockPosition()).getBlock().id == "minecraft:water") {
-                Utils.server.runCommandSilent(`particle minecraft:angry_villager ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 1 50 force`)
-                entity.getLevel().playSound(null, entity.x, entity.y, entity.z, 'minecraft:block.fire.extinguish', 'players', 1, 1) // scarier
-                // and drop item (this is summon command i am referring to above)
-                Utils.server.runCommandSilent(`summon item ${entity.x} ${entity.y} ${entity.z} {Item:{id:"kubejs:solar_stone",Count:1b}}`)
-                removeEntity({ entity: entity })
-            }
-        })
+    // creating solar stone projectile
+    let explosion = { strength: 5, causesFire: true, explosionMode: 'tnt' }
+    let projectile = { item: 'kubejs:solar_stone', entity: 'kubejs:solar_stone_projectile', texture: 'kubejs:textures/item/solar_stone.png' }
+    createProjectile({event: event, projectile: projectile, explosion: explosion})
+    // creating fireball projectile
+    explosion = { strength: 2, causesFire: true }
+    projectile = { item: 'minecraft:fire_charge', entity: 'kubejs:fireball', texture: 'minecraft:textures/item/fire_charge.png' }
+    createProjectile({event: event, projectile: projectile, explosion: explosion})
+    
 })
-
+// -- Create custom items --
 StartupEvents.registry('item', event => {
     // eye of air items
     event.create('gravitite_gel')
