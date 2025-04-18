@@ -7,7 +7,7 @@ function shootFireball(player, item) {
     useItem({ player: player, item: item, cooldown: 0.5 })
     const entity = 'kubejs:fireball'
     const projectile = { entity: entity, velocity: 1.5 }
-    const explosion = { entity: entity } // as long as entity specified, will do a default (small) explosion
+    // no need to specify explosion unless you want it to explode upon entity life terminating
     summonProjectile({ player: player, projectile: projectile })
 }
 // firing test projectile first time on loading server to ensure it works
@@ -47,6 +47,12 @@ EntityEvents.hurt(event => {
     // check source of damage being another entity
     const attacker = source.actual
     if (!attacker) return
+    // Utils.server.runCommandSilent(`attacker by ${attacker}`)
+    console.log(attacker)
+    if (attacker.id === 'kubejs:green_goo_projectile') {
+        attacker.potionEffects.add("minecraft:wither", 20 * 10) // wither for longer time (since directly hit by goo)
+        return
+    }
     // does not do if entity attacking is too far away (wouldnt make sense if it was ranged entity unless close)
     if (entity.distanceToEntity(attacker) > 3) return
     // info on inventory object:
@@ -118,6 +124,17 @@ BlockEvents.rightClicked(event => {
 ItemEvents.rightClicked("minecraft:fire_charge", event => {
     const { player, item } = event;
     shootFireball(player, item)
+})
+// -- Shoot fireball projectile --
+ItemEvents.rightClicked("kubejs:green_goo", event => {
+    // get player and item
+    const { player, item } = event;
+    // use item with cooldown of 2 seconds
+    useItem({ player: player, item: item })
+    let entity = 'kubejs:green_goo_projectile'
+    // specify projectile, velocity and sound when shot (by default uses ghast shoot)
+    const projectile = { entity: entity, velocity: 1, sound: 'minecraft:entity.slime.jump', noGravity: false }
+    summonProjectile({ player: player, projectile: projectile })
 })
 // -- Effect based on items held --
 PlayerEvents.tick(event => {

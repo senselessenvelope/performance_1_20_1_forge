@@ -15,24 +15,57 @@ global.legendaryMonstersEyes = Object.freeze({
     EYE_OF_CHORUS:      "legendary_monsters:eye_of_chorus"
 })
 
+global.projectileInteractions = {
+    entityHit: function(params) {
+        const {
+            func,
+            entity,
+            otherArgs
+        } = params
+        func(entity, {otherArgs: otherArgs})
+    },
+    setOnFire: function(entity, otherArgs) {
+        if (!otherArgs) {
+            otherArgs = {}
+        }
+        const {
+            time
+        } = otherArgs
+        const seconds = time !== undefined ? time : 10
+        entity.setSecondsOnFire(seconds)
+    },
+    setOnWither: function(entity, otherArgs) {
+        if (!otherArgs) {
+            otherArgs = {}
+        }
+        const {
+            time
+        } = otherArgs
+        const seconds = time !== undefined ? time : 10
+        entity.potionEffects.add("minecraft:wither", 20 * seconds) // wither for 10 seconds
+        // // try find out a way to also damage entity directly
+        // entity.damage('projectile', 5)
+    }
+}
+
 
 // global entity utility functions will use in parts of program
 global.entityUtils = {
-    // pass in entity to explode, set defaults if other parameters not defined
+    
     explodeEntity: function(params) {
-        // parameters that can be passed in
+        if (!params.explosion) { return }
+        const explosion = params.explosion
         const {
-            explosion
+            entity
         } = params
-        // define all parameter defaults if undefined
-        const entity = explosion.entity
-        const strength = explosion.strength !== undefined ? explosion.strength : 2;
-        const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
-        const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'mob';
+        const entityData = entity
+        const strength = explosion.strength !== undefined ? explosion.strength : 2
+        const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : false
+        const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'mob'
         // create explosion
-        let explosionSummon = entity.block.createExplosion()
+        let explosionSummon = entityData.block.createExplosion()
         explosionSummon
-            .exploder(entity)
+            .exploder(entityData)
             .strength(strength)
             .causesFire(causesFire)
             .explosionMode(explosionMode)
@@ -53,26 +86,36 @@ global.entityUtils = {
         const {
             projectile
         } = params
-        console.log(`Projectile object from verifyProjectile: ${projectile}`)
         const entity = projectile.entity
         const velocity = projectile.velocity !== undefined ? projectile.velocity : 1.5;
         const sound = projectile.sound !== undefined ? projectile.sound : 'minecraft:entity.ghast.shoot';
         const noGravity = projectile.noGravity !== undefined ? projectile.noGravity : true;
         const texture = projectile.texture !== undefined ? projectile.texture : 'kubejs:textures/item/example_item.png'
         const item = projectile.item !== undefined ? projectile.item : 'minecraft:air'
-        return { entity: entity, velocity: velocity, sound: sound, noGravity: noGravity, texture: texture, item: item }
+        const entityInteractionFunction = projectile.entityInteractionFunction
+        return { 
+            entity: entity, 
+            velocity: velocity, 
+            sound: sound, 
+            noGravity: noGravity, 
+            texture: texture, 
+            item: item, 
+            entityInteractionFunction: entityInteractionFunction
+        }
     },
-    verifyExplosion: function(params) {
-        const explosion = params.explosion || {}
+    moveProjectile: function(params) {
+        if (!params.entity || !params.motion) { console.warn("Non-existing entity or motion for function moveProjectile") }
         const {
-            entity
+            entity,
+            motion
         } = params
-        console.log(`Explosion object from verifyExplosion: ${explosion}`)
-        const entityData = entity
-        const strength = explosion.strength !== undefined ? explosion.strength : 2
-        const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : false
-        const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'mob'
-        return { entity: entityData, strength: strength, causesFire: causesFire, explosionMode: explosionMode }
+        if (entity.removed) return 
+        // update speed
+        entity.setDeltaMovement(motion)
+        // recursive call after 10 ticks (to maintain speed)
+        Utils.server.scheduleInTicks(10, ctx => {
+            global.entityUtils.moveProjectile({ entity: entity , motion: motion })
+        })
     },
     // summon projectile at player
     summonProjectile: function(params) {
@@ -88,12 +131,10 @@ global.entityUtils = {
         const playerAngle = {
             x: player.lookAngle.x(),
             y: player.lookAngle.y(),
-            z: player.lookAngle.z()
+            z: player.lookAngle.z() 
         }
         // create entity to shoot
         const entity = player.level.createEntity(projectileData.entity)
-        // attach proper entity to explosion data (also checks if explosion data exists, if not creates it)
-        const explosionData = verifyExplosion({ entity: entity, explosion: explosion })
         // spawn entity
         entity.spawn()
         Utils.server.schedule(5, () => {
@@ -102,17 +143,23 @@ global.entityUtils = {
             // not affected by gravity
             entity.setNoGravity(projectileData.noGravity)
             const motion = new Vec3d(playerAngle.x * projectileData.velocity, playerAngle.y * projectileData.velocity,  playerAngle.z * projectileData.velocity)
-            // entity.persistentData.put('motion', motion)
-            // entity movement
-            entity.setDeltaMovement(motion)
+            // if projectile has no gravity, you probably dont want it to decelerate
+            if (projectileData.noGravity) {
+                // recursive call for projectiles that have no gravity, will not be slowed down
+                global.entityUtils.moveProjectile({ entity: entity , motion: motion })
+            } else {
+                // if it does have gravity, you want it to slow down with natural curve
+                entity.setDeltaMovement(motion)
+            }
         })
         // player.level.playSound(null, player.x, player.y, player.z, 'minecraft:entity.ghast.shoot', 'players', 1, 1)
         player.level.playSound(null, player.x, player.y, player.z, projectileData.sound, 'players', 1, 1) // scarier
+        
         // seconds entity will exist for
         let entityLife = 20
         // after number of ticks, entity will be killed
         Utils.server.scheduleInTicks(20 * entityLife, ctx => {
-            explodeEntity({ explosion: explosionData })
+            explodeEntity({ entity: entity, explosion: explosion })
             removeEntity({ entity: entity })
         })
     },
@@ -126,7 +173,6 @@ global.entityUtils = {
         } = params
         // verifies projectile data, explosive data is verified later on (once we have the entity from context)
         const projectileData = verifyProjectile({ projectile: projectile })
-        const explosionArg = explosion
         // const explosionData = explosion || {}
         // create projectile for event
         event.create(projectileData.entity, 'entityjs:projectile')
@@ -147,10 +193,8 @@ global.entityUtils = {
             .onHitBlock(context => {
                 const { entity } = context;
                 if (entity.removed || entity.level.isClientSide()) { return }
-                // here we verify explosion data with entity from the context
-                const explosionData = verifyExplosion({ entity: entity, explosion: explosionArg })
-                explodeEntity({ explosion: explosionData })
-
+                // here we pass in explosion from function arguments
+                explodeEntity({ entity: entity, explosion: explosion })
                 // explodeEntity({ explosion: explosionData })
                 removeEntity({ entity: entity })
             })
@@ -159,12 +203,16 @@ global.entityUtils = {
                 if (entity.removed || entity.level.isClientSide()) { return }
                 // custom effect upon hitting entity
                 if (result.entity.living) {
-                    result.entity.setSecondsOnFire(10)
+                    if (projectileData.entityInteractionFunction) {
+                        let timeSeconds = 10 // effect for 10 seconds if there is an effect it gives
+                        global.projectileInteractions.entityHit({ 
+                            func: projectileData.entityInteractionFunction, 
+                            entity: result.entity, 
+                            otherArgs: {time: timeSeconds} 
+                        })
+                    }
                 }
-                const explosionData = verifyExplosion({ entity: entity, explosion: explosionArg })
-                explodeEntity({ explosion: explosionData })
-
-                // explodeEntity({ explosion: explosionData })
+                explodeEntity({ entity: entity, explosion: explosion })
                 removeEntity({ entity: entity })
             })
             .tick(entity => {

@@ -1,17 +1,44 @@
 // referencing utility functions defined at startup
-const { explodeEntity, removeEntity, createProjectile, verifyProjectile, verifyExplosion } = global.entityUtils;
+const { explodeEntity, removeEntity, createProjectile, verifyProjectile } = global.entityUtils;
+const { entityHit, setsOnFire } = global.projectileInteractions;
 // -- Create custom projectiles  --
 StartupEvents.registry('entity_type', event => {
     // creating solar stone projectile
     let entity = 'kubejs:solar_stone_projectile'
-    let explosion = { strength: 5, causesFire: true, explosionMode: 'tnt' }
-    let projectile = { item: 'kubejs:solar_stone', entity: entity, texture: 'kubejs:textures/item/solar_stone.png' }
+    let explosion = { 
+        strength: 5, 
+        causesFire: true, 
+        explosionMode: 'tnt' 
+    }
+    let projectile = { 
+        item: 'kubejs:solar_stone', 
+        entity: entity, 
+        texture: 'kubejs:textures/item/solar_stone.png', 
+        entityInteractionFunction: global.projectileInteractions.setOnFire
+    }
     createProjectile({event: event, projectile: projectile, explosion: explosion})
     // creating fireball projectile
     entity = 'kubejs:fireball'
-    explosion = { strength: 2, causesFire: true }
-    projectile = { item: 'minecraft:fire_charge', entity: entity, texture: 'minecraft:textures/item/fire_charge.png' }
+    explosion = { 
+        strength: 2, 
+        causesFire: true 
+    }
+    projectile = { 
+        item: 'minecraft:fire_charge', 
+        entity: entity, 
+        texture: 'minecraft:textures/item/fire_charge.png', 
+        entityInteractionFunction: global.projectileInteractions.setOnFire
+    }
     createProjectile({event: event, projectile: projectile, explosion: explosion})
+    // creating green goo projectile
+    entity = 'kubejs:green_goo_projectile'
+    projectile = { 
+        item: 'kubejs:green_goo', 
+        entity: entity, 
+        texture: 'kubejs:textures/item/green_goo.png', 
+        entityInteractionFunction: global.projectileInteractions.setOnWither
+    }
+    createProjectile({event: event, projectile: projectile})
     
 })
 // -- Create custom items --
