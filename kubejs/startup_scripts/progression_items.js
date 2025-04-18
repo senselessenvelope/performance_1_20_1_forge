@@ -4,12 +4,12 @@ const { explodeEntity, removeEntity, createProjectile, verifyProjectile, verifyE
 StartupEvents.registry('entity_type', event => {
     // creating solar stone projectile
     let entity = 'kubejs:solar_stone_projectile'
-    let explosion = { entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' }
+    let explosion = { strength: 5, causesFire: true, explosionMode: 'tnt' }
     let projectile = { item: 'kubejs:solar_stone', entity: entity, texture: 'kubejs:textures/item/solar_stone.png' }
     createProjectile({event: event, projectile: projectile, explosion: explosion})
     // creating fireball projectile
     entity = 'kubejs:fireball'
-    explosion = { entity: entity, strength: 2, causesFire: true }
+    explosion = { strength: 2, causesFire: true }
     projectile = { item: 'minecraft:fire_charge', entity: entity, texture: 'minecraft:textures/item/fire_charge.png' }
     createProjectile({event: event, projectile: projectile, explosion: explosion})
     

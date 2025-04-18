@@ -18,50 +18,26 @@ global.legendaryMonstersEyes = Object.freeze({
 
 // global entity utility functions will use in parts of program
 global.entityUtils = {
-
     // pass in entity to explode, set defaults if other parameters not defined
     explodeEntity: function(params) {
         // parameters that can be passed in
         const {
-            entity,
-            strength,
-            causesFire,
-            explosionMode
-        } = params 
+            explosion
+        } = params
         // define all parameter defaults if undefined
-        const s = strength !== undefined ? strength : 5;
-        const fire = causesFire !== undefined ? causesFire : true;
-        const mode = explosionMode !== undefined ? explosionMode : 'tnt';
+        const entity = explosion.entity
+        const strength = explosion.strength !== undefined ? explosion.strength : 2;
+        const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
+        const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'mob';
         // create explosion
-        let explosion = entity.block.createExplosion()
-        explosion
+        let explosionSummon = entity.block.createExplosion()
+        explosionSummon
             .exploder(entity)
-            .strength(s)
-            .causesFire(fire)
-            .explosionMode(mode)
+            .strength(strength)
+            .causesFire(causesFire)
+            .explosionMode(explosionMode)
             .explode()
     },
-
-    // // pass in entity to explode, set defaults if other parameters not defined
-    // explodeEntity: function(params) {
-    //     // parameters that can be passed in
-    //     const {
-    //         explosion
-    //     } = params
-    //     // define all parameter defaults if undefined
-    //     const entity = explosion.entity
-    //     const strength = explosion.strength !== undefined ? explosion.strength : 2;
-    //     const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
-    //     const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'mob';
-    //     // create explosion
-    //     let explosionSummon = entity.block.createExplosion()
-    //     explosionSummon
-    //         .exploder(entity)
-    //         .strength(strength)
-    //         .causesFire(causesFire)
-    //         .explosionMode(explosionMode)
-    //         .explode()
-    // },
     // pass in entity to remove from world
     removeEntity: function(params) {
         // parameters that can be passed in, only need entity
@@ -87,15 +63,16 @@ global.entityUtils = {
         return { entity: entity, velocity: velocity, sound: sound, noGravity: noGravity, texture: texture, item: item }
     },
     verifyExplosion: function(params) {
+        const explosion = params.explosion || {}
         const {
-            explosion
+            entity
         } = params
         console.log(`Explosion object from verifyExplosion: ${explosion}`)
-        const entity = explosion.entity
+        const entityData = entity
         const strength = explosion.strength !== undefined ? explosion.strength : 2
         const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : false
         const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'mob'
-        return { entity: entity, strength: strength, causesFire: causesFire, explosionMode: explosionMode }
+        return { entity: entityData, strength: strength, causesFire: causesFire, explosionMode: explosionMode }
     },
     // summon projectile at player
     summonProjectile: function(params) {
@@ -105,10 +82,8 @@ global.entityUtils = {
             projectile,
             explosion
         } = params
+        // ensure projectile data valid
         const projectileData = verifyProjectile({ projectile: projectile })
-        // const explosionData = verifyExplosion({ explosion: explosion })
-        
-        const explosionData = explosion || {}
         // angle player looking at
         const playerAngle = {
             x: player.lookAngle.x(),
@@ -117,6 +92,8 @@ global.entityUtils = {
         }
         // create entity to shoot
         const entity = player.level.createEntity(projectileData.entity)
+        // attach proper entity to explosion data (also checks if explosion data exists, if not creates it)
+        const explosionData = verifyExplosion({ entity: entity, explosion: explosion })
         // spawn entity
         entity.spawn()
         Utils.server.schedule(5, () => {
@@ -135,30 +112,7 @@ global.entityUtils = {
         let entityLife = 20
         // after number of ticks, entity will be killed
         Utils.server.scheduleInTicks(20 * entityLife, ctx => {
-            // if (explosion !== undefined) {
-            //     // explodeEntity({ explosion: explosionData })
-            //     const strength = explosion.strength !== undefined ? explosion.strength : 5;
-            //     const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
-            //     const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'tnt';
-                
-            //     let explosionSummon = explosion.entity.block.createExplosion()
-            //     explosionSummon
-            //         .exploder(explosion.entity)
-            //         .strength(strength)
-            //         .causesFire(causesFire)
-            //         .explosionMode(explosionMode)
-            //         .explode()
-            // }
-            
-            // check each property of explosion data, if undefined set default value
-            const strength = explosionData.strength !== undefined ? explosionData.strength : 2
-            const causesFire = explosionData.causesFire !== undefined ? explosionData.causesFire : false
-            const explosionMode = explosionData.explosionMode !== undefined ? explosionData.explosionMode : 'mob'
-            explodeEntity({ entity: entity, strength: strength, causesFire: causesFire, explosionMode: explosionMode })
-
-            // explodeEntity({ explosion: explosionData })
-
-            // explodeEntity({ entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' })
+            explodeEntity({ explosion: explosionData })
             removeEntity({ entity: entity })
         })
     },
@@ -170,10 +124,10 @@ global.entityUtils = {
             projectile,
             explosion
         } = params
+        // verifies projectile data, explosive data is verified later on (once we have the entity from context)
         const projectileData = verifyProjectile({ projectile: projectile })
-        // const explosionData = verifyExplosion({ explosion: explosion })
-        
-        const explosionData = explosion || {}
+        const explosionArg = explosion
+        // const explosionData = explosion || {}
         // create projectile for event
         event.create(projectileData.entity, 'entityjs:projectile')
             // one-off values set at startup of game
@@ -193,31 +147,9 @@ global.entityUtils = {
             .onHitBlock(context => {
                 const { entity } = context;
                 if (entity.removed || entity.level.isClientSide()) { return }
-                // if (explosionData !== undefined) {
-                //     explodeEntity({ explosion: explosionData })
-                // }
-                
-                // if (explosion !== undefined) {
-                //     // explodeEntity({ explosion: explosionData })
-                //     const strength = explosion.strength !== undefined ? explosion.strength : 5;
-                //     const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
-                //     const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'tnt';
-                    
-                //     let explosionSummon = explosion.entity.block.createExplosion()
-                //     explosionSummon
-                //         .exploder(explosion.entity)
-                //         .strength(strength)
-                //         .causesFire(causesFire)
-                //         .explosionMode(explosionMode)
-                //         .explode()
-                // }
-                
-                
-            // check each property of explosion data, if undefined set default value
-            const strength = explosionData.strength !== undefined ? explosionData.strength : 2
-            const causesFire = explosionData.causesFire !== undefined ? explosionData.causesFire : false
-            const explosionMode = explosionData.explosionMode !== undefined ? explosionData.explosionMode : 'mob'
-            explodeEntity({ entity: entity, strength: strength, causesFire: causesFire, explosionMode: explosionMode })
+                // here we verify explosion data with entity from the context
+                const explosionData = verifyExplosion({ entity: entity, explosion: explosionArg })
+                explodeEntity({ explosion: explosionData })
 
                 // explodeEntity({ explosion: explosionData })
                 removeEntity({ entity: entity })
@@ -229,32 +161,8 @@ global.entityUtils = {
                 if (result.entity.living) {
                     result.entity.setSecondsOnFire(10)
                 }
-                // if (explosionData !== undefined) {
-                //     explodeEntity({ explosion: explosionData })
-                // }
-                
-                // if (explosion !== undefined) {
-                //     // explodeEntity({ explosion: explosionData })
-                //     const strength = explosion.strength !== undefined ? explosion.strength : 5;
-                //     const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : true;
-                //     const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'tnt';
-                    
-                //     let explosionSummon = explosion.entity.block.createExplosion()
-                //     explosionSummon
-                //         .exploder(explosion.entity)
-                //         .strength(strength)
-                //         .causesFire(causesFire)
-                //         .explosionMode(explosionMode)
-                //         .explode()
-                // }
-                
-                
-                
-            // check each property of explosion data, if undefined set default value
-            const strength = explosionData.strength !== undefined ? explosionData.strength : 2
-            const causesFire = explosionData.causesFire !== undefined ? explosionData.causesFire : false
-            const explosionMode = explosionData.explosionMode !== undefined ? explosionData.explosionMode : 'mob'
-            explodeEntity({ entity: entity, strength: strength, causesFire: causesFire, explosionMode: explosionMode })
+                const explosionData = verifyExplosion({ entity: entity, explosion: explosionArg })
+                explodeEntity({ explosion: explosionData })
 
                 // explodeEntity({ explosion: explosionData })
                 removeEntity({ entity: entity })
