@@ -8,7 +8,7 @@ function shootFireball(player, item) {
     const entity = 'kubejs:fireball'
     const projectile = { entity: entity, velocity: 1.5 }
     const explosion = { entity: entity } // as long as entity specified, will do a default (small) explosion
-    summonProjectile({ player: player, projectile: projectile })
+    summonProjectile({ player: player, projectile: projectile, explosion: explosion })
 }
 // firing test projectile first time on loading server to ensure it works
 ServerEvents.loaded(event => {
@@ -105,7 +105,7 @@ ItemEvents.rightClicked("kubejs:solar_stone", event => {
     // specify projectile, velocity and sound when shot (by default uses ghast shoot)
     const projectile = { entity: entity, velocity: 1.5, sound: 'minecraft:entity.wither.shoot' }
     const explosion = { entity: entity, strength: 5, causesFire: true, explosionMode: 'tnt' }
-    summonProjectile({ player: player, projectile: projectile})
+    summonProjectile({ player: player, projectile: projectile, explosion: explosion})
 })
 // -- Append custom fire charge functionality to existing vanilla --
 BlockEvents.rightClicked(event => {
