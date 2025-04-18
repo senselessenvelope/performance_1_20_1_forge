@@ -12,7 +12,26 @@ function shootFireball(player, item) {
 }
 // firing test projectile first time on loading server to ensure it works
 ServerEvents.loaded(event => {
+    // projectiles we want to remove on loading world/server (otherwise they will persist)
+    const customProjectiles = [
+        "kubejs:fireball",
+        "kubejs:solar_stone_projectile",
+        "kubejs:green_goo_projectile"
+    ]
+    // schedule these after 1 tick (to make sure all other server stuff is loaded/initialised)
     Utils.server.scheduleInTicks(1, () => {
+        // get all entities in server (ArrayList)
+        const entities = event.server.entities
+        // if null exit
+        if (!entities) return
+        // loop through all
+        entities.forEach(entity => {
+            // if is one we want to remove then remove it
+            if (customProjectiles.includes(entity.type.toString())) {
+                console.log(`Removed leftover projectile ${entity.type}`)
+                removeEntity({ entity: entity })
+            }
+        })
         // log will complain about createEntity below but it works, ignore it
         let dummy = event.level.createEntity('kubejs:solar_stone_projectile')
         dummy.setPos(0, -1000, 0)
@@ -47,7 +66,6 @@ EntityEvents.hurt(event => {
     // check source of damage being another entity
     const attacker = source.actual
     if (!attacker) return
-    // Utils.server.runCommandSilent(`attacker by ${attacker}`)
     console.log(attacker)
     if (attacker.id === 'kubejs:green_goo_projectile') {
         attacker.potionEffects.add("minecraft:wither", 20 * 10) // wither for longer time (since directly hit by goo)
