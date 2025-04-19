@@ -53,10 +53,10 @@ BlockEvents.rightClicked(event => {
         if (item.id != 'kubejs:keeper_key') { return }
         mob = block.createEntity('stalwart_dungeons:nether_keeper')
     } else { return }
-    // spawn, play spawn sound and reduce item held by 1
+    // spawn, play spawn sound and use item (reduces stack by 1 if not in creative)
     mob.spawn()
     level.playSound(null, event.player.x, event.player.y, event.player.z, 'minecraft:entity.wither.spawn', 'master', 1, 0.5)
-    item.shrink(1) // reduce key item
+    useItem({ player: event.player, item: item })
 })
 // -- Entity hurting player affected based on item in inventory --
 EntityEvents.hurt(event => {

@@ -1,6 +1,7 @@
 // referencing utility functions defined at startup
 const { explodeEntity, removeEntity, createProjectile, verifyProjectile } = global.entityUtils;
 const { entityHit, setsOnFire } = global.projectileInteractions;
+const { useItem } = global.itemUtils;
 // -- Create custom projectiles  --
 StartupEvents.registry('entity_type', event => {
     // creating solar stone projectile
@@ -81,10 +82,9 @@ StartupEvents.registry('item', event => {
             let effects = entity.potionEffects
             effects.add('minecraft:levitation', 20, 100)
             effects.add('kubejs:falling_immunity', 20 * 20 )
-            if (entity.isPlayer() && !entity.isCreative()) {
-                itemstack.shrink(1) // reduce item
-                entity.give("minecraft:glass_bottle")
-            }
+            // reduce item from player
+            useItem({ player: entity, item: itemstack })
+            entity.give("minecraft:glass_bottle")
             return itemstack
         })
     // eye of bones items
@@ -104,11 +104,11 @@ StartupEvents.registry('item', event => {
     // (not used to craft it, but to summon stalwart dungeon bosses that drop it)
     event.create('ghast_key')
         .displayName('§4Ghast Key')
-        .maxStackSize(16)
+        .maxStackSize(1)
         .tooltip('Unlocks the cage of a ghastly guardian')
     event.create('keeper_key')
         .displayName('§4Keeper Key')
-        .maxStackSize(16)
+        .maxStackSize(1)
         .tooltip('Unlocks the cage of a cunning keeper')
 })
 
