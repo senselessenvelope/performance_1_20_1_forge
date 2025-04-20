@@ -1,7 +1,7 @@
 // referencing utility functions defined at startup
 const { explodeEntity, removeEntity, createProjectile, verifyProjectile } = global.entityUtils;
 const { entityHit, setsOnFire } = global.projectileInteractions;
-const { useItem } = global.itemUtils;
+const { useItem, usePotion, createPotion } = global.itemUtils;
 // -- Create custom projectiles  --
 StartupEvents.registry('entity_type', event => {
     // creating solar stone projectile
@@ -75,16 +75,15 @@ StartupEvents.registry('item', event => {
         .displayName('§bWhale Wind')
         .tooltip('Strong gust that can blow with force')
         .useAnimation('drink')
-        .useDuration(itemstack => 30)
+        .useDuration(itemstack => 10)
         .maxStackSize(8)
         .use((level, player, hand) => true)
         .finishUsing((itemstack, level, entity) => {
             let effects = entity.potionEffects
             effects.add('minecraft:levitation', 20, 100)
-            effects.add('kubejs:falling_immunity', 20 * 20 )
-            // reduce item from player
-            useItem({ player: entity, item: itemstack })
-            entity.give("minecraft:glass_bottle")
+            effects.add('kubejs:falling_immunity', 20 * 20)
+            // use potion (also adds glass bottle to inventory if not in creative)
+            usePotion({ player: entity, item: itemstack })
             return itemstack
         })
     // eye of bones items
@@ -96,6 +95,15 @@ StartupEvents.registry('item', event => {
         .displayName('§3Stiff Skin')
         .maxStackSize(16)
         .tooltip('Hardened for defense')
+        .food(food => {
+            food
+                .hunger(1)
+                .saturation(1) // real value: min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
+                .effect('minecraft:resistance', 20 * 60, 0, 1)
+                .effect('minecraft:absorption', 20 * 60, 0, 1)
+                .alwaysEdible()
+                .meat()
+        })
     event.create('golden_egg')
         .displayName('§aGolden Egg')
         .maxStackSize(1)
@@ -110,5 +118,53 @@ StartupEvents.registry('item', event => {
         .displayName('§4Keeper Key')
         .maxStackSize(1)
         .tooltip('Unlocks the cage of a cunning keeper')
+    // event.create('potion_of_hardness')
+    //     .displayName('§3Potion of Hardness')
+    //     .tooltip('Makes you hard')
+    //     .useAnimation('drink')
+    //     .useDuration(itemstack => 30)
+    //     .maxStackSize(1)
+    //     .use((level, player, hand) => true)
+    //     .finishUsing((itemstack, level, entity) => {
+    //         let effects = entity.potionEffects
+    //         // effect for 3 mins
+    //         effects.add('minecraft:resistance', 20 * 180, 2)
+    //         effects.add('minecraft:absorption', 20 * 180, 4)
+    //         usePotion({ player: entity, item: itemstack })
+    //         return itemstack
+    //     })
+    // event.create('potion_of_floatiness')
+    //     .displayName('§1Potion of Floatiness')
+    //     .tooltip('Makes you float')
+    //     .useAnimation('drink')
+    //     .useDuration(itemstack => 30)
+    //     .maxStackSize(1)
+    //     .use((level, player, hand) => true)
+    //     .finishUsing((itemstack, level, entity) => {
+    //         let effects = entity.potionEffects
+    //         // effect for 3 mins
+    //         effects.add('minecraft:speed', 20 * 180, 2)
+    //         effects.add('minecraft:jump_boost', 20 * 180, 4)
+    //         usePotion({ player: entity, item: itemstack })
+    //         return itemstack
+    //     })
 })
-
+StartupEvents.registry('potion', event => {
+    event.create('potion_of_hardness')
+        .effect('minecraft:resistance', 20 * 180, 2)
+        .effect('minecraft:absorption', 20 * 180, 4)
+        // .color(0x62729D)
+    event.create('potion_of_floatiness')
+        .effect('minecraft:speed', 20 * 180, 2)
+        .effect('minecraft:jump_boost', 20 * 180, 4)
+        // .color(0x437AC5)
+});
+MoreJSEvents.registerPotionBrewing((event) => {
+    /**
+     * 1. Argument: The top ingredient of the brewing stand
+     * 2. Argument: The bottom ingredient of the brewing stand
+     * 3. Argument: The result of the brewing
+     */
+    createPotion({ event: event, input: "kubejs:stiff_skin", output: "kubejs:potion_of_hardness" })
+    createPotion({ event: event, input: "kubejs:gravitite_gel", output: "kubejs:potion_of_floatiness" })
+});

@@ -193,6 +193,7 @@ global.entityUtils = {
             .onHitBlock(context => {
                 const { entity } = context;
                 if (entity.removed || entity.level.isClientSide()) { return }
+                Utils.server.runCommandSilent(`particle minecraft:ash ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 5 200 force`)
                 // here we pass in explosion from function arguments
                 explodeEntity({ entity: entity, explosion: explosion })
                 // explodeEntity({ explosion: explosionData })
@@ -250,5 +251,39 @@ global.itemUtils = {
         player.addItemCooldown(item, 20 * c)
         // do not reduce stack size if in creative
         if (!player.isCreative()) { item.shrink(1) }
+    },
+    // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
+    createPotion: function(params) {
+        // parameters that can be passed in, item and its cooldown (in seconds)
+        const {
+            event,
+            input,
+            output
+        } = params 
+        event.addCustomBrewing(
+            input,
+            Ingredient.customNBT("minecraft:potion", (nbt) => {
+                return nbt.contains("Potion") && nbt.Potion == "minecraft:water";
+            }),
+            Item.of("minecraft:potion", { Potion: output })
+        );
+    },
+    // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
+    usePotion: function(params) {
+        // parameters that can be passed in, item and its cooldown (in seconds)
+        const {
+            player,
+            item,
+            cooldown
+        } = params 
+        // define all parameter defaults if undefined
+        const c = cooldown !== undefined ? cooldown : 0;
+        // item cooldown
+        player.addItemCooldown(item, 20 * c)
+        // do not reduce stack size if in creative
+        if (!player.isCreative()) { 
+            item.shrink(1)
+            player.give("minecraft:glass_bottle")
+        }
     }
 }
