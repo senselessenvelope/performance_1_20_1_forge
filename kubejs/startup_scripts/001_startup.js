@@ -1,4 +1,6 @@
-
+// ------------------------------
+// -----[ PROGRESSION EYES ]-----
+// ------------------------------
 
 // eyes from legendary monsters mod, this is like an enum for javascript
 global.legendaryMonstersEyes = Object.freeze({
@@ -15,6 +17,11 @@ global.legendaryMonstersEyes = Object.freeze({
     EYE_OF_CHORUS:      "legendary_monsters:eye_of_chorus"
 })
 
+// ------------------------------------
+// -----[ PROJECTILE INTERACTION ]-----
+// ------------------------------------
+
+// functions relating to when projectile collides with something
 global.projectileInteractions = {
     entityHit: function(params) {
         const {
@@ -25,9 +32,7 @@ global.projectileInteractions = {
         func(entity, {otherArgs: otherArgs})
     },
     setOnFire: function(entity, otherArgs) {
-        if (!otherArgs) {
-            otherArgs = {}
-        }
+        if (!otherArgs) { otherArgs = {} }
         const {
             time
         } = otherArgs
@@ -35,9 +40,7 @@ global.projectileInteractions = {
         entity.setSecondsOnFire(seconds)
     },
     setOnWither: function(entity, otherArgs) {
-        if (!otherArgs) {
-            otherArgs = {}
-        }
+        if (!otherArgs) { otherArgs = {} }
         const {
             time
         } = otherArgs
@@ -48,10 +51,47 @@ global.projectileInteractions = {
     }
 }
 
+// ----------------------------
+// -----[ ENTITY UTILITY ]-----
+// ----------------------------
 
 // global entity utility functions will use in parts of program
 global.entityUtils = {
-    
+    addSingleDrop: function(params) {
+        const {
+            event,
+            entity,
+            item
+        } = params
+        // drop 1 of item
+        event
+            .addEntityLootModifier(entity)
+            .addLoot(item)
+    },
+    addCommonDrop: function(params) {
+        const {
+            event,
+            entity,
+            item
+        } = params
+        // drop 4-7 of item
+        event
+            .addEntityLootModifier(entity)
+            .addLoot(Item.of(item, 4))
+            .randomChance(0.6)
+            .addLoot(item)
+            .randomChance(0.4)
+            .addLoot(item)
+            .randomChance(0.2)
+            .addLoot(item)
+            // // cleaner, but doesnt work (idk why)
+            // .addLoot(
+            //     LootEntry
+            //         .of("kubejs:whale_wind", [4, 7])
+            //         .withWeight(1)
+            //         .withQuality(2)
+            // )
+    },
     explodeEntity: function(params) {
         if (!params.explosion) { return }
         const explosion = params.explosion
@@ -87,9 +127,9 @@ global.entityUtils = {
             projectile
         } = params
         const entity = projectile.entity
-        const velocity = projectile.velocity !== undefined ? projectile.velocity : 1.5;
-        const sound = projectile.sound !== undefined ? projectile.sound : 'minecraft:entity.ghast.shoot';
-        const noGravity = projectile.noGravity !== undefined ? projectile.noGravity : true;
+        const velocity = projectile.velocity !== undefined ? projectile.velocity : 1.5
+        const sound = projectile.sound !== undefined ? projectile.sound : 'minecraft:entity.ghast.shoot'
+        const noGravity = projectile.noGravity !== undefined ? projectile.noGravity : true
         const texture = projectile.texture !== undefined ? projectile.texture : 'kubejs:textures/item/example_item.png'
         const item = projectile.item !== undefined ? projectile.item : 'minecraft:air'
         const entityInteractionFunction = projectile.entityInteractionFunction
@@ -152,9 +192,7 @@ global.entityUtils = {
                 entity.setDeltaMovement(motion)
             }
         })
-        // player.level.playSound(null, player.x, player.y, player.z, 'minecraft:entity.ghast.shoot', 'players', 1, 1)
         player.level.playSound(null, player.x, player.y, player.z, projectileData.sound, 'players', 1, 1) // scarier
-        
         // seconds entity will exist for
         let entityLife = 20
         // after number of ticks, entity will be killed
@@ -191,7 +229,7 @@ global.entityUtils = {
             .noItem()
             // all methods below return void, so nothing needs to be returned
             .onHitBlock(context => {
-                const { entity } = context;
+                const { entity } = context
                 if (entity.removed || entity.level.isClientSide()) { return }
                 Utils.server.runCommandSilent(`particle minecraft:ash ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 5 200 force`)
                 // here we pass in explosion from function arguments
@@ -200,7 +238,7 @@ global.entityUtils = {
                 removeEntity({ entity: entity })
             })
             .onHitEntity(context => {
-                const { entity, result } = context;
+                const { entity, result } = context
                 if (entity.removed || entity.level.isClientSide()) { return }
                 // custom effect upon hitting entity
                 if (result.entity.living) {
@@ -235,6 +273,10 @@ global.entityUtils = {
     }
 }
 
+// --------------------------
+// -----[ ITEM UTILITY ]-----
+// --------------------------
+
 // global item utility functions will use in parts of program
 global.itemUtils = {
     // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
@@ -246,7 +288,7 @@ global.itemUtils = {
             cooldown
         } = params 
         // define all parameter defaults if undefined
-        const c = cooldown !== undefined ? cooldown : 0;
+        const c = cooldown !== undefined ? cooldown : 0
         // item cooldown
         player.addItemCooldown(item, 20 * c)
         // do not reduce stack size if in creative
@@ -260,13 +302,19 @@ global.itemUtils = {
             input,
             output
         } = params 
+        /*
+         * 1: top ingredient of brewing stand
+         * 2: bottom ingredient of brewing stand
+         * 3: result potion
+         */
         event.addCustomBrewing(
             input,
             Ingredient.customNBT("minecraft:potion", (nbt) => {
-                return nbt.contains("Potion") && nbt.Potion == "minecraft:water";
+                // does not work with anything other than minecraft:water as NBT tag, maybe not initialised yet at this point?
+                return nbt.contains("Potion") && nbt.Potion == "minecraft:water"
             }),
             Item.of("minecraft:potion", { Potion: output })
-        );
+        )
     },
     // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
     usePotion: function(params) {
@@ -275,9 +323,9 @@ global.itemUtils = {
             player,
             item,
             cooldown
-        } = params 
+        } = params
         // define all parameter defaults if undefined
-        const c = cooldown !== undefined ? cooldown : 0;
+        const c = cooldown !== undefined ? cooldown : 0
         // item cooldown
         player.addItemCooldown(item, 20 * c)
         // do not reduce stack size if in creative

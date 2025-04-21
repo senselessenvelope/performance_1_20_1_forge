@@ -1,7 +1,17 @@
+// ---------------------
+// -----[ IMPORTS ]-----
+// ---------------------
+
 // referencing utility functions defined at startup
-const { explodeEntity, removeEntity, createProjectile, verifyProjectile } = global.entityUtils;
-const { entityHit, setsOnFire } = global.projectileInteractions;
-const { useItem, usePotion, createPotion } = global.itemUtils;
+const { explodeEntity, removeEntity, createProjectile, verifyProjectile } = global.entityUtils
+const { entityHit, setsOnFire } = global.projectileInteractions
+const { useItem, usePotion, createPotion } = global.itemUtils
+
+
+// --------------------------------------
+// -----[ CREATING PROJECTILE DATA ]-----
+// --------------------------------------
+
 // -- Create custom projectiles  --
 StartupEvents.registry('entity_type', event => {
     // creating solar stone projectile
@@ -40,8 +50,12 @@ StartupEvents.registry('entity_type', event => {
         entityInteractionFunction: global.projectileInteractions.setOnWither
     }
     createProjectile({event: event, projectile: projectile})
-    
 })
+
+// ----------------------------
+// -----[ CREATING ITEMS ]-----
+// ----------------------------
+
 // -- Create custom items --
 StartupEvents.registry('item', event => {
     // eye of air items
@@ -118,53 +132,26 @@ StartupEvents.registry('item', event => {
         .displayName('§4Keeper Key')
         .maxStackSize(1)
         .tooltip('Unlocks the cage of a cunning keeper')
-    // event.create('potion_of_hardness')
-    //     .displayName('§3Potion of Hardness')
-    //     .tooltip('Makes you hard')
-    //     .useAnimation('drink')
-    //     .useDuration(itemstack => 30)
-    //     .maxStackSize(1)
-    //     .use((level, player, hand) => true)
-    //     .finishUsing((itemstack, level, entity) => {
-    //         let effects = entity.potionEffects
-    //         // effect for 3 mins
-    //         effects.add('minecraft:resistance', 20 * 180, 2)
-    //         effects.add('minecraft:absorption', 20 * 180, 4)
-    //         usePotion({ player: entity, item: itemstack })
-    //         return itemstack
-    //     })
-    // event.create('potion_of_floatiness')
-    //     .displayName('§1Potion of Floatiness')
-    //     .tooltip('Makes you float')
-    //     .useAnimation('drink')
-    //     .useDuration(itemstack => 30)
-    //     .maxStackSize(1)
-    //     .use((level, player, hand) => true)
-    //     .finishUsing((itemstack, level, entity) => {
-    //         let effects = entity.potionEffects
-    //         // effect for 3 mins
-    //         effects.add('minecraft:speed', 20 * 180, 2)
-    //         effects.add('minecraft:jump_boost', 20 * 180, 4)
-    //         usePotion({ player: entity, item: itemstack })
-    //         return itemstack
-    //     })
 })
+
+// ----------------------------------
+// -----[ CREATING POTION DATA ]-----
+// ----------------------------------
+
 StartupEvents.registry('potion', event => {
     event.create('potion_of_hardness')
         .effect('minecraft:resistance', 20 * 180, 2)
         .effect('minecraft:absorption', 20 * 180, 4)
-        // .color(0x62729D)
     event.create('potion_of_floatiness')
         .effect('minecraft:speed', 20 * 180, 2)
         .effect('minecraft:jump_boost', 20 * 180, 4)
-        // .color(0x437AC5)
-});
+})
+
+// -------------------------------------
+// -----[ CREATING POTION RECIPES ]-----
+// -------------------------------------
+
 MoreJSEvents.registerPotionBrewing((event) => {
-    /**
-     * 1. Argument: The top ingredient of the brewing stand
-     * 2. Argument: The bottom ingredient of the brewing stand
-     * 3. Argument: The result of the brewing
-     */
     createPotion({ event: event, input: "kubejs:stiff_skin", output: "kubejs:potion_of_hardness" })
     createPotion({ event: event, input: "kubejs:gravitite_gel", output: "kubejs:potion_of_floatiness" })
-});
+})

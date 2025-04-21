@@ -1,5 +1,16 @@
-const { explodeEntity, removeEntity, summonProjectile, verifyProjectile } = global.entityUtils;
-const { useItem } = global.itemUtils;
+// ---------------------
+// -----[ IMPORTS ]-----
+// ---------------------
+
+// loading java class
+const ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
+// referencing utility functions defined at startup
+const { explodeEntity, removeEntity, summonProjectile, verifyProjectile } = global.entityUtils
+const { useItem } = global.itemUtils
+
+// -------------------
+// -----[ SETUP ]-----
+// -------------------
 
 // shoot fireball from given item
 function shootFireball(player, item) {
@@ -39,10 +50,15 @@ ServerEvents.loaded(event => {
         dummy.kill()
     })
 })
+
+// --------------------------
+// -----[ BLOCK EVENTS ]-----
+// --------------------------
+
 // -- Summoning nether bosses for nether eyes --
 BlockEvents.rightClicked(event => {
     const { level, block, item } = event
-    var mob;
+    var mob
     // do not summon if not in nether
     if (level.getDimension() != 'minecraft:the_nether') { return }
     // define mob based on held item and block, otherwise stop
@@ -58,6 +74,39 @@ BlockEvents.rightClicked(event => {
     level.playSound(null, event.player.x, event.player.y, event.player.z, 'minecraft:entity.wither.spawn', 'master', 1, 0.5)
     useItem({ player: event.player, item: item })
 })
+// -- Append custom fire charge functionality to existing vanilla --
+BlockEvents.rightClicked(event => {
+    const { player, item } = event
+    if (item.id == 'minecraft:fire_charge') { 
+        shootFireball(player, item)
+    }
+})
+// -- Golden egg fortune enchantment while holding --
+BlockEvents.broken(event => {
+    const { player, block } = event
+    // do not drop items in creative
+    if (player.isCreative()) { return }
+    if (player.isHoldingInAnyHand('kubejs:golden_egg')) {
+        // do not do extra drops to blocks that are not ores
+        if (!block.id.includes("_ore")) { return }
+        let drops = block.getDrops()
+        let max = 1 // count could be [0-1), so chance of no extra item
+        for (let i = 0; i < drops.length; i++) {
+            let extraItemCount = Math.floor(Math.random() * max)
+            // no extra item case
+            if (extraItemCount == 0) { return }
+            // otherwise get item, set extra count and add it to drop
+            let item = drops.get(i)
+            item.setCount(extraItemCount)
+            block.popItem(item)
+        }
+    }
+})
+
+// ---------------------------
+// -----[ ENTITY EVENTS ]-----
+// ---------------------------
+
 // -- Entity hurting player affected based on item in inventory --
 EntityEvents.hurt(event => {
     const { entity, source } = event
@@ -77,7 +126,6 @@ EntityEvents.hurt(event => {
     //      https://hunter19823.github.io/kubejsoffline/1.20.1/forge/#net.minecraft.world.entity.player.Inventory?focus=methods-header&methods-expanded=false&methods-page=0&methods-page-size=25
     const inventory = entity.getInventory()
     // create items to look for using ItemStack objects
-    const ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack');
     const greenGoo = new ItemStack("kubejs:green_goo")
     const solarStone = new ItemStack("kubejs:solar_stone")
     // give wither if green goo
@@ -88,72 +136,12 @@ EntityEvents.hurt(event => {
     if (inventory.contains(solarStone)) {
         attacker.remainingFireTicks = 20 * 3
     }
-});
-// test for looping through all entities, was originally a way to try get solar stone projectile to go on forever
-ServerEvents.tick(event => {
-    // Get the world where the event is running
-    // const world = event.server.level;
-    // console.log(event.server)
-    // console.log(world)
-    // const entities = event.server.level.getEntities();
-    const entities = event.server.entities
-    // if (!world) { return }
-    // if (world.entities === null) { return }
-    if (!entities) return
-    // Loop through all entities currently in the world
-    entities.forEach(entity => {
+})
 
-        // // Example: Apply a condition for a specific entity type (e.g., 'kubejs:solar_stone_projectile')
-        // if (entity.type === 'kubejs:solar_stone_projectile') {
-            
-        //     // You can modify the entity here or check specific properties
-        //     console.log(`Found solar_stone_projectile at (${entity.x}, ${entity.y}, ${entity.z})`);
+// ---------------------------
+// -----[ PLAYER EVENTS ]-----
+// ---------------------------
 
-        //     // // DONT WORK
-        //     // const data = entity.persistentData
-        //     // if (data.has('motion')) {
-        //     //     const motion = data.get('motion')
-        //     //     entity.setDeltaMovement(motion)
-        //     // }
-        // }
-    });
-});
-
-// -- Shoot solar stone projectile --
-ItemEvents.rightClicked("kubejs:solar_stone", event => {
-    // get player and item
-    const { player, item } = event;
-    // use item with cooldown of 2 seconds
-    useItem({ player: player, item: item, cooldown: 2 })
-    let entity = 'kubejs:solar_stone_projectile'
-    // specify projectile, velocity and sound when shot (by default uses ghast shoot)
-    const projectile = { entity: entity, velocity: 1.5, sound: 'minecraft:entity.wither.shoot' }
-    const explosion = { strength: 5, causesFire: true, explosionMode: 'tnt' }
-    summonProjectile({ player: player, projectile: projectile, explosion: explosion})
-})
-// -- Append custom fire charge functionality to existing vanilla --
-BlockEvents.rightClicked(event => {
-    const { player, item } = event
-    if (item.id == 'minecraft:fire_charge') { 
-        shootFireball(player, item)
-    }
-})
-// -- Shoot fireball projectile --
-ItemEvents.rightClicked("minecraft:fire_charge", event => {
-    const { player, item } = event;
-    shootFireball(player, item)
-})
-// -- Shoot fireball projectile --
-ItemEvents.rightClicked("kubejs:green_goo", event => {
-    // get player and item
-    const { player, item } = event;
-    // use item with cooldown of 2 seconds
-    useItem({ player: player, item: item })
-    let entity = 'kubejs:green_goo_projectile'
-    // specify projectile, velocity and sound when shot (by default uses ghast shoot)
-    const projectile = { entity: entity, velocity: 1, sound: 'minecraft:entity.slime.jump', noGravity: false }
-    summonProjectile({ player: player, projectile: projectile })
-})
 // -- Effect based on items held --
 PlayerEvents.tick(event => {
     const { player, server } = event
@@ -184,24 +172,72 @@ PlayerEvents.tick(event => {
     }
 })
 
-// -- Golden egg fortune enchantment while holding --
-BlockEvents.broken(event => {
-    const { player, block } = event
-    // do not drop items in creative
-    if (player.isCreative()) { return }
-    if (player.isHoldingInAnyHand('kubejs:golden_egg')) {
-        // do not do extra drops to blocks that are not ores
-        if (!block.id.includes("_ore")) { return }
-        let drops = block.getDrops()
-        let max = 1 // count could be [0-1), so chance of no extra item
-        for (let i = 0; i < drops.length; i++) {
-            let extraItemCount = Math.floor(Math.random() * max)
-            // no extra item case
-            if (extraItemCount == 0) { return }
-            // otherwise get item, set extra count and add it to drop
-            let item = drops.get(i)
-            item.setCount(extraItemCount)
-            block.popItem(item)
-        }
-    }
+// -------------------------
+// -----[ ITEM EVENTS ]-----
+// -------------------------
+
+// -- Shoot solar stone projectile --
+ItemEvents.rightClicked("kubejs:solar_stone", event => {
+    // get player and item
+    const { player, item } = event
+    // use item with cooldown of 2 seconds
+    useItem({ player: player, item: item, cooldown: 2 })
+    let entity = 'kubejs:solar_stone_projectile'
+    // specify projectile, velocity and sound when shot (by default uses ghast shoot)
+    const projectile = { entity: entity, velocity: 1.5, sound: 'minecraft:entity.wither.shoot' }
+    const explosion = { strength: 5, causesFire: true, explosionMode: 'tnt' }
+    summonProjectile({ player: player, projectile: projectile, explosion: explosion})
+})
+// -- Shoot fireball projectile --
+ItemEvents.rightClicked("minecraft:fire_charge", event => {
+    const { player, item } = event
+    shootFireball(player, item)
+})
+// -- Shoot fireball projectile --
+ItemEvents.rightClicked("kubejs:green_goo", event => {
+    // get player and item
+    const { player, item } = event
+    // use item with cooldown of 2 seconds
+    useItem({ player: player, item: item })
+    let entity = 'kubejs:green_goo_projectile'
+    // specify projectile, velocity and sound when shot (by default uses ghast shoot)
+    const projectile = { entity: entity, velocity: 1, sound: 'minecraft:entity.slime.jump', noGravity: false }
+    summonProjectile({ player: player, projectile: projectile })
+})
+
+
+// ---------------------------
+// -----[ MOREJS EVENTS ]-----
+// ---------------------------
+
+MoreJSEvents.villagerTrades((event) => {
+    // here is how this method works:
+    //      event.addTrade(profession, level, [...input], output);
+    // add each trade, then transform into an offer (that may or may not be offered)
+    event
+        .addTrade(
+            "minecraft:mason", 
+            3, 
+            [
+                "blue_skies:zeal_lighter", 
+                TradeItem.of("minecraft:emerald", 5, 8)
+            ], 
+            Item.of("blue_skies:lunar_stonebrick", 8)
+        )
+        .transform((offer, entity, random) => {
+            offer.maxUses = 10
+        })
+    event
+        .addTrade(
+            "minecraft:mason", 
+            3, 
+            [
+                "blue_skies:zeal_lighter", 
+                TradeItem.of("minecraft:emerald", 5, 8)
+            ], 
+            Item.of("blue_skies:turquoise_stonebrick", 8)
+        )
+        .transform((offer, entity, random) => {
+            offer.maxUses = 10
+        })
 })

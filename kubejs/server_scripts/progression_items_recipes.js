@@ -1,3 +1,6 @@
+// ------------------------------
+// -----[ RECIPE CONSTANTS ]-----
+// ------------------------------
 
 // common items for some recipes
 const blazePowder = 'minecraft:blaze_powder'
@@ -7,7 +10,11 @@ const EYE_OF_SOUL = global.legendaryMonstersEyes.EYE_OF_SOUL
 const EYE_OF_BONES = global.legendaryMonstersEyes.EYE_OF_BONES
 const EYE_OF_AIR = global.legendaryMonstersEyes.EYE_OF_AIR
 
-// -- Recipes for custom items --
+// ---------------------------------
+// -----[ PROGRESSION RECIPES ]-----
+// ---------------------------------
+
+// recipes for all the eyes (that need to be crafted)
 ServerEvents.recipes(event => {
     event.shaped(EYE_OF_MAGMA, [
             'XYX',
