@@ -17,28 +17,21 @@ const { checkerBoardRecipeWithCenterItem } = global.itemUtils
 
 // recipes for all the eyes (that need to be crafted)
 ServerEvents.recipes(event => {
-    event.shaped(EYE_OF_MAGMA, [
-            'XYX',
-            'YZY',
-            'XYX'
-        ],
-        {
-            X: blazePowder,
-            Y: 'minecraft:nether_bricks',
-            Z: 'minecraft:nether_wart',
-        }
-    )
-    event.shaped(EYE_OF_SOUL, [
-            'XYX',
-            'YZY',
-            'XYX'
-        ],
-        {
-            X: blazePowder,
-            Y: 'minecraft:soul_sand',
-            Z: 'minecraft:ghast_tear',
-        }
-    )
+    let recipe
+    recipe = { 
+        output: "kubejs:keeper_key", 
+        itemOne: blazePowder, 
+        itemTwo: "minecraft:nether_bricks", 
+        centerItem: "minecraft:nether_wart"
+    }
+    checkerBoardRecipeWithCenterItem({ event: event, recipe: recipe })
+    recipe = { 
+        output: "kubejs:ghast_key", 
+        itemOne: blazePowder, 
+        itemTwo: "minecraft:soul_sand", 
+        centerItem: "minecraft:ghast_tear"
+    }
+    checkerBoardRecipeWithCenterItem({ event: event, recipe: recipe })
     event.shapeless(EYE_OF_AIR, [
             'kubejs:gravitite_gel',
             'kubejs:valkyrean_wing',
@@ -52,7 +45,7 @@ ServerEvents.recipes(event => {
             'kubejs:golden_egg'
         ]
     )
-    let recipe = { 
+    recipe = { 
         output: Item.of("blue_skies:turquoise_stonebrick", 4), 
         itemOne: "minecraft:snowball", 
         itemTwo: "minecraft:brick", 

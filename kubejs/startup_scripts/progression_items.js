@@ -122,6 +122,7 @@ StartupEvents.registry('item', event => {
         .displayName('§aGolden Egg')
         .maxStackSize(1)
         .tooltip('Holds potential for life and riches')
+        .useDuration(itemstack => 100) // make it slow because its literally a golden egg
         .food(food => {
             food
                 .hunger(1)
