@@ -5,10 +5,11 @@
 // common items for some recipes
 const blazePowder = 'minecraft:blaze_powder'
 // reference enum with eye data
-const EYE_OF_MAGMA = global.legendaryMonstersEyes.EYE_OF_MAGMA
-const EYE_OF_SOUL = global.legendaryMonstersEyes.EYE_OF_SOUL
+// const EYE_OF_MAGMA = global.legendaryMonstersEyes.EYE_OF_MAGMA
+// const EYE_OF_SOUL = global.legendaryMonstersEyes.EYE_OF_SOUL
 const EYE_OF_BONES = global.legendaryMonstersEyes.EYE_OF_BONES
 const EYE_OF_AIR = global.legendaryMonstersEyes.EYE_OF_AIR
+const { checkerBoardRecipeWithCenterItem } = global.itemUtils
 
 // ---------------------------------
 // -----[ PROGRESSION RECIPES ]-----
@@ -51,6 +52,24 @@ ServerEvents.recipes(event => {
             'kubejs:golden_egg'
         ]
     )
+    let recipe = { 
+        output: Item.of("blue_skies:turquoise_stonebrick", 4), 
+        itemOne: "minecraft:snowball", 
+        itemTwo: "minecraft:brick", 
+        centerItem: "blue_skies:zeal_lighter", 
+        centerItemIsTool: true, 
+        centerItemIsDamaged: true 
+    }
+    checkerBoardRecipeWithCenterItem({ event: event, recipe: recipe })
+    recipe = { 
+        output: Item.of("blue_skies:lunar_stonebrick", 4), 
+        itemOne: "minecraft:vine", 
+        itemTwo: "minecraft:brick", 
+        centerItem: "blue_skies:zeal_lighter", 
+        centerItemIsTool: true, 
+        centerItemIsDamaged: true 
+    }
+    checkerBoardRecipeWithCenterItem({ event: event, recipe: recipe })
 })
 
     

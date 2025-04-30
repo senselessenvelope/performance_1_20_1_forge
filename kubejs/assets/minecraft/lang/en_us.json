@@ -1,11 +1,15 @@
 {
-    "item.minecraft.potion.effect.potion_of_hardness": "Potion of Hardness",
-    "item.minecraft.splash_potion.effect.potion_of_hardness": "Splash Potion of Hardness",
-    "item.minecraft.lingering_potion.effect.potion_of_hardness": "Lingering Potion of Hardness",
-    "item.minecraft.tipped_arrow.effect.potion_of_hardness": "Arrow of Hardness",
+    "item.minecraft.potion.effect.potion_of_hardiness": "Potion of Hardiness",
+    "item.minecraft.splash_potion.effect.potion_of_hardiness": "Splash Potion of Hardiness",
+    "item.minecraft.lingering_potion.effect.potion_of_hardiness": "Lingering Potion of Hardiness",
+    "item.minecraft.tipped_arrow.effect.potion_of_hardiness": "Arrow of Hardiness",
     "item.minecraft.potion.effect.potion_of_floatiness": "Potion of Floatiness",
     "item.minecraft.splash_potion.effect.potion_of_floatiness": "Splash Potion of Floatiness",
     "item.minecraft.lingering_potion.effect.potion_of_floatiness": "Lingering Potion of Floatiness",
-    "item.minecraft.tipped_arrow.effect.potion_of_floatiness": "Arrow of Floatiness"
+    "item.minecraft.tipped_arrow.effect.potion_of_floatiness": "Arrow of Floatiness",
+    "item.minecraft.potion.effect.potion_of_angriness": "Potion of Angriness",
+    "item.minecraft.splash_potion.effect.potion_of_angriness": "Splash Potion of Angriness",
+    "item.minecraft.lingering_potion.effect.potion_of_angriness": "Lingering Potion of Angriness",
+    "item.minecraft.tipped_arrow.effect.potion_of_angriness": "Arrow of Angriness"
 }
   

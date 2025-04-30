@@ -68,7 +68,7 @@ StartupEvents.registry('item', event => {
                 .hunger(1)
                 .saturation(1) // real value: min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
                 .effect('minecraft:jump_boost', 20 * 60, 2, 1)
-                .effect('minecraft:speed', 20 * 60, 2, 1)
+                .effect('minecraft:speed', 20 * 60, 1, 1)
                 .alwaysEdible()
         })
     // may need tweaks for balancing
@@ -112,7 +112,7 @@ StartupEvents.registry('item', event => {
         .food(food => {
             food
                 .hunger(1)
-                .saturation(1) // real value: min(hunger * saturation * 2 + saturation, foodAmountAfterEating)
+                .saturation(1)
                 .effect('minecraft:resistance', 20 * 60, 0, 1)
                 .effect('minecraft:absorption', 20 * 60, 0, 1)
                 .alwaysEdible()
@@ -122,6 +122,13 @@ StartupEvents.registry('item', event => {
         .displayName('§aGolden Egg')
         .maxStackSize(1)
         .tooltip('Holds potential for life and riches')
+        .food(food => {
+            food
+                .hunger(1)
+                .saturation(1)
+                .effect('minecraft:regeneration', 20 * 60, 10, 1)
+                .alwaysEdible()
+        })
     // eye of magma and soul items 
     // (not used to craft it, but to summon stalwart dungeon bosses that drop it)
     event.create('ghast_key')
@@ -139,12 +146,15 @@ StartupEvents.registry('item', event => {
 // ----------------------------------
 
 StartupEvents.registry('potion', event => {
-    event.create('potion_of_hardness')
+    event.create('potion_of_hardiness')
         .effect('minecraft:resistance', 20 * 180, 2)
         .effect('minecraft:absorption', 20 * 180, 4)
     event.create('potion_of_floatiness')
         .effect('minecraft:speed', 20 * 180, 2)
         .effect('minecraft:jump_boost', 20 * 180, 4)
+    event.create('potion_of_angriness')
+        .effect('minecraft:strength', 20 * 180, 1)
+        .effect('minecraft:haste', 20 * 180, 3)
 })
 
 // -------------------------------------
@@ -152,6 +162,7 @@ StartupEvents.registry('potion', event => {
 // -------------------------------------
 
 MoreJSEvents.registerPotionBrewing((event) => {
-    createPotion({ event: event, input: "kubejs:stiff_skin", output: "kubejs:potion_of_hardness" })
+    createPotion({ event: event, input: "kubejs:stiff_skin", output: "kubejs:potion_of_hardiness" })
     createPotion({ event: event, input: "kubejs:gravitite_gel", output: "kubejs:potion_of_floatiness" })
+    createPotion({ event: event, input: "kubejs:valkyrean_wing", output: "kubejs:potion_of_angriness" })
 })

@@ -20,8 +20,7 @@ ServerEvents.recipes(event => {
     //                      how to get to other dimensions, villager will turn into blueskies NPC, OR can make custom NPC in mushroom 
     //                      underground biome, or something like that)
     // aether       - air
-    // nether       - magma
-    // otherside    - soul
+    // nether       - magma/soul
     // twilight     - bones
     // dark         - many_ribs
     // undergarden  - ghost

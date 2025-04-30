@@ -1,3 +1,5 @@
+// priority: 0
+
 // ------------------------------
 // -----[ PROGRESSION EYES ]-----
 // ------------------------------
@@ -46,8 +48,7 @@ global.projectileInteractions = {
         } = otherArgs
         const seconds = time !== undefined ? time : 10
         entity.potionEffects.add("minecraft:wither", 20 * seconds) // wither for 10 seconds
-        // // try find out a way to also damage entity directly
-        // entity.damage('projectile', 5)
+        entity.potionEffects.add("minecraft:instant_damage", 1, 1) // damage instantly
     }
 }
 
@@ -328,10 +329,40 @@ global.itemUtils = {
         const c = cooldown !== undefined ? cooldown : 0
         // item cooldown
         player.addItemCooldown(item, 20 * c)
-        // do not reduce stack size if in creative
+        // reduce stack size if not in creative mode
         if (!player.isCreative()) { 
             item.shrink(1)
             player.give("minecraft:glass_bottle")
         }
+    },
+    checkerBoardRecipeWithCenterItem: function(params) {
+        const {
+            event,
+            recipe
+        } = params
+        const output = recipe.output
+        const itemOne = recipe.itemOne
+        const itemTwo = recipe.itemTwo
+        const centerItem = recipe.centerItem
+        // if unspecified, assume center item is not a tool, and is used up in recipe
+        const centerItemIsTool = recipe.centerItemIsTool !== undefined ? recipe.centerItemIsTool : false
+        const centerItemIsDamaged = recipe.centerItemIsDamaged !== undefined ? recipe.centerItemIsDamaged : false
+        let craftedItem = event.shaped(
+                output, 
+                [
+                    'XYX',
+                    'YZY',
+                    'XYX'
+                ], 
+                {
+                    X: itemOne,
+                    Y: itemTwo,
+                    Z: centerItem
+                }
+            )
+        // if item is to be damaged, damage by 1, otherwise do 0 damage (will only be damaged if is a tool)
+        const damage = centerItemIsDamaged ? '1' : '0'
+        // if is a tool, will damage the center item (which can be changed to be a tool)
+        if (centerItemIsTool) craftedItem.damageIngredient(centerItem, damage)
     }
 }
