@@ -85,13 +85,6 @@ global.entityUtils = {
             .addLoot(item)
             .randomChance(0.2)
             .addLoot(item)
-            // // cleaner, but doesnt work (idk why)
-            // .addLoot(
-            //     LootEntry
-            //         .of("kubejs:whale_wind", [4, 7])
-            //         .withWeight(1)
-            //         .withQuality(2)
-            // )
     },
     explodeEntity: function(params) {
         if (!params.explosion) { return }
@@ -179,14 +172,8 @@ global.entityUtils = {
         // spawn entity
         entity.spawn()
         Utils.server.schedule(5, () => {
-            // entity spawn position
-            // entity.blockPosition
-            // console.log(entity.pos)
-            // console.log(entity.pos.x)
-            // entity.pos = new Vec3d(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
-            
+            // move spawned entity to player firing it
             entity.teleportTo(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
-            // console.log(entity.pos)
             
             // not affected by gravity
             entity.setNoGravity(projectileData.noGravity)
