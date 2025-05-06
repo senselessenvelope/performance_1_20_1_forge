@@ -180,7 +180,14 @@ global.entityUtils = {
         entity.spawn()
         Utils.server.schedule(5, () => {
             // entity spawn position
-            entity.pos = new Vec3d(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
+            // entity.blockPosition
+            // console.log(entity.pos)
+            // console.log(entity.pos.x)
+            // entity.pos = new Vec3d(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
+            
+            entity.teleportTo(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
+            // console.log(entity.pos)
+            
             // not affected by gravity
             entity.setNoGravity(projectileData.noGravity)
             const motion = new Vec3d(playerAngle.x * projectileData.velocity, playerAngle.y * projectileData.velocity,  playerAngle.z * projectileData.velocity)

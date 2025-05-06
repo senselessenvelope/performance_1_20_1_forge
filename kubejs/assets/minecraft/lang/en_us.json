@@ -10,6 +10,10 @@
     "item.minecraft.potion.effect.potion_of_angriness": "Potion of Angriness",
     "item.minecraft.splash_potion.effect.potion_of_angriness": "Splash Potion of Angriness",
     "item.minecraft.lingering_potion.effect.potion_of_angriness": "Lingering Potion of Angriness",
-    "item.minecraft.tipped_arrow.effect.potion_of_angriness": "Arrow of Angriness"
+    "item.minecraft.tipped_arrow.effect.potion_of_angriness": "Arrow of Angriness",
+    "item.minecraft.potion.effect.potion_of_deadliness": "Potion of Deadliness",
+    "item.minecraft.splash_potion.effect.potion_of_deadliness": "Splash Potion of Deadliness",
+    "item.minecraft.lingering_potion.effect.potion_of_deadliness": "Lingering Potion of Deadliness",
+    "item.minecraft.tipped_arrow.effect.potion_of_deadliness": "Arrow of Deadliness"
 }
   

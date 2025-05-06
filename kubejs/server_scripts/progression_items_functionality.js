@@ -90,14 +90,16 @@ BlockEvents.broken(event => {
         // do not do extra drops to blocks that are not ores
         if (!block.id.includes("_ore")) { return }
         let drops = block.getDrops()
-        let max = 1 // count could be [0-1), so chance of no extra item
+        console.log(drops)
+        let max = 4 // count could be [0-max), so chance of no extra item
         for (let i = 0; i < drops.length; i++) {
             let extraItemCount = Math.floor(Math.random() * max)
+            console.log(extraItemCount)
             // no extra item case
             if (extraItemCount == 0) { return }
-            // otherwise get item, set extra count and add it to drop
+            // otherwise get item, add extra count to drop
             let item = drops.get(i)
-            item.setCount(extraItemCount)
+            item.setCount(item.getCount() + extraItemCount)
             block.popItem(item)
         }
     }

@@ -16,7 +16,9 @@ LootJS.modifiers((event) => {
             raw_iron_item,
             raw_copper_item,
             raw_silver_item,
-        ]);
+        ])
+        .applyOreBonus("minecraft:fortune")
+        // .when((c) => c.matchMainHand(ItemFilter.hasEnchantment("minecraft:fortune")))
     // adds a copper and silver ingots to loot tables for chests
     let copper_ingot_loot = LootEntry.of("minecraft:copper_ingot");
     event

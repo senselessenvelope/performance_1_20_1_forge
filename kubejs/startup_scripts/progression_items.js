@@ -80,8 +80,9 @@ StartupEvents.registry('item', event => {
         .speedBaseline(-2.0)
     event.create('solar_stone')
         .displayName('§6Solar Stone')
-        .maxStackSize(8)
         .tooltip('Hot to the touch')
+        .burnTime(40000) // can smelt 200 items
+        .maxStackSize(8)
     // for some code below explained, see: 
     //      https://wiki.latvian.dev/books/kubejs-legacy/page/custom-items#bkmrk-custom-foods
     // create generic item, then define to be drinkable
@@ -156,6 +157,9 @@ StartupEvents.registry('potion', event => {
     event.create('potion_of_angriness')
         .effect('minecraft:strength', 20 * 180, 1)
         .effect('minecraft:haste', 20 * 180, 3)
+    event.create('potion_of_deadliness')
+        .effect('minecraft:instant_damage', 1, 1)
+        .effect('minecraft:wither', 20 * 30, 2)
 })
 
 // -------------------------------------
@@ -166,4 +170,5 @@ MoreJSEvents.registerPotionBrewing((event) => {
     createPotion({ event: event, input: "kubejs:stiff_skin", output: "kubejs:potion_of_hardiness" })
     createPotion({ event: event, input: "kubejs:gravitite_gel", output: "kubejs:potion_of_floatiness" })
     createPotion({ event: event, input: "kubejs:valkyrean_wing", output: "kubejs:potion_of_angriness" })
+    createPotion({ event: event, input: "kubejs:green_goo", output: "kubejs:potion_of_deadliness" })
 })

@@ -28,9 +28,9 @@ ItemEvents.rightClicked((event) => {
 // SOME OF THESE BOSSES MAY NOT BE USED FOR THESE DROPS, AND MAY BE OTHER BOSSES FOR THEM
 LootJS.modifiers((event) => {
     // aether boss drop loot
-    addCommonDrop({ event: event, entity: "aether:the_slider", item: "kubejs:gravitite_gel" })
-    addSingleDrop({ event: event, entity: "aether:the_valkyrie_queen", item: "kubejs:valkyrean_wing" })
-    addCommonDrop({ event: event, entity: "aether:the_sun_god", item: "kubejs:solar_stone" })
+    addCommonDrop({ event: event, entity: "aether:slider", item: "kubejs:gravitite_gel" })
+    addSingleDrop({ event: event, entity: "aether:valkyrie_queen", item: "kubejs:valkyrean_wing" })
+    addCommonDrop({ event: event, entity: "aether:sun_spirit", item: "kubejs:solar_stone" })
     addCommonDrop({ event: event, entity: "lost_aether_content:aerwhale_king", item: "kubejs:whale_wind" })
     // nether boss drop loot
     addSingleDrop({ event: event, entity: "stalwart_dungeons:nether_keeper", item: EYE_OF_MAGMA })
@@ -40,7 +40,7 @@ LootJS.modifiers((event) => {
     addCommonDrop({ event: event, entity: "twilightforest:ur_ghast", item: "kubejs:stiff_skin" })
     addCommonDrop({ event: event, entity: "twilightforest:snow_queen", item: "kubejs:stiff_skin" })
     addCommonDrop({ event: event, entity: "twilightforest:hydra", item: "kubejs:stiff_skin" })
-    addSingleDrop({ event: event, entity: "twilightforest:giant", item: "kubejs:golden_egg" })
+    addSingleDrop({ event: event, entity: "twilightforest:giant_miner", item: "kubejs:golden_egg" })
     // dark dimension boss drop loot
     event
         .addEntityLootModifier("more_zombies2:zombie_god")
