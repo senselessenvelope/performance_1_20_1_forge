@@ -40,7 +40,7 @@ ServerEvents.tick(event => {
                     // console logs and chat logs (for player feedback)
                     console.log(`${spawnedEntity} set off above overworld limit of Y=40 for high-power explosives`)
                     event.server.tell(`${displayName} was unable to set off too close to the overworld surface (go below Y=40)`)
-                    let item
+                    let item;
                     switch (spawnedEntity) {
                         case restricted_explosives[0]:
                             item = nuclear

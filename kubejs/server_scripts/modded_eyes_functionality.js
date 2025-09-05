@@ -25,42 +25,62 @@ ItemEvents.rightClicked((event) => {
     }
 })
 
+// generalised drop processing function, pass in EntityItem object, a key-value of entities and their 
+// item to drop, and the function for item drop distribution (whether should drop 1 or multiple)
+function processDrops(entityItem, dropTable, dropFunction) {
+    for (var entity in dropTable) {
+        if (dropTable.hasOwnProperty(entity)) {
+            entityItem.update(entity, dropTable[entity])
+            dropFunction(entityItem)
+        }
+    }
+}
+
+// process single drop entities
+function processSingleDrops(entityItem, dropTable) {
+    processDrops(entityItem, dropTable, addSingleDrop)
+}
+
+// process common drop entities
+function processCommonDrops(entityItem, dropTable) {
+    processDrops(entityItem, dropTable, addCommonDrop)
+}
+
+
 // SOME OF THESE BOSSES MAY NOT BE USED FOR THESE DROPS, AND MAY BE OTHER BOSSES FOR THEM
 LootJS.modifiers((event) => {
-    // aether boss drop loot
-    addCommonDrop({ event: event, entity: "aether:slider", item: "kubejs:gravitite_gel" })
-    addSingleDrop({ event: event, entity: "aether:valkyrie_queen", item: "kubejs:valkyrean_wing" })
-    addCommonDrop({ event: event, entity: "aether:sun_spirit", item: "kubejs:solar_stone" })
-    addCommonDrop({ event: event, entity: "lost_aether_content:aerwhale_king", item: "kubejs:whale_wind" })
-    // nether boss drop loot
-    addSingleDrop({ event: event, entity: "stalwart_dungeons:nether_keeper", item: EYE_OF_MAGMA })
-    addSingleDrop({ event: event, entity: "stalwart_dungeons:awful_ghast", item: EYE_OF_SOUL })
-    // twilight forest boss drop loot
-    addCommonDrop({ event: event, entity: "twilightforest:lich", item: "kubejs:green_goo" })
-    addCommonDrop({ event: event, entity: "twilightforest:ur_ghast", item: "kubejs:stiff_skin" })
-    addCommonDrop({ event: event, entity: "twilightforest:snow_queen", item: "kubejs:stiff_skin" })
-    addCommonDrop({ event: event, entity: "twilightforest:hydra", item: "kubejs:stiff_skin" })
-    addSingleDrop({ event: event, entity: "twilightforest:giant_miner", item: "kubejs:golden_egg" })
-    // dark dimension boss drop loot
-    event
-        .addEntityLootModifier("more_zombies2:zombie_god")
-        .addLoot(EYE_OF_MANY_RIBS)
-    // undergarden boss drop loot
-    event
-        .addEntityLootModifier("undergarden:forgotten_guardian")
-        .addLoot(EYE_OF_GHOST)
-    // everbright boss drop loot
-    event
-        .addEntityLootModifier("blue_skies:summoner")
-        .addLoot(EYE_OF_FROST)
-    // everdawn boss drop loot
-    event
-        .addEntityLootModifier("blue_skies:alchemist")
-        .addLoot(EYE_OF_SANDSTORM)
-    // overworld eye, MAY INSTEAD BE A TRADE FROM BLUE SKIES NPC, 
-    // see edit_recipes.json AND progress.txt for more info
-    // (could not figure it out, so may just be a drop, INSTEAD of that i may have him buffed once hit)
-    event
-        .addEntityLootModifier("blue_skies:gatekeeper")
-        .addLoot(EYE_OF_MOSS)
+    // ----------------------------
+    // -----[ DROP TABLES ]-----
+    // ----------------------------
+
+    // entities that use addSingleDrop
+    var singleDrops = {
+        "aether:valkyrie_queen": "kubejs:valkyrean_wing",
+        "stalwart_dungeons:nether_keeper": EYE_OF_MAGMA,
+        "stalwart_dungeons:awful_ghast": EYE_OF_SOUL,
+        "twilightforest:giant_miner": "kubejs:golden_egg",
+        "more_zombies2:zombie_god": EYE_OF_MANY_RIBS,
+        "undergarden:forgotten_guardian": EYE_OF_GHOST,
+        "blue_skies:summoner": EYE_OF_FROST,
+        "blue_skies:alchemist": EYE_OF_SANDSTORM,
+        "blue_skies:gatekeeper": EYE_OF_MOSS
+    }
+
+    // entities that use addCommonDrop
+    var commonDrops = {
+        "aether:slider": "kubejs:gravitite_gel",
+        "aether:sun_spirit": "kubejs:solar_stone",
+        "lost_aether_content:aerwhale_king": "kubejs:whale_wind",
+        "twilightforest:lich": "kubejs:green_goo",
+        "twilightforest:ur_ghast": "kubejs:stiff_skin",
+        "twilightforest:snow_queen": "kubejs:stiff_skin",
+        "twilightforest:hydra": "kubejs:stiff_skin"
+    }
+
+    // specify event, and add placeholder entity and item
+    var entityItem = new global.EntityItem({ event: event })
+
+    // process all of them
+    processSingleDrops(entityItem, singleDrops)
+    processCommonDrops(entityItem, commonDrops)
 })
