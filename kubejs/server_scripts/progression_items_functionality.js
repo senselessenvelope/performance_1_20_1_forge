@@ -15,7 +15,7 @@ const { useItem } = global.itemUtils
 // shoot fireball from given item
 function shootFireball(player, item) {
     // cooldown of 0.5 seconds
-    useItem({ player: player, item: item, cooldown: 0.5 })
+    useItem(new global.PlayerItem({ player: player, item: item, cooldown: 0.5 }))
     const entity = 'kubejs:fireball'
     const projectile = { entity: entity, velocity: 1.5 }
     // no need to specify explosion unless you want it to explode upon entity life terminating
@@ -72,7 +72,7 @@ BlockEvents.rightClicked(event => {
     // spawn, play spawn sound and use item (reduces stack by 1 if not in creative)
     mob.spawn()
     level.playSound(null, event.player.x, event.player.y, event.player.z, 'minecraft:entity.wither.spawn', 'master', 1, 0.5)
-    useItem({ player: event.player, item: item })
+    useItem(new global.PlayerItem({ player: event.player, item: item }))
 })
 // -- Append custom fire charge functionality to existing vanilla --
 BlockEvents.rightClicked(event => {
@@ -183,12 +183,12 @@ ItemEvents.rightClicked("kubejs:solar_stone", event => {
     // get player and item
     const { player, item } = event
     // use item with cooldown of 2 seconds
-    useItem({ player: player, item: item, cooldown: 2 })
+    useItem(new global.PlayerItem({ player: player, item: item, cooldown: 2 }))
     let entity = 'kubejs:solar_stone_projectile'
     // specify projectile, velocity and sound when shot (by default uses ghast shoot)
-    const projectile = { entity: entity, velocity: 1.5, sound: 'minecraft:entity.wither.shoot' }
-    const explosion = { strength: 5, causesFire: true, explosionMode: 'tnt' }
-    summonProjectile({ player: player, projectile: projectile, explosion: explosion})
+    const explosion = new global.Explosion({ strength: 5, causesFire: true, explosionMode: 'tnt' })
+    const projectile = new global.ProjectileEntity({ entity: entity, velocity: 1.5, sound: 'minecraft:entity.wither.shoot', explosion: explosion })
+    summonProjectile({ player: player, projectile: projectile})
 })
 // -- Shoot fireball projectile --
 ItemEvents.rightClicked("minecraft:fire_charge", event => {
@@ -200,10 +200,10 @@ ItemEvents.rightClicked("kubejs:green_goo", event => {
     // get player and item
     const { player, item } = event
     // use item with cooldown of 2 seconds
-    useItem({ player: player, item: item })
+    useItem(new global.PlayerItem({ player: player, item: item }))
     let entity = 'kubejs:green_goo_projectile'
     // specify projectile, velocity and sound when shot (by default uses ghast shoot)
-    const projectile = { entity: entity, velocity: 1, sound: 'minecraft:entity.slime.jump', noGravity: false }
+    const projectile = new global.ProjectileEntity({ entity: entity, velocity: 1, sound: 'minecraft:entity.slime.jump', noGravity: false })
     summonProjectile({ player: player, projectile: projectile })
 })
 

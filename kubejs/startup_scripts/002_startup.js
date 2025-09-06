@@ -59,23 +59,23 @@ global.projectileInteractions = {
 
 // global entity utility functions will use in parts of program
 global.entityUtils = {
-    addSingleDrop: function(itemEntity) {
+    addSingleDrop: function(entityItemDrop) {
         const {
             event,
             entity,
             item
-        } = itemEntity.data
+        } = entityItemDrop.data
         // drop 1 of item
         event
             .addEntityLootModifier(entity)
             .addLoot(item)
     },
-    addCommonDrop: function(itemEntity) {
+    addCommonDrop: function(entityItemDrop) {
         const {
             event,
             entity,
             item
-        } = itemEntity.data
+        } = entityItemDrop.data
         // drop 4-7 of item
         event
             .addEntityLootModifier(entity)
@@ -96,14 +96,16 @@ global.entityUtils = {
     },
     explodeEntity: function(params) {
         if (!params.explosion) { return }
-        const explosion = params.explosion
+        const explosion = params.explosion.data
         const {
             entity
         } = params
+        const {
+            strength,
+            causesFire,
+            explosionMode
+        } = explosion
         const entityData = entity
-        const strength = explosion.strength !== undefined ? explosion.strength : 2
-        const causesFire = explosion.causesFire !== undefined ? explosion.causesFire : false
-        const explosionMode = explosion.explosionMode !== undefined ? explosion.explosionMode : 'mob'
         // create explosion
         let explosionSummon = entityData.block.createExplosion()
         explosionSummon
@@ -124,27 +126,6 @@ global.entityUtils = {
         entity.kill()
         entity.discard()
     },
-    verifyProjectile: function(params) {
-        const {
-            projectile
-        } = params
-        const entity = projectile.entity
-        const velocity = projectile.velocity !== undefined ? projectile.velocity : 1.5
-        const sound = projectile.sound !== undefined ? projectile.sound : 'minecraft:entity.ghast.shoot'
-        const noGravity = projectile.noGravity !== undefined ? projectile.noGravity : true
-        const texture = projectile.texture !== undefined ? projectile.texture : 'kubejs:textures/item/example_item.png'
-        const item = projectile.item !== undefined ? projectile.item : 'minecraft:air'
-        const entityInteractionFunction = projectile.entityInteractionFunction
-        return { 
-            entity: entity, 
-            velocity: velocity, 
-            sound: sound, 
-            noGravity: noGravity, 
-            texture: texture, 
-            item: item, 
-            entityInteractionFunction: entityInteractionFunction
-        }
-    },
     moveProjectile: function(params) {
         if (!params.entity || !params.motion) { console.warn("Non-existing entity or motion for function moveProjectile") }
         const {
@@ -164,11 +145,11 @@ global.entityUtils = {
         // parameters of function, player and velocity of projectile, and sound it makes when shot
         const {
             player,
-            projectile,
-            explosion
+            projectile
         } = params
         // ensure projectile data valid
-        const projectileData = verifyProjectile({ projectile: projectile })
+        const projectileData = projectile.data
+        const explosion = projectile.getExplosion()
         // angle player looking at
         const playerAngle = {
             x: player.lookAngle.x(),
@@ -194,14 +175,14 @@ global.entityUtils = {
             const motion = new Vec3d(playerAngle.x * projectileData.velocity, playerAngle.y * projectileData.velocity,  playerAngle.z * projectileData.velocity)
             // if projectile has no gravity, you probably dont want it to decelerate
             if (projectileData.noGravity) {
-                // recursive call for projectiles that have no gravity, will not be slowed down
+                // recursive call for projectiles that have no gravity, will not be slowed down, call recursive motion function
                 global.entityUtils.moveProjectile({ entity: entity , motion: motion })
             } else {
                 // if it does have gravity, you want it to slow down with natural curve
                 entity.setDeltaMovement(motion)
             }
         })
-        player.level.playSound(null, player.x, player.y, player.z, projectileData.sound, 'players', 1, 1) // scarier
+        player.level.playSound(null, player.x, player.y, player.z, projectileData.sound, 'players', 1, 1)
         // seconds entity will exist for
         let entityLife = 20
         // after number of ticks, entity will be killed
@@ -215,11 +196,11 @@ global.entityUtils = {
         // parameters of function, player and velocity of projectile, and sound it makes when shot
         const {
             event,
-            projectile,
-            explosion
+            projectile
         } = params
         // verifies projectile data, explosive data is verified later on (once we have the entity from context)
-        const projectileData = verifyProjectile({ projectile: projectile })
+        const projectileData = projectile.data
+        const explosion = projectile.getExplosion()
         // const explosionData = explosion || {}
         // create projectile for event
         event.create(projectileData.entity, 'entityjs:projectile')
@@ -243,7 +224,6 @@ global.entityUtils = {
                 Utils.server.runCommandSilent(`particle minecraft:ash ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 5 200 force`)
                 // here we pass in explosion from function arguments
                 explodeEntity({ entity: entity, explosion: explosion })
-                // explodeEntity({ explosion: explosionData })
                 removeEntity({ entity: entity })
             })
             .onHitEntity(context => {
@@ -251,6 +231,7 @@ global.entityUtils = {
                 if (entity.removed || entity.level.isClientSide()) { return }
                 // custom effect upon hitting entity
                 if (result.entity.living) {
+                    // if it has a function to use upon interaction
                     if (projectileData.entityInteractionFunction) {
                         let timeSeconds = 10 // effect for 10 seconds if there is an effect it gives
                         global.projectileInteractions.entityHit({ 
@@ -295,22 +276,19 @@ global.itemUtils = {
             player,
             item,
             cooldown
-        } = params 
-        // define all parameter defaults if undefined
-        const c = cooldown !== undefined ? cooldown : 0
+        } = params.data
         // item cooldown
-        player.addItemCooldown(item, 20 * c)
+        player.addItemCooldown(item, 20 * cooldown)
         // do not reduce stack size if in creative
         if (!player.isCreative()) { item.shrink(1) }
     },
-    // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
+    // pass in event, input ingredient and output potion through a Potion object
     createPotion: function(params) {
-        // parameters that can be passed in, item and its cooldown (in seconds)
         const {
             event,
             input,
             output
-        } = params 
+        } = params.data
         /*
          * 1: top ingredient of brewing stand
          * 2: bottom ingredient of brewing stand
@@ -327,21 +305,14 @@ global.itemUtils = {
     },
     // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
     usePotion: function(params) {
+        // use general item use function
+        this.useItem(params)
         // parameters that can be passed in, item and its cooldown (in seconds)
         const {
-            player,
-            item,
-            cooldown
-        } = params
-        // define all parameter defaults if undefined
-        const c = cooldown !== undefined ? cooldown : 0
-        // item cooldown
-        player.addItemCooldown(item, 20 * c)
-        // reduce stack size if not in creative mode
-        if (!player.isCreative()) { 
-            item.shrink(1)
-            player.give("minecraft:glass_bottle")
-        }
+            player
+        } = params.data
+        // for potions give back glass bottle if not in creative
+        if (!player.isCreative()) { player.give("minecraft:glass_bottle") }
     },
     checkerBoardRecipeWithCenterItem: function(params) {
         const {

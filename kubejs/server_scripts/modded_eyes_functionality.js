@@ -25,25 +25,25 @@ ItemEvents.rightClicked((event) => {
     }
 })
 
-// generalised drop processing function, pass in EntityItem object, a key-value of entities and their 
+// generalised drop processing function, pass in EntityItemDrop object, a key-value of entities and their 
 // item to drop, and the function for item drop distribution (whether should drop 1 or multiple)
-function processDrops(entityItem, dropTable, dropFunction) {
+function processDrops(entityItemDrop, dropTable, dropFunction) {
     for (var entity in dropTable) {
         if (dropTable.hasOwnProperty(entity)) {
-            entityItem.update(entity, dropTable[entity])
-            dropFunction(entityItem)
+            entityItemDrop.update(entity, dropTable[entity])
+            dropFunction(entityItemDrop)
         }
     }
 }
 
 // process single drop entities
-function processSingleDrops(entityItem, dropTable) {
-    processDrops(entityItem, dropTable, addSingleDrop)
+function processSingleDrops(entityItemDrop, dropTable) {
+    processDrops(entityItemDrop, dropTable, addSingleDrop)
 }
 
 // process common drop entities
-function processCommonDrops(entityItem, dropTable) {
-    processDrops(entityItem, dropTable, addCommonDrop)
+function processCommonDrops(entityItemDrop, dropTable) {
+    processDrops(entityItemDrop, dropTable, addCommonDrop)
 }
 
 
@@ -77,10 +77,10 @@ LootJS.modifiers((event) => {
         "twilightforest:hydra": "kubejs:stiff_skin"
     }
 
-    // specify event, and add placeholder entity and item
-    var entityItem = new global.EntityItem({ event: event })
+    // specify event for entity and item drop (which can be added later)
+    var entityItemDrop = new global.EntityItemDrop({ event: event })
 
     // process all of them
-    processSingleDrops(entityItem, singleDrops)
-    processCommonDrops(entityItem, commonDrops)
+    processSingleDrops(entityItemDrop, singleDrops)
+    processCommonDrops(entityItemDrop, commonDrops)
 })

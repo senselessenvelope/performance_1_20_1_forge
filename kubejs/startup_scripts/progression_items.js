@@ -16,39 +16,41 @@ const { useItem, usePotion, createPotion } = global.itemUtils
 StartupEvents.registry('entity_type', event => {
     // creating solar stone projectile
     let entity = 'kubejs:solar_stone_projectile'
-    let explosion = { 
+    let explosion = new global.Explosion({ 
         strength: 5, 
         causesFire: true, 
         explosionMode: 'tnt' 
-    }
-    let projectile = { 
+    })
+    let projectile = new global.ProjectileEntity({ 
         item: 'kubejs:solar_stone', 
         entity: entity, 
         texture: 'kubejs:textures/item/solar_stone.png', 
-        entityInteractionFunction: global.projectileInteractions.setOnFire
-    }
-    createProjectile({event: event, projectile: projectile, explosion: explosion})
+        entityInteractionFunction: global.projectileInteractions.setOnFire,
+        explosion: explosion
+    })
+    createProjectile({event: event, projectile: projectile})
     // creating fireball projectile
     entity = 'kubejs:fireball'
-    explosion = { 
+    explosion = new global.Explosion({ 
         strength: 2, 
         causesFire: true 
-    }
-    projectile = { 
+    })
+    projectile = new global.ProjectileEntity({ 
         item: 'minecraft:fire_charge', 
         entity: entity, 
         texture: 'minecraft:textures/item/fire_charge.png', 
-        entityInteractionFunction: global.projectileInteractions.setOnFire
-    }
-    createProjectile({event: event, projectile: projectile, explosion: explosion})
+        entityInteractionFunction: global.projectileInteractions.setOnFire,
+        explosion: explosion
+    })
+    createProjectile({event: event, projectile: projectile})
     // creating green goo projectile
     entity = 'kubejs:green_goo_projectile'
-    projectile = { 
+    projectile = new global.ProjectileEntity({ 
         item: 'kubejs:green_goo', 
         entity: entity, 
         texture: 'kubejs:textures/item/green_goo.png', 
         entityInteractionFunction: global.projectileInteractions.setOnWither
-    }
+    })
     createProjectile({event: event, projectile: projectile})
 })
 
@@ -98,7 +100,7 @@ StartupEvents.registry('item', event => {
             effects.add('minecraft:levitation', 20, 100)
             effects.add('kubejs:falling_immunity', 20 * 20)
             // use potion (also adds glass bottle to inventory if not in creative)
-            usePotion({ player: entity, item: itemstack })
+            usePotion(new global.PlayerItem({ player: entity, item: itemstack }))
             return itemstack
         })
     // eye of bones items
@@ -167,8 +169,8 @@ StartupEvents.registry('potion', event => {
 // -------------------------------------
 
 MoreJSEvents.registerPotionBrewing((event) => {
-    createPotion({ event: event, input: "kubejs:stiff_skin", output: "kubejs:potion_of_hardiness" })
-    createPotion({ event: event, input: "kubejs:gravitite_gel", output: "kubejs:potion_of_floatiness" })
-    createPotion({ event: event, input: "kubejs:valkyrean_wing", output: "kubejs:potion_of_angriness" })
-    createPotion({ event: event, input: "kubejs:green_goo", output: "kubejs:potion_of_deadliness" })
+    createPotion(new global.Potion({ event: event, input: "kubejs:stiff_skin", output: "kubejs:potion_of_hardiness" }))
+    createPotion(new global.Potion({ event: event, input: "kubejs:gravitite_gel", output: "kubejs:potion_of_floatiness" }))
+    createPotion(new global.Potion({ event: event, input: "kubejs:valkyrean_wing", output: "kubejs:potion_of_angriness" }))
+    createPotion(new global.Potion({ event: event, input: "kubejs:green_goo", output: "kubejs:potion_of_deadliness" }))
 })
