@@ -132,6 +132,7 @@ EntityEvents.hurt(event => {
     // player resistance effect (if out of cooldown for stun)
     if (attacker.player && attacker.persistentData.stunCounter == 0) {
         const seconds = 1
+        // change the second last true, the ambient, to false if you want to have player be able to see when temporary resistance wears off
         attacker.potionEffects.add("minecraft:resistance", 20 * seconds, 2, true, false) // give resistance effect as a 'stun' for enemy not being able to hit them back
         attacker.persistentData.stunCounter = 60
         return
