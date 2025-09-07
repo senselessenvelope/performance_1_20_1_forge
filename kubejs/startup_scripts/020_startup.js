@@ -341,6 +341,7 @@ global.itemUtils = {
         const centerItem = recipe.centerItem
         // if unspecified, assume center item is not a tool, and is used up in recipe
         const centerItemIsTool = recipe.centerItemIsTool !== undefined ? recipe.centerItemIsTool : false
+        // if item should be damaged (for example, a bucket is considered a tool in this context but cannot be damaged, a pickaxe however can be damaged)
         const centerItemIsDamaged = recipe.centerItemIsDamaged !== undefined ? recipe.centerItemIsDamaged : false
         let craftedItem = event.shaped(
                 output, 

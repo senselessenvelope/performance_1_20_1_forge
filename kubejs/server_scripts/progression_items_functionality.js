@@ -109,6 +109,35 @@ BlockEvents.broken(event => {
 // -----[ ENTITY EVENTS ]-----
 // ---------------------------
 
+// Every server tick
+ServerEvents.tick(event => {
+    // Iterate over all players
+    event.server.players.forEach(player => {
+        // initialize stunCounter if it doesn't exist
+        if (player.persistentData.stunCounter === undefined) { player.persistentData.stunCounter = 0 }
+        // decrement but never go below 0
+        player.persistentData.stunCounter -= 1
+        player.persistentData.stunCounter = Math.max(0, player.persistentData.stunCounter)
+    })
+})
+
+// -- Stagger/stun effect, give resistance to player after melee attacking an enemy --
+// inspired by this mod by Scizor: 
+//      https://www.curseforge.com/minecraft/mc-mods/staggers-stuns-my-first-attempt-at-modding
+EntityEvents.hurt(event => {
+    const { source } = event
+    // check source of damage being another entity
+    const attacker = source.actual
+    if (!attacker) return
+    // player resistance effect (if out of cooldown for stun)
+    if (attacker.player && attacker.persistentData.stunCounter == 0) {
+        const seconds = 1
+        attacker.potionEffects.add("minecraft:resistance", 20 * seconds, 2, true, false) // give resistance effect as a 'stun' for enemy not being able to hit them back
+        attacker.persistentData.stunCounter = 60
+        return
+    }
+})
+
 // -- Entity hurting player affected based on item in inventory --
 EntityEvents.hurt(event => {
     const { entity, source } = event
@@ -117,7 +146,7 @@ EntityEvents.hurt(event => {
     // check source of damage being another entity
     const attacker = source.actual
     if (!attacker) return
-    console.log(attacker)
+
     if (attacker.id === 'kubejs:green_goo_projectile') {
         attacker.potionEffects.add("minecraft:wither", 20 * 10) // wither for longer time (since directly hit by goo)
         return
