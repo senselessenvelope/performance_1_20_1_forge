@@ -319,9 +319,7 @@ global.itemUtils = {
     },
     // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
     usePotion: function(params) {
-        // use general item use function
-        // console.warn(params.data)
-        // console.warn(params.data.cooldown)
+        // general item use function
         global.itemUtils.useItem(params)
         // parameters that can be passed in, item and its cooldown (in seconds)
         const {
@@ -357,7 +355,7 @@ global.itemUtils = {
                 }
             )
         // if item is to be damaged, damage by 1, otherwise do 0 damage (will only be damaged if is a tool)
-        const damage = centerItemIsDamaged ? '1' : '0'
+        const damage = centerItemIsDamaged ? 1 : 0
         // if is a tool, will damage the center item (which can be changed to be a tool)
         if (centerItemIsTool) craftedItem.damageIngredient(centerItem, damage)
     }

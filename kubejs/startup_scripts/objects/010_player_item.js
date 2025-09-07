@@ -9,7 +9,9 @@ global.PlayerItem = function(params) {
     // explicitly set data dictionary (to avoid issues with some objects having a nested field being same name as one of the main fields)
     // for example, potion effects have cooldown, and by default that was overwriting our cooldown field in data dictionary
     this.data = global.objectUtils.addObjectData(params)
-    this.data.cooldown = params.cooldown ?? global.constants.DEFAULT_COOLDOWN // cooldown does not exist unless specified for item
+
+    // default values such as item use cooldown
+    this.data.cooldown = params.cooldown ?? global.constants.DEFAULT_COOLDOWN
 }
 
 // getters for properties of data dictionary
