@@ -25,7 +25,12 @@ StartupEvents.registry('entity_type', event => {
         item: 'kubejs:solar_stone', 
         entity: entity, 
         texture: 'kubejs:textures/item/solar_stone.png', 
-        entityInteractionFunction: global.projectileInteractions.setOnFire,
+        entityInteractionFunction: new global.EntityInteractionFunction({ 
+            func: global.projectileInteractions.setOnFire, 
+            args: { 
+                time: 10 
+            } 
+        }),
         explosion: explosion
     })
     createProjectile({event: event, projectile: projectile})
@@ -39,7 +44,12 @@ StartupEvents.registry('entity_type', event => {
         item: 'minecraft:fire_charge', 
         entity: entity, 
         texture: 'minecraft:textures/item/fire_charge.png', 
-        entityInteractionFunction: global.projectileInteractions.setOnFire,
+        entityInteractionFunction: new global.EntityInteractionFunction({ 
+            func: global.projectileInteractions.setOnFire, 
+            args: { 
+                time: 10 
+            } 
+        }),
         explosion: explosion
     })
     createProjectile({event: event, projectile: projectile})
@@ -49,7 +59,12 @@ StartupEvents.registry('entity_type', event => {
         item: 'kubejs:green_goo', 
         entity: entity, 
         texture: 'kubejs:textures/item/green_goo.png', 
-        entityInteractionFunction: global.projectileInteractions.setOnWither
+        entityInteractionFunction: new global.EntityInteractionFunction({ 
+            func: global.projectileInteractions.setOnWither, 
+            args: { 
+                time: 10 
+            } 
+        }),
     })
     createProjectile({event: event, projectile: projectile})
 })

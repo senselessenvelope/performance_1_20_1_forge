@@ -23,31 +23,45 @@ global.legendaryMonstersEyes = Object.freeze({
 // -----[ PROJECTILE INTERACTION ]-----
 // ------------------------------------
 
+// default time in seconds for effect if not specified for functions
+global.constants = Object.freeze({
+    DEFAULT_TIME:         1
+})
+
 // functions relating to when projectile collides with something
 global.projectileInteractions = {
     entityHit: function(params) {
         const {
-            func,
             entity,
-            otherArgs
+            entityInteractionFunction
         } = params
-        func(entity, {otherArgs: otherArgs})
+        const {
+            func,
+            args
+        } = entityInteractionFunction.data
+        func(entity, args)
     },
-    setOnFire: function(entity, otherArgs) {
-        if (!otherArgs) { otherArgs = {} }
+    // ensures arguments exist for consecutive functions that may need to access arguments, if not sets empty dictionary of arguments (no args)
+    verifyArgs: function(args) {
+        if (!args) { args = {} }
+        return args
+    },
+    // get time in seconds for function to apply effects (if not defaults time to global constant)
+    getTime: function(args) {
         const {
             time
-        } = otherArgs
-        const seconds = time !== undefined ? time : 10
+        } = args
+        return time ?? global.constants.DEFAULT_TIME
+    },
+    setOnFire: function(entity, args) {
+        args = global.projectileInteractions.verifyArgs(args)
+        const seconds = global.projectileInteractions.getTime(args)
         entity.setSecondsOnFire(seconds)
     },
-    setOnWither: function(entity, otherArgs) {
-        if (!otherArgs) { otherArgs = {} }
-        const {
-            time
-        } = otherArgs
-        const seconds = time !== undefined ? time : 10
-        entity.potionEffects.add("minecraft:wither", 20 * seconds) // wither for 10 seconds
+    setOnWither: function(entity, args) {
+        args = global.projectileInteractions.verifyArgs(args)
+        const seconds = global.projectileInteractions.getTime(args)
+        entity.potionEffects.add("minecraft:wither", 20 * seconds) // wither for X seconds
         entity.potionEffects.add("minecraft:instant_damage", 1, 1) // damage instantly
     }
 }
@@ -235,9 +249,8 @@ global.entityUtils = {
                     if (projectileData.entityInteractionFunction) {
                         let timeSeconds = 10 // effect for 10 seconds if there is an effect it gives
                         global.projectileInteractions.entityHit({ 
-                            func: projectileData.entityInteractionFunction, 
                             entity: result.entity, 
-                            otherArgs: {time: timeSeconds} 
+                            entityInteractionFunction: projectileData.entityInteractionFunction
                         })
                     }
                 }

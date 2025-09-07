@@ -10,7 +10,6 @@ global.EntityItemDrop = function(params) {
 }
 
 
-
 // getters for properties of data dictionary
 global.EntityItemDrop.prototype.getData = function() { return this.data }
 global.EntityItemDrop.prototype.getEvent = function() { return this.data.event }
