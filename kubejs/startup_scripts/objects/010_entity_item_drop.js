@@ -6,7 +6,8 @@ global.EntityItemDrop = function(params) {
     if (!params || !params.hasOwnProperty('event')) {
         throw new Error("EntityItemDrop requires 'event' property")
     }
-    this.data = params
+    // add rest of properties
+    this.data = global.objectUtils.addObjectData(params)
 }
 
 

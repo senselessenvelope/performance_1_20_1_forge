@@ -4,7 +4,7 @@ global.ProjectileEntity = function(params) {
     if (!params || !params.hasOwnProperty('entity')) {
         throw new Error("ProjectileEntity requires projectile 'entity' property")
     }
-    this.data = params
+    this.data = global.objectUtils.addObjectData(params)
 
     // set default params if not existing
     this.data.velocity = this.data.velocity ?? 0

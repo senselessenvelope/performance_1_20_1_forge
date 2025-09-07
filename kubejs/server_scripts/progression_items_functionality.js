@@ -122,9 +122,9 @@ EntityEvents.hurt(event => {
         attacker.potionEffects.add("minecraft:wither", 20 * 10) // wither for longer time (since directly hit by goo)
         return
     }
-    // does not do if entity attacking is too far away (wouldnt make sense if it was ranged entity unless close)
-    if (entity.distanceToEntity(attacker) > 3) return
-    // info on inventory object:
+    // only continue if melee (doesnt make sense to have ranged enemies get contact damage)
+    if (source.isProjectile() || source.isMagic() || source.isExplosion()) return
+    // info on inventory object (also available through kubejsoffline command in-game):
     //      https://hunter19823.github.io/kubejsoffline/1.20.1/forge/#net.minecraft.world.entity.player.Inventory?focus=methods-header&methods-expanded=false&methods-page=0&methods-page-size=25
     const inventory = entity.getInventory()
     // create items to look for using ItemStack objects

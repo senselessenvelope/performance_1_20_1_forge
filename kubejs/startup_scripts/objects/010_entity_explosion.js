@@ -1,10 +1,6 @@
 // construct and Explosion instance
 global.Explosion = function(params) {
-    // // requires projectile entity and velocity of projectile
-    // if (!params || !params.hasOwnProperty('entity')) {
-    //     throw new Error("Explosion requires 'entity' property")
-    // }
-    this.data = params
+    this.data = global.objectUtils.addObjectData(params)
 
     // set default params if not existing
     this.data.strength = this.data.strength ?? 2

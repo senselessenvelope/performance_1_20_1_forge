@@ -4,7 +4,7 @@ global.Potion = function(params) {
     if (!params || !params.hasOwnProperty('event') || !params.hasOwnProperty('input') || !params.hasOwnProperty('output')) {
         throw new Error("Potion requires 'event', 'input' ingredient and 'output' effect properties")
     }
-    this.data = params
+    this.data = global.objectUtils.addObjectData(params)
 }
 
 // getters for properties of data dictionary

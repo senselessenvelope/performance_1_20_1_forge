@@ -25,7 +25,8 @@ global.legendaryMonstersEyes = Object.freeze({
 
 // default time in seconds for effect if not specified for functions
 global.constants = Object.freeze({
-    DEFAULT_TIME:         1
+    DEFAULT_TIME:               1,
+    DEFAULT_COOLDOWN:           0
 })
 
 // functions relating to when projectile collides with something
@@ -319,7 +320,9 @@ global.itemUtils = {
     // pass in player, item used and the cooldown (if no cooldown passed in assumed there is not one)
     usePotion: function(params) {
         // use general item use function
-        this.useItem(params)
+        // console.warn(params.data)
+        // console.warn(params.data.cooldown)
+        global.itemUtils.useItem(params)
         // parameters that can be passed in, item and its cooldown (in seconds)
         const {
             player
