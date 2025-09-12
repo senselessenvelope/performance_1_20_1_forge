@@ -26,7 +26,8 @@ global.legendaryMonstersEyes = Object.freeze({
 // default time in seconds for effect if not specified for functions
 global.constants = Object.freeze({
     DEFAULT_TIME:               1,
-    DEFAULT_COOLDOWN:           0
+    DEFAULT_COOLDOWN:           0,
+    DEFAULT_DAMAGE:             1
 })
 
 // functions relating to when projectile collides with something

@@ -10,6 +10,7 @@ const blazePowder = 'minecraft:blaze_powder'
 const EYE_OF_BONES = global.legendaryMonstersEyes.EYE_OF_BONES
 const EYE_OF_AIR = global.legendaryMonstersEyes.EYE_OF_AIR
 const { checkerBoardRecipeWithCenterItem } = global.itemUtils
+const { createRecipe } = global.recipeUtils
 
 // ---------------------------------
 // -----[ PROGRESSION RECIPES ]-----
@@ -63,6 +64,40 @@ ServerEvents.recipes(event => {
         centerItemIsDamaged: true 
     }
     checkerBoardRecipeWithCenterItem({ event: event, recipe: recipe })
+
+
+
+
+
+    
+    // shaped recipe with tool and container
+    recipe = new global.Recipe({ 
+        output: 'minecraft:diamond',
+        shape: [
+            'XXX',
+            'YAY',
+            'ZZZ'
+        ],
+        items: {
+            X: 'minecraft:apple',
+            Y: 'minecraft:potato',
+            Z: 'minecraft:diamond_pickaxe',
+            A: 'minecraft:water_bucket'
+        }
+    })
+    createRecipe({ event: event, recipe: recipe })
+    
+    // shapeless recipe with tool and container
+    recipe = new global.Recipe({ 
+        output: 'minecraft:emerald',
+        items: [
+            '1x minecraft:apple',
+            '1x minecraft:potato',
+            '1x minecraft:diamond_pickaxe',
+            '1x minecraft:water_bucket'
+        ]
+    })
+    createRecipe({ event: event, recipe: recipe })
 })
 
     

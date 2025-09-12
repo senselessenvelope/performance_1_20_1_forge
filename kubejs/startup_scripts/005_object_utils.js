@@ -1,6 +1,4 @@
 
-// Iterate through all own properties and copy them
-
 // global utility functions for objects
 global.objectUtils = {
     // copies all own properties from source to target
