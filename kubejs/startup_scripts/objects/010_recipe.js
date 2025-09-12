@@ -18,28 +18,6 @@ global.Recipe = function(params) {
     
     // default values such as item damage (if is a tool used in recipe)
     this.data.damage = params.damage ?? global.constants.DEFAULT_DAMAGE
-
-
-    // // NO NEED FOR THE BELOW, if is a tool will be damaged, otherwise will be consumed
-    // // for container items, i can return them AFTER the shape, e.g. 
-    //     // event.shaped('minecraft:diamond', [
-    //     //     ' B ',
-    //     //     ' S ',
-    //     //     '   '
-    //     //     ], {
-    //     //     B: 'minecraft:water_bucket',
-    //     //     S: 'minecraft:stick'
-    //     //     }).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
-    // // BUT NEED TO TEST OUT IF CORRECT (MAY NOT WORK)
-    
-    // // -- Default Values --
-    // // if item is a tool, for example a pickaxe or bucket
-    // this.data.isTool = params.isTool ?? false
-    // // item HAS to be a tool to be damaged, basically:
-    // //      condition ? valueIfTrue : valueIfFalse
-    // // if condition true     -->     valueIfTrue
-    // // if condition false    -->     valueIfFalse
-    // this.data.isDamaged = params.isTool ? (params.isDamaged ?? false) : false
 }
 
 // getters for properties of data dictionary
