@@ -11,6 +11,7 @@ const EYE_OF_BONES = global.legendaryMonstersEyes.EYE_OF_BONES
 const EYE_OF_AIR = global.legendaryMonstersEyes.EYE_OF_AIR
 const { checkerBoardRecipeWithCenterItem } = global.itemUtils
 const { createRecipe } = global.recipeUtils
+const Recipe = global.objects.item.Recipe
 
 // ---------------------------------
 // -----[ PROGRESSION RECIPES ]-----
@@ -71,7 +72,7 @@ ServerEvents.recipes(event => {
 
     
     // shaped recipe with tool and container
-    recipe = new global.Recipe({ 
+    recipe = new Recipe({ 
         output: 'minecraft:diamond',
         shape: [
             'XXX',
@@ -88,7 +89,7 @@ ServerEvents.recipes(event => {
     createRecipe({ event: event, recipe: recipe })
     
     // shapeless recipe with tool and container
-    recipe = new global.Recipe({ 
+    recipe = new Recipe({ 
         output: 'minecraft:emerald',
         items: [
             '1x minecraft:apple',

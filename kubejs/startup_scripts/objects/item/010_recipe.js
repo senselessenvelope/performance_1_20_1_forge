@@ -1,5 +1,5 @@
 // construct a Recipe instance
-global.Recipe = function(params) {
+global.objects.item.Recipe = function(params) {
     // requires output, recipe items, and, 
     if (!params || 
         !params.hasOwnProperty('output') || 
@@ -21,15 +21,15 @@ global.Recipe = function(params) {
 }
 
 // getters for properties of data dictionary
-global.Recipe.prototype.getData = function() { return this.data }
-global.Recipe.prototype.getOutput = function() { return this.data.output }
-global.Recipe.prototype.getShape = function() { return this.data.shape }
-global.Recipe.prototype.getItems = function() { return this.data.items }
-global.Recipe.prototype.getDamage = function() { return this.data.damage }
+global.objects.item.Recipe.prototype.getData = function() { return this.data }
+global.objects.item.Recipe.prototype.getOutput = function() { return this.data.output }
+global.objects.item.Recipe.prototype.getShape = function() { return this.data.shape }
+global.objects.item.Recipe.prototype.getItems = function() { return this.data.items }
+global.objects.item.Recipe.prototype.getDamage = function() { return this.data.damage }
 
-global.Recipe.prototype.setItems = function(newItems) { this.data.items = newItems }
+global.objects.item.Recipe.prototype.setItems = function(newItems) { this.data.items = newItems }
 
-global.Recipe.prototype.getItemsAsList = function() {
+global.objects.item.Recipe.prototype.getItemsAsList = function() {
     let items = this.getItems()
     var result = []
     if (Array.isArray(items)) {

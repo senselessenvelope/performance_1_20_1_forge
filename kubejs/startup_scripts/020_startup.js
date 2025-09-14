@@ -35,12 +35,12 @@ global.projectileInteractions = {
     entityHit: function(params) {
         const {
             entity,
-            entityInteractionFunction
+            customFunction
         } = params
         const {
             func,
             args
-        } = entityInteractionFunction.data
+        } = customFunction.data
         func(entity, args)
     },
     // ensures arguments exist for consecutive functions that may need to access arguments, if not sets empty dictionary of arguments (no args)
@@ -248,11 +248,11 @@ global.entityUtils = {
                 // custom effect upon hitting entity
                 if (result.entity.living) {
                     // if it has a function to use upon interaction
-                    if (projectileData.entityInteractionFunction) {
+                    if (projectileData.customFunction) {
                         let timeSeconds = 10 // effect for 10 seconds if there is an effect it gives
                         global.projectileInteractions.entityHit({ 
                             entity: result.entity, 
-                            entityInteractionFunction: projectileData.entityInteractionFunction
+                            customFunction: projectileData.customFunction
                         })
                     }
                 }

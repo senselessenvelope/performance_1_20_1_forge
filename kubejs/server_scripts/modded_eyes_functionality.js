@@ -1,6 +1,7 @@
 
-// referencing utility functions defined at startup
+// referencing functions defined at startup
 const { addCommonDrop, addSingleDrop } = global.entityUtils
+const EntityItemDrop = global.objects.entity.EntityItemDrop
 
 // partially destructured global enum eyes (shorter reference)
 const {
@@ -78,7 +79,7 @@ LootJS.modifiers((event) => {
     }
 
     // specify event for entity and item drop (which can be added later)
-    var entityItemDrop = new global.EntityItemDrop({ event: event })
+    var entityItemDrop = new EntityItemDrop({ event: event })
 
     // process all of them
     processSingleDrops(entityItemDrop, singleDrops)
