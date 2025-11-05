@@ -2,7 +2,7 @@ let ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
 
 
 // global utility functions for recipes
-global.recipeUtils = {
+global.utils.item.recipeUtils = {
     // consume items in recipes or, if they are tools, damage them, if they are containers (like a water bucket) return empty container (bucket)
     damageTool: function(event, recipe) {
         let items = recipe.getItemsAsList()
@@ -36,7 +36,7 @@ global.recipeUtils = {
             )
         }
         // function to damage tool (containers are updated automatically it seems)
-        global.recipeUtils.damageTool(addedRecipe, recipe)
+        global.utils.item.recipeUtils.damageTool(addedRecipe, recipe)
 
     }
 

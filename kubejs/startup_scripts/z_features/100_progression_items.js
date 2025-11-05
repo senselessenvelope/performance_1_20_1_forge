@@ -3,9 +3,9 @@
 // ---------------------
 
 // referencing utility functions defined at startup
-const { explodeEntity, removeEntity, createProjectile, verifyProjectile } = global.entityUtils
-const { entityHit, setsOnFire } = global.projectileInteractions
-const { useItem, usePotion, createPotion } = global.itemUtils
+const { createProjectile, verifyProjectile } = global.utils.entity.projectile.projectileUtils
+const { entityHit, setOnFire, setOnWither } = global.utils.entity.projectile.projectileInteractions
+const { useItem, usePotion, createPotion } = global.utils.item.itemUtils
 const Explosion = global.objects.entity.Explosion
 const CustomFunction = global.objects.meta.CustomFunction
 const ProjectileEntity = global.objects.entity.projectile.ProjectileEntity
@@ -31,7 +31,7 @@ StartupEvents.registry('entity_type', event => {
         entity: entity, 
         texture: 'kubejs:textures/item/solar_stone.png', 
         customFunction: new CustomFunction({ 
-            func: global.projectileInteractions.setOnFire, 
+            func: setOnFire, 
             args: { 
                 time: 10 
             } 
@@ -50,7 +50,7 @@ StartupEvents.registry('entity_type', event => {
         entity: entity, 
         texture: 'minecraft:textures/item/fire_charge.png', 
         customFunction: new CustomFunction({ 
-            func: global.projectileInteractions.setOnFire, 
+            func: setOnFire, 
             args: { 
                 time: 10 
             } 
@@ -65,7 +65,7 @@ StartupEvents.registry('entity_type', event => {
         entity: entity, 
         texture: 'kubejs:textures/item/green_goo.png', 
         customFunction: new CustomFunction({ 
-            func: global.projectileInteractions.setOnWither, 
+            func: setOnWither, 
             args: { 
                 time: 10 
             } 

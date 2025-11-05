@@ -9,8 +9,8 @@ const blazePowder = 'minecraft:blaze_powder'
 // const EYE_OF_SOUL = global.legendaryMonstersEyes.EYE_OF_SOUL
 const EYE_OF_BONES = global.legendaryMonstersEyes.EYE_OF_BONES
 const EYE_OF_AIR = global.legendaryMonstersEyes.EYE_OF_AIR
-const { checkerBoardRecipeWithCenterItem } = global.itemUtils
-const { createRecipe } = global.recipeUtils
+const { checkerBoardRecipeWithCenterItem } = global.utils.item.itemUtils
+const { createRecipe } = global.utils.item.recipeUtils
 const Recipe = global.objects.item.Recipe
 
 // ---------------------------------

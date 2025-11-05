@@ -1,6 +1,6 @@
 
 // referencing functions defined at startup
-const { addCommonDrop, addSingleDrop } = global.entityUtils
+const { addCommonDrop, addSingleDrop } = global.utils.entity.entityUtils
 const EntityItemDrop = global.objects.entity.EntityItemDrop
 
 // partially destructured global enum eyes (shorter reference)

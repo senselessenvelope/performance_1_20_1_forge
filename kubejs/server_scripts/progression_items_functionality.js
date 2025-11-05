@@ -5,8 +5,9 @@
 // loading java class
 const ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
 // referencing utility functions defined at startup
-const { explodeEntity, removeEntity, summonProjectile, verifyProjectile } = global.entityUtils
-const { useItem } = global.itemUtils
+const { explodeEntity, removeEntity } = global.utils.entity.entityUtils
+const { summonProjectile, verifyProjectile } = global.utils.entity.projectile.projectileUtils
+const { useItem } = global.utils.item.itemUtils
 const Explosion = global.objects.entity.Explosion
 const ProjectileEntity = global.objects.entity.projectile.ProjectileEntity
 const PlayerItem = global.objects.player.PlayerItem
@@ -156,7 +157,7 @@ EntityEvents.hurt(event => {
         return
     }
     // only continue if melee (doesnt make sense to have ranged enemies get contact damage)
-    if (source.isProjectile() || source.isMagic() || source.isExplosion()) return
+    if (source.isIndirect()) return
     // info on inventory object (also available through kubejsoffline command in-game):
     //      https://hunter19823.github.io/kubejsoffline/1.20.1/forge/#net.minecraft.world.entity.player.Inventory?focus=methods-header&methods-expanded=false&methods-page=0&methods-page-size=25
     const inventory = entity.getInventory()

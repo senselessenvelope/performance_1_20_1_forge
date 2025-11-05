@@ -1,0 +1,139 @@
+const { explodeEntity, removeEntity } = global.utils.entity.entityUtils
+
+// global projectile utility functions will use in parts of program
+global.utils.entity.projectile.projectileUtils = {
+    moveProjectile: function(params) {
+        if (!params.entity || !params.motion) { console.warn("Non-existing entity or motion for function moveProjectile") }
+        const {
+            entity,
+            motion
+        } = params
+        if (entity.removed) return 
+        // update speed
+        entity.setDeltaMovement(motion)
+        // recursive call after 10 ticks (to maintain speed)
+        Utils.server.scheduleInTicks(10, ctx => {
+            global.utils.entity.projectile.projectileUtils.moveProjectile({ entity: entity , motion: motion })
+        })
+    },
+    // summon projectile at player
+    summonProjectile: function(params) {
+        // parameters of function, player and velocity of projectile, and sound it makes when shot
+        const {
+            player,
+            projectile
+        } = params
+        // ensure projectile data valid
+        const projectileData = projectile.data
+        const explosion = projectile.getExplosion()
+        // angle player looking at
+        const playerAngle = {
+            x: player.lookAngle.x(),
+            y: player.lookAngle.y(),
+            z: player.lookAngle.z() 
+        }
+        // create entity to shoot
+        const entity = player.level.createEntity(projectileData.entity)
+        // spawn entity
+        entity.spawn()
+        Utils.server.schedule(5, () => {
+            // entity spawn position
+            // entity.blockPosition
+            // console.log(entity.pos)
+            // console.log(entity.pos.x)
+            // entity.pos = new Vec3d(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
+            
+            entity.teleportTo(player.x + (1.5 * playerAngle.x), player.y + (player.getEyeHeight() + playerAngle.y), player.z + (1.5 * playerAngle.z))
+            // console.log(entity.pos)
+            
+            // not affected by gravity
+            entity.setNoGravity(projectileData.noGravity)
+            const motion = new Vec3d(playerAngle.x * projectileData.velocity, playerAngle.y * projectileData.velocity,  playerAngle.z * projectileData.velocity)
+            // if projectile has no gravity, you probably dont want it to decelerate
+            if (projectileData.noGravity) {
+                // recursive call for projectiles that have no gravity, will not be slowed down, call recursive motion function
+                global.utils.entity.projectile.projectileUtils.moveProjectile({ entity: entity , motion: motion })
+            } else {
+                // if it does have gravity, you want it to slow down with natural curve
+                entity.setDeltaMovement(motion)
+            }
+        })
+        player.level.playSound(null, player.x, player.y, player.z, projectileData.sound, 'players', 1, 1)
+        // seconds entity will exist for
+        let entityLife = 20
+        // after number of ticks, entity will be killed
+        Utils.server.scheduleInTicks(20 * entityLife, ctx => {
+            explodeEntity({ entity: entity, explosion: explosion })
+            removeEntity({ entity: entity })
+        })
+    },
+    // create projectile entity given object arguments
+    createProjectile: function(params) {
+        // parameters of function, player and velocity of projectile, and sound it makes when shot
+        const {
+            event,
+            projectile
+        } = params
+        // verifies projectile data, explosive data is verified later on (once we have the entity from context)
+        const projectileData = projectile.data
+        const explosion = projectile.getExplosion()
+        // const explosionData = explosion || {}
+        // create projectile for event
+        event.create(projectileData.entity, 'entityjs:projectile')
+            // one-off values set at startup of game
+            .sized(0.4, 0.4)
+            .renderScale(1, 1, 1)
+            .item(item => {
+                item.canThrow(true)
+            })
+            // use custom texture
+            .textureLocation(entity => {
+                return projectileData.texture
+            })
+            // prevents an item specifically for this entity from being created (keep if you already have an item to shoot the projectile)
+            // uncomment if you want it to auto create item (if you havent already)
+            .noItem()
+            // all methods below return void, so nothing needs to be returned
+            .onHitBlock(context => {
+                const { entity } = context
+                if (entity.removed || entity.level.isClientSide()) { return }
+                Utils.server.runCommandSilent(`particle minecraft:ash ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 5 200 force`)
+                // here we pass in explosion from function arguments
+                explodeEntity({ entity: entity, explosion: explosion })
+                removeEntity({ entity: entity })
+            })
+            .onHitEntity(context => {
+                const { entity, result } = context
+                if (entity.removed || entity.level.isClientSide()) { return }
+                // custom effect upon hitting entity
+                if (result.entity.living) {
+                    // if it has a function to use upon interaction
+                    if (projectileData.customFunction) {
+                        let timeSeconds = 10 // effect for 10 seconds if there is an effect it gives
+                        global.projectileInteractions.entityHit({ 
+                            entity: result.entity, 
+                            customFunction: projectileData.customFunction
+                        })
+                    }
+                }
+                explodeEntity({ entity: entity, explosion: explosion })
+                removeEntity({ entity: entity })
+            })
+            .tick(entity => {
+                // check if projectile entity has been discarded (to prevent phantom projectiles, 
+                // particularly after hitting entity, so does not continue to a block)
+                // also check for if trying to render client side, should only do server-side entity checks
+                // (prevents item duplicating in summon command below for both server and client)
+                if (entity.removed|| entity.level.isClientSide()) { return }
+                
+                // if in water, kill entity
+                if (entity.getLevel().getBlockState(entity.blockPosition()).getBlock().id == "minecraft:water") {
+                    Utils.server.runCommandSilent(`particle minecraft:angry_villager ${entity.x} ${entity.y} ${entity.z} 0.125 0.125 0.125 1 50 force`)
+                    entity.getLevel().playSound(null, entity.x, entity.y, entity.z, 'minecraft:block.fire.extinguish', 'players', 1, 1)
+                    // and drop item (this is the summon command i am referring to above)
+                    Utils.server.runCommandSilent(`summon item ${entity.x} ${entity.y} ${entity.z} {Item:{id:"${projectileData.item}",Count:1b}}`)
+                    removeEntity({ entity: entity })
+                }
+            })
+    }
+}
