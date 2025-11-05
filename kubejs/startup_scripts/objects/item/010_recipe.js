@@ -1,5 +1,8 @@
+// shortening reference to module
+const ItemModule = global.objects.item
+
 // construct a Recipe instance
-global.objects.item.Recipe = function(params) {
+ItemModule.Recipe = function(params) {
     // requires output, recipe items, and, 
     if (!params || 
         !params.hasOwnProperty('output') || 
@@ -20,16 +23,19 @@ global.objects.item.Recipe = function(params) {
     this.data.damage = params.damage ?? global.constants.DEFAULT_DAMAGE
 }
 
+// shortening access to prototype function
+const RecipeClass = ItemModule.Recipe.prototype
+
 // getters for properties of data dictionary
-global.objects.item.Recipe.prototype.getData = function() { return this.data }
-global.objects.item.Recipe.prototype.getOutput = function() { return this.data.output }
-global.objects.item.Recipe.prototype.getShape = function() { return this.data.shape }
-global.objects.item.Recipe.prototype.getItems = function() { return this.data.items }
-global.objects.item.Recipe.prototype.getDamage = function() { return this.data.damage }
+RecipeClass.getData = function() { return this.data }
+RecipeClass.getOutput = function() { return this.data.output }
+RecipeClass.getShape = function() { return this.data.shape }
+RecipeClass.getItems = function() { return this.data.items }
+RecipeClass.getDamage = function() { return this.data.damage }
 
-global.objects.item.Recipe.prototype.setItems = function(newItems) { this.data.items = newItems }
+RecipeClass.setItems = function(newItems) { this.data.items = newItems }
 
-global.objects.item.Recipe.prototype.getItemsAsList = function() {
+RecipeClass.getItemsAsList = function() {
     let items = this.getItems()
     var result = []
     if (Array.isArray(items)) {

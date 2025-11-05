@@ -1,7 +1,8 @@
-
+// shortening reference
+const PlayerModule = global.objects.player
 
 // construct and PlayerItem instance
-global.objects.player.PlayerItem = function(params) {
+PlayerModule.PlayerItem = function(params) {
     // requires player and item
     if (!params || !params.hasOwnProperty('player') || !params.hasOwnProperty('item')) {
         throw new Error("PlayerItem requires 'player' and 'item' properties")
@@ -14,9 +15,12 @@ global.objects.player.PlayerItem = function(params) {
     this.data.cooldown = params.cooldown ?? global.constants.DEFAULT_COOLDOWN
 }
 
+// shortening access to prototype function
+const PlayerItemClass = PlayerModule.PlayerItem.prototype
+
 // getters for properties of data dictionary
-global.objects.player.PlayerItem.prototype.getData = function() { return this.data }
-global.objects.player.PlayerItem.prototype.getPlayer = function() { return this.data.player }
-global.objects.player.PlayerItem.prototype.getItem = function() { return this.data.item }
-global.objects.player.PlayerItem.prototype.getCooldown = function() { return this.data.cooldown }
+PlayerItemClass.getData = function() { return this.data }
+PlayerItemClass.getPlayer = function() { return this.data.player }
+PlayerItemClass.getItem = function() { return this.data.item }
+PlayerItemClass.getCooldown = function() { return this.data.cooldown }
 
