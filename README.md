@@ -3,9 +3,21 @@ we do some modding
 
 
 ## How to install instance
-To install instance, get access to instance zip file from person in power
+To install instance, pull repo first
 
-Then, go to
+Then, import instance in ATLauncher
+
+<img width="1179" height="154" alt="image" src="https://github.com/user-attachments/assets/28cacdd1-64c8-4f9a-a41a-61393165e2b9" />
+
+Choose file
+
+<img width="472" height="244" alt="image" src="https://github.com/user-attachments/assets/5d67896a-bd08-480f-9180-34dd0933167d" />
+
+Select instance file pulled from repo
+
+<img width="205" height="72" alt="image" src="https://github.com/user-attachments/assets/a6c6b440-bc60-4a98-bfe5-727d5ed32edf" />
+
+
 
 ## How to set up scripts
 To use these scripts, navigate to your Minecraft instance folder (in ATLauncher, click Open Folder option of instance) and pull the contents of this repo. 
