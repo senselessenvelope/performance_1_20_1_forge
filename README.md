@@ -15,7 +15,7 @@ Choose file
 
 Select instance file pulled from repo
 
-<img width="205" height="72" alt="image" src="https://github.com/user-attachments/assets/a6c6b440-bc60-4a98-bfe5-727d5ed32edf" />
+<img width="136" height="30" alt="image" src="https://github.com/user-attachments/assets/f0ee66b2-fe65-4a18-a475-bce9cccc1b2b" />
 
 
 
