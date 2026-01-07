@@ -3,6 +3,7 @@
 
 # EXCEPT these folder and contents
 !.gitignore
+!instance.zip
 !/kubejs/
 !/kubejs/**
 !/config/
