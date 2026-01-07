@@ -7,7 +7,7 @@ To install instance, pull repo first
 
 Then, import instance in ATLauncher
 
-<img width="1179" height="154" alt="image" src="https://github.com/user-attachments/assets/28cacdd1-64c8-4f9a-a41a-61393165e2b9" />
+<img width="1181" height="149" alt="image" src="https://github.com/user-attachments/assets/7ae700df-9938-4727-930d-89cc7db86805" />
 
 Choose file
 
@@ -15,7 +15,7 @@ Choose file
 
 Select instance file pulled from repo
 
-<img width="205" height="72" alt="image" src="https://github.com/user-attachments/assets/a6c6b440-bc60-4a98-bfe5-727d5ed32edf" />
+<img width="136" height="30" alt="image" src="https://github.com/user-attachments/assets/f0ee66b2-fe65-4a18-a475-bce9cccc1b2b" />
 
 
 
