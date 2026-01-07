@@ -43,6 +43,8 @@ So you now have these.
 
 Now this entire folder will be recognised as a Git repo. Make sure to KEEP .gitignore !!!
 
+You should now be able to test these scripts in-game and the instance folder will act as your repo. If you want to add code you can branch and add some more functionality based on existing functionality or completely new logic and push it to this repo!
+
 
 
 
