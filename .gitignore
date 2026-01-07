@@ -1,0 +1,9 @@
+# ignore EVERYTHING
+*
+
+# EXCEPT these folder and contents
+!.gitignore
+!/kubejs/
+!/kubejs/**
+!/config/
+!/config/commandaliases.txt
