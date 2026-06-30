@@ -17,6 +17,8 @@ Select instance file pulled from repo
 
 <img width="136" height="30" alt="image" src="https://github.com/user-attachments/assets/f0ee66b2-fe65-4a18-a475-bce9cccc1b2b" />
 
+Name it whatever you want with whatever description. You will need to customise your own RAM, settings, keybinds, and so on within ATLauncher. 
+Set up scripts below and test them in a new world to get started!
 
 
 ## How to set up scripts
@@ -40,6 +42,8 @@ So you now have these.
 <img width="140" height="138" alt="image" src="https://github.com/user-attachments/assets/e7ad78b1-06be-43a3-9f50-64b5e398ffd2" />
 
 Now this entire folder will be recognised as a Git repo. Make sure to KEEP .gitignore !!!
+
+You should now be able to test these scripts in-game and the instance folder will act as your repo. If you want to add code you can branch and add some more functionality based on existing functionality or completely new logic and push it to this repo!
 
 
 
