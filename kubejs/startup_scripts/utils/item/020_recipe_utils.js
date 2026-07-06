@@ -1,3 +1,5 @@
+// priority: 45
+
 let ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack')
 
 

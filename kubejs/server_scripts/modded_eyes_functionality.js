@@ -5,10 +5,8 @@ const EntityItemDrop = global.objects.entity.EntityItemDrop
 
 // partially destructured global enum eyes (shorter reference)
 const {
-    // EYE_OF_AIR,
     EYE_OF_MAGMA,
     EYE_OF_SOUL,
-    // EYE_OF_BONES,
     EYE_OF_MANY_RIBS,
     EYE_OF_GHOST,
     EYE_OF_FROST,

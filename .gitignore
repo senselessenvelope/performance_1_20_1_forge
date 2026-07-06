@@ -6,3 +6,7 @@
 !instance.zip
 !/kubejs/
 !/kubejs/**
+
+# BUT do ignore these
+/kubejs/assets/kubejs/textures/item/client.zip
+/kubejs/documentation/

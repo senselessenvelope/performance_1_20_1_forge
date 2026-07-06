@@ -1,3 +1,4 @@
+// priority: 55
 
 // global utility functions for objects
 global.objectUtils = {

@@ -1,3 +1,5 @@
+// priority: 43
+
 const { explodeEntity, removeEntity } = global.utils.entity.entityUtils
 
 // global projectile utility functions will use in parts of program

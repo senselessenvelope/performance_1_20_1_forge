@@ -1,3 +1,4 @@
+// priority: 45
 
 // global entity utility functions will use in parts of program
 global.utils.entity.entityUtils = {

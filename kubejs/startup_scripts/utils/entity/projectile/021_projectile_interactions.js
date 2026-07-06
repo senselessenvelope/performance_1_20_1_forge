@@ -1,3 +1,4 @@
+// priority: 44
 
 // functions relating to when projectile collides with something
 global.utils.entity.projectile.projectileInteractions = {
