@@ -4,13 +4,13 @@ we do some modding
 
 ## Table of Contents
 
-- [How to install instance](#how-to-install-instance)
-- [How to set up scripts](#how-to-set-up-scripts)
-- [How to download fixed (pregenerated) overworld save](#how-to-download-fixed-pregenerated-overworld-save)
+- [1. How to install instance](#how-to-install-instance)
+- [2. How to set up scripts](#how-to-set-up-scripts)
+- [3. How to download fixed (pregenerated) overworld save](#how-to-download-fixed-pregenerated-overworld-save)
 
 
 <a name="how-to-install-instance"></a>
-## How to install instance
+## 1. How to install instance
 
 To install instance, download from [here](https://drive.google.com/file/d/19fy6Gr_0azs_TswxSBBufWvjq8WieRn6/view?usp=sharing)
 
@@ -30,7 +30,8 @@ Name it whatever you want with whatever description. You will need to customise 
 Set up scripts below and test them in a new world to get started!
 
 
-## How to set up scripts
+<a name="how-to-set-up-scripts"></a>
+## 2. How to set up scripts
 
 Pull/clone the repository
 
@@ -57,7 +58,8 @@ Now this entire folder will be recognised as a Git repo. Make sure to KEEP .giti
 You should now be able to test these scripts in-game and the instance folder will act as your repo. If you want to add code you can branch and add some more functionality based on existing functionality or completely new logic and push it to this repo!
 
 
-## How to download fixed (pregenerated) overworld save
+<a name="how-to-download-fixed-pregenerated-overworld-save"></a>
+## 3. How to download fixed (pregenerated) overworld save
 
 Since this branch relies on a previously generated 1.12.2 OTG modded world, this needs to be downloaded. This is found [here](https://drive.google.com/file/d/1TY0OUxZMyHmMLkvsbCUuKOhzY-24IzZw/view?usp=sharing)
 
