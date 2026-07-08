@@ -1,23 +1,16 @@
 # performance_1_20_1_forge
 we do some modding
 
-## How to download fixed (pregenerated) overworld save
-Since this branch relies on a previously generated 1.12.2 OTG modded world, this needs to be downloaded. This is found [here](https://drive.google.com/file/d/1TY0OUxZMyHmMLkvsbCUuKOhzY-24IzZw/view?usp=sharing)
 
-Put this world.zip in your instance folder saves
+## Table of Contents
 
-<img width="316" height="132" alt="image" src="https://github.com/user-attachments/assets/dedc62dd-d30c-4646-9cab-63ecb8da0657" />
-
-Now extract it into the saves directory, ending up with a folder called "dungeons"
-
-<img width="320" height="116" alt="image" src="https://github.com/user-attachments/assets/00c58060-9865-4d29-8ea3-5cc05c9c92e6" />
-
-You may now delete world.zip, leaving only "dungeons" world
-
-<img width="327" height="97" alt="image" src="https://github.com/user-attachments/assets/06902b62-f83d-4490-a057-ab46ed5c1208" />
+- [How to install instance](#instance)
+- [How to set up scripts](#scripts)
+- [How to download fixed (pregenerated) overworld save](#world)
 
 
 ## How to install instance
+
 To install instance, download from [here](https://drive.google.com/file/d/19fy6Gr_0azs_TswxSBBufWvjq8WieRn6/view?usp=sharing)
 
 Then, import instance in ATLauncher
@@ -37,7 +30,8 @@ Set up scripts below and test them in a new world to get started!
 
 
 ## How to set up scripts
-Pull/clone the repo
+
+Pull/clone the repository
 
 To use these scripts, navigate to your Minecraft instance folder (in ATLauncher, click Open Folder option of an instance) and pull the contents of this repo. 
 
@@ -60,6 +54,23 @@ So you now have these.
 Now this entire folder will be recognised as a Git repo. Make sure to KEEP .gitignore !!!
 
 You should now be able to test these scripts in-game and the instance folder will act as your repo. If you want to add code you can branch and add some more functionality based on existing functionality or completely new logic and push it to this repo!
+
+
+## How to download fixed (pregenerated) overworld save
+
+Since this branch relies on a previously generated 1.12.2 OTG modded world, this needs to be downloaded. This is found [here](https://drive.google.com/file/d/1TY0OUxZMyHmMLkvsbCUuKOhzY-24IzZw/view?usp=sharing)
+
+Put this world.zip in your instance folder saves
+
+<img width="316" height="132" alt="image" src="https://github.com/user-attachments/assets/dedc62dd-d30c-4646-9cab-63ecb8da0657" />
+
+Now extract it into the saves directory, ending up with a folder called "dungeons"
+
+<img width="320" height="116" alt="image" src="https://github.com/user-attachments/assets/00c58060-9865-4d29-8ea3-5cc05c9c92e6" />
+
+You may now delete world.zip, leaving only "dungeons" world
+
+<img width="327" height="97" alt="image" src="https://github.com/user-attachments/assets/06902b62-f83d-4490-a057-ab46ed5c1208" />
 
 
 
