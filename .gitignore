@@ -4,14 +4,11 @@
 # EXCEPT these folder and contents
 !.gitignore
 !.gitattributes
-!instance.zip
 !/kubejs/
 !/kubejs/**
 !/config/
 !/config/incontrol/
 !/config/incontrol/**
-# !/saves/
-# !/saves/world.zip
 
 # BUT do ignore these
 /kubejs/assets/kubejs/textures/item/client.zip

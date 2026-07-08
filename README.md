@@ -1,9 +1,14 @@
 # performance_1_20_1_forge
 we do some modding
 
+## How to download fixed (pregenerated) overworld save
+Since this branch relies on a previously generated 1.12.2 OTG modded world, this needs to be downloaded. This is found [here](https://drive.google.com/file/d/1TY0OUxZMyHmMLkvsbCUuKOhzY-24IzZw/view?usp=sharing)
+
+Put this world.zip in your instance folder saves and extract it into the saves directory, ending up with a folder called "dungeons". You may now delete world.zip
+
 
 ## How to install instance
-To install instance, pull repo first
+To install instance, download from [here](https://drive.google.com/file/d/19fy6Gr_0azs_TswxSBBufWvjq8WieRn6/view?usp=sharing)
 
 Then, import instance in ATLauncher
 
@@ -22,14 +27,15 @@ Set up scripts below and test them in a new world to get started!
 
 
 ## How to set up scripts
-To use these scripts, navigate to your Minecraft instance folder (in ATLauncher, click Open Folder option of instance) and pull the contents of this repo. 
-IF ALREADY PULLED FROM ABOVE, just follow along using those repo contents EXCEPT for instance.zip.
+Pull/clone the repo
+
+To use these scripts, navigate to your Minecraft instance folder (in ATLauncher, click Open Folder option of an instance) and pull the contents of this repo. 
 
 This will create a subfolder with the repo contents.
 
 <img width="227" height="108" alt="image" src="https://github.com/user-attachments/assets/ee394792-af1f-4b17-9081-ee5e1d847b6f" />
 
-Just drag the contents of that subfolder (EXCEPT instance.zip) back into the main instance folder so it looks like this. Make sure to ALSO DRAG .gitignore !!!
+Just drag the contents of that subfolder back into the main instance folder so it looks like this. Make sure to ALSO DRAG .gitignore !!!
 
 <img width="215" height="155" alt="image" src="https://github.com/user-attachments/assets/80b0f3b0-e096-40be-b711-c36c55dc3326" />
 
