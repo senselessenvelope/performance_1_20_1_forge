@@ -4,9 +4,9 @@ we do some modding
 
 ## Table of Contents
 
-- [How to install instance](#instance)
-- [How to set up scripts](#scripts)
-- [How to download fixed (pregenerated) overworld save](#world)
+- [How to install instance](#how-to-install-instance)
+- [How to set up scripts](#how-to-set-up-scripts)
+- [How to download fixed (pregenerated) overworld save](#how-to-download-fixed-pregenerated-overworld-save)
 
 
 ## How to install instance
