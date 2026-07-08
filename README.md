@@ -28,7 +28,7 @@ Choose file
 
 <img width="472" height="244" alt="image" src="https://github.com/user-attachments/assets/5d67896a-bd08-480f-9180-34dd0933167d" />
 
-Select instance file pulled from repo
+Select the instance.zip file you downloaded
 
 <img width="136" height="30" alt="image" src="https://github.com/user-attachments/assets/f0ee66b2-fe65-4a18-a475-bce9cccc1b2b" />
 
