@@ -39,19 +39,19 @@ To use these scripts, navigate to your Minecraft instance folder (in ATLauncher,
 
 This will create a subfolder with the repo contents.
 
-<img width="227" height="108" alt="image" src="https://github.com/user-attachments/assets/ee394792-af1f-4b17-9081-ee5e1d847b6f" />
+<img width="259" height="152" alt="image" src="https://github.com/user-attachments/assets/8e058e6d-388f-45a9-b0e8-b8e0ff260661" />
 
-Just drag the contents of that subfolder back into the main instance folder so it looks like this. Make sure to ALSO DRAG .gitignore !!!
+Just drag the contents of that subfolder back into the main instance folder (accept all overwriting files as they are most likely mob spawn configs) so it looks like this
 
-<img width="215" height="155" alt="image" src="https://github.com/user-attachments/assets/80b0f3b0-e096-40be-b711-c36c55dc3326" />
+<img width="260" height="242" alt="image" src="https://github.com/user-attachments/assets/93171be3-b64d-451b-aee4-b5bcdc0069c4" />
 
 And now delete that repo folder.
 
-<img width="205" height="148" alt="image" src="https://github.com/user-attachments/assets/671c91ee-f0a3-4d85-968c-3113e521e9e3" />
+<img width="259" height="232" alt="image" src="https://github.com/user-attachments/assets/ea77dc2b-390e-487c-afbb-1c81de9c6a59" />
 
 So you now have these.
 
-<img width="140" height="138" alt="image" src="https://github.com/user-attachments/assets/e7ad78b1-06be-43a3-9f50-64b5e398ffd2" />
+<img width="259" height="217" alt="image" src="https://github.com/user-attachments/assets/7e67e614-1c4d-4281-ba28-2d8f2cec0e94" />
 
 Now this entire folder will be recognised as a Git repo. Make sure to KEEP .gitignore !!!
 
