@@ -41,15 +41,17 @@ This will create a subfolder with the repo contents.
 
 <img width="259" height="152" alt="image" src="https://github.com/user-attachments/assets/8e058e6d-388f-45a9-b0e8-b8e0ff260661" />
 
-Just drag the contents of that subfolder back into the main instance folder (accept all overwriting files as they are most likely mob spawn configs) so it looks like this
+Just drag the contents of that subfolder back into the main instance folder. Accept all overwriting files as they are most likely mob spawn configs
+
+It should now look something like this:
 
 <img width="260" height="242" alt="image" src="https://github.com/user-attachments/assets/93171be3-b64d-451b-aee4-b5bcdc0069c4" />
 
-And now delete that repo folder.
+And now delete that repo folder
 
 <img width="259" height="232" alt="image" src="https://github.com/user-attachments/assets/ea77dc2b-390e-487c-afbb-1c81de9c6a59" />
 
-So you now have these.
+So you now have these:
 
 <img width="259" height="217" alt="image" src="https://github.com/user-attachments/assets/7e67e614-1c4d-4281-ba28-2d8f2cec0e94" />
 
