@@ -9,6 +9,7 @@ we do some modding
 - [How to download fixed (pregenerated) overworld save](#how-to-download-fixed-pregenerated-overworld-save)
 
 
+<a name="how-to-install-instance"></a>
 ## How to install instance
 
 To install instance, download from [here](https://drive.google.com/file/d/19fy6Gr_0azs_TswxSBBufWvjq8WieRn6/view?usp=sharing)
