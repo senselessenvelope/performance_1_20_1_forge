@@ -1,0 +1,2 @@
+instance.zip filter=lfs diff=lfs merge=lfs -text
+dungeons/saves/** filter=lfs diff=lfs merge=lfs -text
