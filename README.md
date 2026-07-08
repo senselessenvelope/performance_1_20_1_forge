@@ -18,7 +18,7 @@ Then, import instance in ATLauncher
 
 <img width="1181" height="149" alt="image" src="https://github.com/user-attachments/assets/7ae700df-9938-4727-930d-89cc7db86805" />
 
-Choose file
+Choose to browse a file
 
 <img width="472" height="244" alt="image" src="https://github.com/user-attachments/assets/5d67896a-bd08-480f-9180-34dd0933167d" />
 
