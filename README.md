@@ -27,7 +27,7 @@ Select the instance.zip file you downloaded
 <img width="136" height="30" alt="image" src="https://github.com/user-attachments/assets/f0ee66b2-fe65-4a18-a475-bce9cccc1b2b" />
 
 Name it whatever you want with whatever description. You will need to customise your own RAM, settings, keybinds, and so on within ATLauncher. 
-Set up scripts below and test them in a new world to get started!
+Set up the scripts and pregenerated world below to get started!
 
 
 <a name="how-to-set-up-scripts"></a>
