@@ -20,4 +20,3 @@ global.utils.entity = global.utils.entity || {}
 global.utils.entity.projectile = global.utils.entity.projectile || {}
 global.utils.player = global.utils.player || {}
 global.utils.item = global.utils.item || {}
-
