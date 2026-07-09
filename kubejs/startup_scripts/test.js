@@ -47,5 +47,26 @@ const test = {
     },
     assertNull(value, message) {
         this.assert(value == null, message)
+    },
+
+    // the core of this, used to test above assertions to make sure they work
+    // THESE NEED TO WORK SO ASSUME THEY WORK AND VERIFY LOGIC
+    assertThrows(fn, message) {
+        try {
+            fn()
+        } catch (e) {
+            this.pass(message)
+            return
+        }
+        this.fail(message)
+    },
+    assertNotThrows(fn, message) {
+        try {
+            fn()
+        } catch (e) {
+            this.fail(`${message}\nUnexpected Error: ${e}`)
+            return
+        }
+        this.pass(message)
     }
 }
