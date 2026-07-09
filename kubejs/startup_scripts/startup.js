@@ -29,4 +29,3 @@ global.constants = Object.freeze({
     DEFAULT_COOLDOWN:           0,
     DEFAULT_DAMAGE:             1
 })
-
