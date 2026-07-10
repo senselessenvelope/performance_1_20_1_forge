@@ -12,7 +12,7 @@
 //          thing1 === thing2,
 //          "test name"
 //      )
-const test = {
+global.test = {
     // pass or fail methods
     pass(message) {
         console.log("[TEST PASSED] " + message)
@@ -70,3 +70,5 @@ const test = {
         this.pass(message)
     }
 }
+
+const test = global.test
